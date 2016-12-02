@@ -1,0 +1,130 @@
+/*
+Theme Name: Unicon Child Theme
+Description: Unicon Child Theme for your Customizations
+Author: minti
+Template: unicon
+Version: 1.0
+*/
+
+/* ------------------------------------------------------------------------ */
+/* Global
+/* ------------------------------------------------------------------------ */
+
+h1 {
+    color: #1A3E5F;
+}
+
+h2 {
+    color: #76BFC9
+}
+
+h3 {
+    color: #E87E2B
+}
+
+h4 {
+    color: #848484
+}
+
+h5 {
+    color: #1A3E5F
+}
+
+h6 {
+    color: #1A3E5F
+}
+
+.font-special, a.button {
+    font-family: "Gotham", sans-serif;
+    font-weight: bold;
+}
+
+a.button.color-empty {
+    border: 2px solid #EE9137;
+    color: #e87e2b;
+    background: transparent;
+}
+
+a.button.small.color-empty {
+    padding: 15px 35px;
+    font-size: 14px;
+}
+
+a.button.small.color-full {
+    padding: 18px 30px;
+    font-size: 14px;
+    width: 157px;
+}
+
+a.button .fa {
+    display: none;
+}
+
+.tp-leftarrow.custom:hover, .tp-rightarrow.custom:hover {
+//    background: transparent !important;
+//    border: 1px solid;
+}
+
+.tp-leftarrow.custom:hover:before, .tp-rightarrow.custom:hover:before {
+    color: #e87e2b !important;
+}
+
+.tp-rightarrow.custom:before,
+.tp-leftarrow.custom:before {
+    color: #e87e2b;
+}
+
+.boxes-beneath, .our-mission-boxes {
+    font-family: "GothamBook", sans-serif;
+    font-size: 14px;
+}
+
+.box-content {
+    min-height: 100px;
+    margin-bottom: 15px;
+}
+
+.boxes-beneath .iconbox h3 {
+    color: #215072;
+    margin-bottom: 15px;
+}
+
+.stats-boxes .wpb_column {
+    border-right: 1px solid #e87e2b;
+}
+
+.stats-boxes .wpb_column:last-child {
+    border-right: none;
+}
+
+.our-mission-boxes .box.style-3 {
+    background: none;
+}
+
+.stats-boxes .counter-number,
+.stats-boxes .counter-title {
+    font-family: "GothamBook",sans-serif;
+    font-weight: normal;
+}
+
+.stats-boxes .counter-number {
+    font-size: 32px;
+}
+
+.stats-boxes .counter-title {
+    font-size: 16px;
+}
+
+#topbar .topbar-col1 a {
+  dispalay:inline-block;
+  vertical-align: middle
+}
+#topbar .topbar-col1 a i {
+  vertical-align: middle;
+}
+
+body.home .rev_slider_wrapper.fullwidthbanner-container .tp-caption a{
+  text-decoration:none;
+  color: inherit;
+  border: none;
+}

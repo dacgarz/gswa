@@ -1,0 +1,116 @@
+.yarpp-related .row-wrapper,
+.blog-page.blog-gswa .row-wrapper {
+  overflow: hidden;
+  margin-right: -15px;
+  margin-left: -15px;
+  background: #F6F6F6;
+  /*margin-bottom: 50px;*/
+  padding-bottom: 50px;
+}
+
+.yarpp-related .row-wrapper:last-child,
+.blog-page.blog-gswa .row-wrapper:last-child {
+  /*margin-bottom: 0;*/
+  padding-bottom: 0;
+}
+
+.yarpp-related .post-wrapper,
+.blog-page.blog-gswa .post-wrapper {
+  float: left;
+  width: 25%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.yarpp-related .post-wrapper .post,
+.blog-page.blog-gswa .post-wrapper .post {
+  background: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: none;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+.yarpp-related  .post-wrapper .post .entry-image,
+.blog-page.blog-gswa .post-wrapper .post .entry-image {
+  margin-bottom: 20px;
+}
+.yarpp-related  .post-wrapper .post .entry-title a,
+.blog-page.blog-gswa .post-wrapper .post .entry-title a {
+  color: #203E5F;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.yarpp-related  .post-wrapper .post .entry-title a:hover,
+.blog-page.blog-gswa .post-wrapper .post .entry-title a:hover {
+  text-decoration: underline;
+}
+
+.yarpp-related  .post-wrapper .post .entry-readmore-wrapper,
+.blog-page.blog-gswa .post-wrapper .post .entry-readmore-wrapper {
+  text-align: right;
+  margin-top: 33px;
+}
+
+.yarpp-related  .post-wrapper .post .entry-readmore-wrapper a,
+.blog-page.blog-gswa .post-wrapper .post .entry-readmore-wrapper a {
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 1em;
+  color: #215072;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+}
+
+.yarpp-related .post-wrapper .post .entry-readmore-wrapper a:hover,
+.blog-page.blog-gswa .post-wrapper .post .entry-readmore-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.yarpp-related .post-wrapper .post .entry-wrap,
+.blog-page.blog-gswa .post-wrapper .post .entry-wrap {
+  margin: 0 15px;
+}
+
+.yarpp-related .post-wrapper .post.format-link,
+.yarpp-related .post-wrapper .post.format-quote,
+.blog-page.blog-gswa .post-wrapper .post.format-link,
+.blog-page.blog-gswa .post-wrapper .post.format-quote {
+  padding-bottom: 0;
+}
+
+.yarpp-related .post-wrapper .post.format-quote .entry-quote a,
+.blog-page.blog-gswa .post-wrapper .post.format-quote .entry-quote a {
+  background: transparent;
+}
+.yarpp-related .post-wrapper .post.format-quote .entry-quote a:hover,
+.blog-page.blog-gswa .post-wrapper .post.format-quote .entry-quote a:hover {
+  background: #73a041;
+}
+.yarpp-related .post-wrapper .post.format-link .entry-link,
+.blog-page.blog-gswa .post-wrapper .post.format-link .entry-link {
+  margin-bottom: 0;
+}
+
+
+@media only screen and (max-width: 1199px) {
+  .yarpp-related .post-wrapper,
+  .blog-page.blog-gswa .post-wrapper {
+    width: 50%;
+    padding-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .yarpp-related  .post-wrapper,
+  .blog-page.blog-gswa .post-wrapper {
+    width: 100%;
+    padding-bottom: 50px;
+  }
+}

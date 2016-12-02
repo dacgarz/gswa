@@ -1,0 +1,219 @@
+#footer {
+    color: #fff;
+    padding: 30px 0 20px;
+}
+
+#footer .widget h3 {
+    font-family: "Gotham", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+#footer .widget_text .item {
+    display: inline-block;
+    float: left;
+    width: 50%;
+}
+
+#footer .widget_text .item h3 {
+    margin-bottom: 5px;
+}
+
+#footer .widget_text .item p {
+    margin-bottom: 15px;
+}
+
+#footer .widget_text .row {
+    margin-bottom: 0;
+}
+
+#footer .widget_search input {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 20px 20px;
+    border-radius: 3px;
+    color: #A9A9A8;
+    text-transform: uppercase;
+}
+
+/*#searchform input[placeholder],*/
+/*#searchform input::-moz-placeholder,*/
+/*#searchform input:-moz-placeholder,*/
+/*#searchform input:-ms-input-placeholder,*/
+#footer .widget_search input:focus {
+    color: #A9A9A8;
+}
+
+#footer .widget_search form:before,
+#footer a, #footer .widget ul li:after {
+    display: none;
+}
+
+.widget_search #searchsubmit {
+    display: block;
+}
+
+#footer .widget_search #searchsubmit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url("../images/search-icon.png") no-repeat center #73a041;
+    margin: 0;
+    height: 100%;
+    width: 60px;
+    border: none;
+    color: transparent;
+    font-size: 1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#footer .widget_search form {
+    width: 75%;
+}
+
+.submit-button .fa-search {
+    position: absolute;
+    right: 21px;
+    top: 35%;
+    font-size: 22px;
+}
+
+#footer .widget ul li {
+    border: none;
+}
+
+#footer .widget .social-icons ul li {
+    display: block;
+    width: 50%;
+    float: left;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#wysiwyg_widgets_widget-2 #donate {
+    display: block;
+    padding: 20px 10px;
+    width: auto;
+    margin: 10px 0 0;
+}
+
+#footer #wysiwyg_widgets_widget-2 img {
+    width: 100%;
+}
+
+#footer #wysiwyg_widgets_widget-2 p{
+    margin: 0;
+}
+
+#footer .widget .social-icons ul {
+    margin-top: 5px;
+    display: block;
+    overflow: hidden;
+}
+
+#footer .widget {
+    margin-bottom: 15px;
+}
+
+#footer .widget .social-icons a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    background: #fff;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+#footer .widget .social-icons a i.fa {
+    color: #4482ac;
+}
+
+#footer .event-item {
+    border-bottom: 1px solid #73a041;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+#footer .event-item:last-child {
+    border: none;
+}
+
+#footer .event-item p {
+    margin-bottom: 5px;
+}
+
+#footer .event-item span {
+    display: inline-block;
+    float: right;
+    margin-right: 25%;
+    margin-left: 10px;
+}
+
+
+
+
+
+form.ctct-form label,
+form.ctct-form hr,
+form.ctct-form sub {
+    display: none;
+}
+
+form.ctct-form input[type="email"] {
+    width: 155px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    background-color: white !important;
+}
+
+form.ctct-form input[type="submit"] {
+    height: 44px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+form.ctct-form input[type="hidden"],
+form.ctct-form p {
+    display: inline-block;
+    vertical-align: top;
+}
+.ctct-message {
+    background: white !important;
+}
+#footer .tribe-events-list-widget {
+    border-bottom: 1px solid #73a041;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+
+}
+
+#footer .tribe-events-list-widget ol {
+    margin: 0;
+}
+
+#footer .tribe-events-list-widget ol li {
+    border-bottom: 1px solid #73a041;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+#footer .tribe-events-list-widget ol h4 {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+#footer .tribe-events-list-widget .tribe-events-widget-link {
+    text-align: right;
+    margin-bottom: 0;
+}
+
+#footer .tribe-events-list-widget .tribe-events-widget-link a {
+    font-size: 12px;
+}
+#footer .tribe-events-list-widget a {
+    display: block;
+}
