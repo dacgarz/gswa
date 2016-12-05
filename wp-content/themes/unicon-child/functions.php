@@ -25,3 +25,8 @@ function minti_custom_excerpt_child($limit=50, $read_more = TRUE) {
     return strip_shortcodes(wp_trim_words(get_the_content(), $limit));
   }
 }
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
