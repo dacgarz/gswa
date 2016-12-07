@@ -86,7 +86,7 @@ class  rsEvents {
   public function access_to_private() {
     self::$access_to_private_events = FALSE;
     $user = wp_get_current_user();
-    if (in_array('administrator', $user->roles)) {
+    if (is_admin() && in_array('administrator', $user->roles)) {
       self::$access_to_private_events = TRUE;
     }
     return self::$access_to_private_events;
