@@ -1,0 +1,70 @@
+#tribe-events-bar {
+  .tribe-bar-search-category-filter,
+  .tribe-bar-search-filter,
+  .tribe-bar-date-filter,
+  .tribe-bar-submit {
+    float: left;
+    width: 25%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 15px;
+  }
+
+  select {
+    display: none;
+  }
+
+  .selectric-wrapper {
+    .selectric {
+      border: none;
+      border-bottom: 1px dashed #b9b9b9;
+
+      .label {
+        line-height: 20px;
+        padding: 5px;
+        height: 27px;
+        margin-right: 27px;
+        margin-left: 0;
+        font-size: 15px;
+      }
+
+      .button {
+        height: 27px;
+        width: 27px;
+        font-size: 0;
+      }
+    }
+    .selectric-items li {
+      padding: 5px;
+    }
+
+    &.selectric-open {
+      .selectric {
+        border-color: transparent;
+      }
+    }
+  }
+
+  .tribe-bar-mini {
+    .selectric-wrapper .selectric {
+      .label {
+        font-size: 12px;
+        height: 25px;
+      }
+      .button {
+        height: 25px;
+      }
+    }
+  }
+
+  .tribe-bar-collapse {
+    .tribe-bar-search-category-filter,
+    .tribe-bar-search-filter,
+    .tribe-bar-date-filter,
+    .tribe-bar-submit {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+

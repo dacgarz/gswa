@@ -2,10 +2,13 @@
 
 class  rsEvents {
   public static $category_filter_name = 'tribe-bar-search-category';
+  public static $access_to_private_events = FALSE;
 
   function __construct() {
-    add_filter( 'tribe-events-bar-filters', array($this, 'setup_category_search_in_bar') , 1, 1 );
-    add_action( 'pre_get_posts', array( __CLASS__, 'pre_get_posts' ), 51 );
+//    self::$access_to_private_events = $this->access_to_private();
+    add_filter( 'tribe-events-bar-filters', array( $this, 'setup_category_search_in_bar' ) , 1, 1 );
+    add_action( 'pre_get_posts', array( $this, 'pre_get_posts' ), 51 );
+    add_action( 'init', array( $this, 'access_to_private' ));
   }
 
 
@@ -19,7 +22,10 @@ class  rsEvents {
       'taxonomy' => 'tribe_events_cat'
     ));
     foreach ($categories as $cat) {
-      $options[$cat->term_id] = $cat->name;
+      $options[$cat->term_id] = array(
+        'name' => $cat->name,
+        'slug' => $cat->slug
+      );
     }
 
     if ( tribe_get_option( 'tribeDisableTribeBar', false ) == false ) {
@@ -35,13 +41,14 @@ class  rsEvents {
 
   private function get_category_html($name, $items, $default_value) {
     $html = "<select name='$name' id='$name' >";
-    $html .= "<option value='' >Select Category</option>";
-    foreach ($items as $id => $title) {
+    $html .= "<option value='' >All Categories</option>";
+    foreach ($items as $id => $values) {
+      if ( (!self::$access_to_private_events) && ($values['slug'] == 'private') ) continue;
       $att = '';
       if ($default_value == $id) {
         $att = " selected='selected' ";
       }
-      $html .= "<option value='$id' $att >$title</option>";
+      $html .= "<option value='$id' $att >" . $values['name'] . "</option>";
     }
     $html .= '</select>';
     return $html;
@@ -51,9 +58,18 @@ class  rsEvents {
   public function  pre_get_posts($query) {
     if ( $query->tribe_is_event || $query->tribe_is_event_category ) {
       $tax_query = array(
-        //@TODO hide private
-        //'operator' => 'NOT IN',
+        'relation' => 'AND',
       );
+
+      if (!self::$access_to_private_events) {
+        $tax_query[] = array(
+          'taxonomy' => 'tribe_events_cat',
+          'field'    => 'slug',
+          'terms'    => array('private'),
+          'operator' => 'NOT IN'
+        );
+      }
+
       if ( ! empty( $_REQUEST[self::$category_filter_name] ) ) {
         $cat = $_REQUEST[self::$category_filter_name];
         $tax_query[] = array(
@@ -62,12 +78,18 @@ class  rsEvents {
           'terms'    => array( $cat ),
         );
       }
-
       $query->set( 'tax_query', $tax_query);
     }
     return $query;
   }
-  //@TODO hide private
-  //@TODO css
-  
+
+  public function access_to_private() {
+    self::$access_to_private_events = FALSE;
+    $user = wp_get_current_user();
+    if (in_array('administrator', $user->roles)) {
+      self::$access_to_private_events = TRUE;
+    }
+    return self::$access_to_private_events;
+  }
+
 }
