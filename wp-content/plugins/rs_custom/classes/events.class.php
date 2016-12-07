@@ -84,9 +84,10 @@ class  rsEvents {
   }
 
   public function access_to_private() {
+    $file_name = basename($_SERVER['SCRIPT_NAME']);
     self::$access_to_private_events = FALSE;
     $user = wp_get_current_user();
-    if (is_admin() && in_array('administrator', $user->roles)) {
+    if ((is_admin() && ($file_name != 'admin-ajax.php') ) && in_array('administrator', $user->roles)) {
       self::$access_to_private_events = TRUE;
     }
     return self::$access_to_private_events;
