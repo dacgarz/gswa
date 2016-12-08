@@ -10,6 +10,24 @@
     padding: 15px;
   }
 
+  #tribe-bar-views {
+    .tribe-bar-views-inner {
+      padding: 10px 6px 7px 6px;
+    }
+
+    .tribe-bar-views-list {
+      position: relative;
+    }
+
+    li.tribe-bar-views-option {
+      display: block;
+
+      &.tribe-bar-active {
+        font-weight: bold;
+      }
+    }
+  }
+
   select {
     display: none;
   }
