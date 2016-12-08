@@ -161,10 +161,15 @@ form.ctct-form sub {
     display: none;
 }
 
+form.ctct-form {
+    position: relative;
+}
+
 form.ctct-form input[type="email"] {
-    width: 190px;
+    width: 99.9%;
+    box-sizing: border-box;
     padding-left: 7px;
-    padding-right: 7px;
+    padding-right: 85px;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     background-color: white !important;
@@ -172,13 +177,17 @@ form.ctct-form input[type="email"] {
 
 form.ctct-form input[type="submit"] {
     height: 44px;
+    position: absolute;
+    top: 0;
+    right: 0;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
+    margin-right: 0;
 }
 
 form.ctct-form input[type="hidden"],
 form.ctct-form p {
-    display: inline-block;
+    display: block;
     vertical-align: top;
 }
 .ctct-message {
