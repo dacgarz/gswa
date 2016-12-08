@@ -131,7 +131,7 @@
 }
 
 #footer .event-item {
-    border-bottom: 1px solid #73a041;
+    border-bottom: 1px solid white;
     padding-bottom: 15px;
     margin-bottom: 15px;
 }
@@ -185,7 +185,7 @@ form.ctct-form p {
     background: white !important;
 }
 #footer .tribe-events-list-widget {
-    border-bottom: 1px solid #73a041;
+    border-bottom: 1px solid white;
     padding-bottom: 15px;
     margin-bottom: 15px;
 
@@ -196,7 +196,7 @@ form.ctct-form p {
 }
 
 #footer .tribe-events-list-widget ol li {
-    border-bottom: 1px solid #73a041;
+    border-bottom: 1px solid white;
     padding-bottom: 15px;
     margin-bottom: 15px;
 }
@@ -207,7 +207,6 @@ form.ctct-form p {
 }
 
 #footer .tribe-events-list-widget .tribe-events-widget-link {
-    text-align: right;
     margin-bottom: 0;
 }
 
