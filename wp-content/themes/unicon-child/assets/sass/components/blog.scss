@@ -1,5 +1,10 @@
 .yarpp-related,
 .blog-page.blog-gswa {
+
+  &.yarpp-related {
+    padding: 0 10px;
+  }
+
   .row-wrapper {
     overflow: hidden;
     margin-right: -15px;
