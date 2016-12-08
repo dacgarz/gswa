@@ -31,8 +31,8 @@
 #header #navigation > ul > li > a {
     font-family: 'Gotham', sans-serif;
     font-weight: bold;
-    font-size: 12px;
-    padding: 0 10px;
+    font-size: 14px;
+    padding: 0 4px;
 }
 
 #donate {
