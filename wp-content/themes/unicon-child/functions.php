@@ -11,7 +11,7 @@ function theme_enqueue_styles() {
 
   wp_enqueue_style( 'gotham-fonts', get_stylesheet_directory_uri() . '/framework/fonts/Gotham/Gotham.css');
 
-  wp_enqueue_style( 'unicon_child_styles_gulp', get_stylesheet_directory_uri() . '/assets/compiled/css/global.css', array(), '0.0.1');
+  wp_enqueue_style( 'unicon_child_styles_gulp', get_stylesheet_directory_uri() . '/assets/compiled/css/global.css', array(), '0.0.2');
   wp_enqueue_script( 'unicon_child_js_gulp', get_stylesheet_directory_uri() . '/assets/compiled/js/global.js', array('jquery'), '0.0.1');
 }
 
