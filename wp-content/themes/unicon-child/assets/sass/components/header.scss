@@ -1,0 +1,41 @@
+@media only screen and (max-width: 1199px) {
+
+  .sticky-wrapper {
+    display: block !important;
+  }
+
+  header#header {
+    display: block !important;
+    position: relative !important;
+    margin-bottom: 0;
+    padding: 0 !important;
+
+    >div.container {
+      display: none !important;
+    }
+  }
+
+  #topbar {
+    margin-bottom: 0;
+
+    li:last-child {
+      display: none !important;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  #topbar {
+
+    .columns,
+    .container,
+    .topbar-col1 {
+      width: 100% !important;
+    }
+
+    .topbar-col2 {
+      display: none !important;
+    }
+  }
+}
