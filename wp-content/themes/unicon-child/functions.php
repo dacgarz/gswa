@@ -34,3 +34,11 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+
+function is_tribe_calendar() {
+  if ( tribe_is_event_query() || tribe_is_event_organizer() || tribe_is_event_venue() ) {
+    return TRUE;
+  }
+  return FALSE;
+}

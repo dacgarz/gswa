@@ -31,7 +31,9 @@
 		// Include Titlebar
 		if (is_single() && get_post_type() == 'post') {
 			get_template_part( 'framework/inc/titlebar_post' );
-		} else {
+		} elseif(is_tribe_calendar()) {
+			get_template_part( 'framework/inc/titlebar_events' );
+		} else  {
 			get_template_part( 'framework/inc/titlebar' );
 		}
 	}
