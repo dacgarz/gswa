@@ -1,12 +1,13 @@
 <div class="tribe-settings-form-wrap">
   <h3>Event Index Page</h3>
+  <div class="clear"></div>
   <fieldset>
     <legend class="tribe-field-label">Title</legend>
     <div class="tribe-field-wrap">
       <input name='index_settings_title' value='<?php print $default_value['title']; ?>'>
     </div>
   </fieldset>
-
+  <div class="clear"></div>
   <fieldset>
     <legend class="tribe-field-label">Header Image</legend>
     <div class="tribe-field-wrap">
@@ -40,4 +41,5 @@
 
     });
   </script>
+  <div class="clear"></div>
 </div>
