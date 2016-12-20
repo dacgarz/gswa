@@ -10,12 +10,22 @@
   }
 
   &.only-one-slide {
-
     .tp-rightarrow,
     .tp-leftarrow {
       display: none;
     }
+  }
 
+  .sans-semilight {
+    font-family: 'TheSansSemiLight', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .serif-semibold {
+    font-family: 'TheSerifSemiBold', sans-serif;
+    font-weight: normal;
+    font-style: normal;
   }
 }
 

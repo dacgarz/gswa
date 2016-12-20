@@ -1,0 +1,12 @@
+/* Webfont: TheSerifSemiBold-Plain */@font-face {
+    font-family: 'TheSerifSemiBold-';
+    src: url('TheSerifSemiBold-Plain.eot'); /* IE9 Compat Modes */
+    src: url('TheSerifSemiBold-Plain.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('TheSerifSemiBold-Plain.woff') format('woff'), /* Modern Browsers */
+         url('TheSerifSemiBold-Plain.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('TheSerifSemiBold-Plain.svg#TheSerifSemiBold-Plain') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

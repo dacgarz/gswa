@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'TheSansSemiLight';
+  src: url('#{$font-folder}/the_sans_semi_light/TheSansSemiLight-Plain.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-folder}/the_sans_semi_light/TheSansSemiLight-Plain.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$font-folder}/the_sans_semi_light/TheSansSemiLight-Plain.woff') format('woff'), /* Modern Browsers */
+       url('#{$font-folder}/the_sans_semi_light/TheSansSemiLight-Plain.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('#{$font-folder}/the_sans_semi_light/TheSansSemiLight-Plain.svg#TheSansSemiLight-Plain') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+
+@font-face {
+  font-family: 'TheSerifSemiBold';
+  src: url('#{$font-folder}/the_serif_semi_bold/TheSerifSemiBold-Plain.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-folder}/the_serif_semi_bold/TheSerifSemiBold-Plain.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$font-folder}/the_serif_semi_bold/TheSerifSemiBold-Plain.woff') format('woff'), /* Modern Browsers */
+       url('#{$font-folder}/the_serif_semi_bold/TheSerifSemiBold-Plain.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('#{$font-folder}/the_serif_semi_bold/TheSerifSemiBold-Plain.svg#TheSerifSemiBold-Plain') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('#{$font-folder}/gotham/Gotham-Bold.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-folder}/gotham/Gotham-Bold.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('#{$font-folder}/gotham/Gotham-Bold.woff') format('woff'),
+    /* Modern Browsers */ url('#{$font-folder}/gotham/Gotham-Bold.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('#{$font-folder}/gotham/Gotham-Bold.svg#Gotham-Bold') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Gotham-Medium */
+@font-face {
+  font-family: 'Gotham';
+  src: url('#{$font-folder}/gotham/Gotham-Medium.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-folder}/gotham/Gotham-Medium.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('#{$font-folder}/gotham/Gotham-Medium.woff') format('woff'),
+    /* Modern Browsers */ url('#{$font-folder}/gotham/Gotham-Medium.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('#{$font-folder}/gotham/Gotham-Medium.svg#Gotham-Medium') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Gotham-Book */
+@font-face {
+  font-family: 'GothamBook';
+  src: url('#{$font-folder}/gotham/Gotham-Book.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-folder}/gotham/Gotham-Book.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('#{$font-folder}/gotham/Gotham-Book.woff') format('woff'),
+    /* Modern Browsers */ url('#{$font-folder}/gotham/Gotham-Book.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('#{$font-folder}/gotham/Gotham-Book.svg#Gotham-Book') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
