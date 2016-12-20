@@ -1,3 +1,24 @@
+.rev_slider_wrapper.fullwidthbanner-container {
+  .tp-caption {
+    a.button {
+      padding: 20px 60px !important;
+      border-radius: 3px;
+      letter-spacing: 3px !important;
+      font-size: 16px !important;
+      font-weight: normal !important;
+    }
+  }
+
+  &.only-one-slide {
+
+    .tp-rightarrow,
+    .tp-leftarrow {
+      display: none;
+    }
+
+  }
+}
+
 @media only screen and (max-width: 767px) {
 
   body.home .standard-section.wpb_row {
