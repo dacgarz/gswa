@@ -3,12 +3,19 @@
 class  rsEvents {
   public static $category_filter_name = 'tribe-bar-search-category';
   public static $access_to_private_events = FALSE;
+  private $plate_engine = false;
 
-  function __construct() {
+  function __construct($plate_engine) {
+    $this->plate_engine = $plate_engine;
 //    self::$access_to_private_events = $this->access_to_private();
     add_filter( 'tribe-events-bar-filters', array( $this, 'setup_category_search_in_bar' ) , 1, 1 );
     add_action( 'pre_get_posts', array( $this, 'pre_get_posts' ), 51 );
     add_action( 'init', array( $this, 'access_to_private' ));
+
+    add_action( 'tribe_settings_after_tabs', array($this, 'tribe_settings_after_tabs'));
+    add_action( 'tribe_settings_content_tab_index_settings', array($this, 'tribe_settings_content_tab_index_settings'));
+
+    add_action( 'tribe_settings_validate_tab_index_settings', array($this, 'tribe_settings_validate_tab_index_settings'));
   }
 
 
@@ -93,4 +100,26 @@ class  rsEvents {
     return self::$access_to_private_events;
   }
 
+  public function tribe_settings_after_tabs() {
+    print "<a id='index-settings' href='?page=tribe-common&tab=index_settings&post_type=tribe_events' class='nav-tab' >Index Page Settings</a>";
+  }
+
+  public function tribe_settings_content_tab_index_settings() {
+    wp_enqueue_media();
+    print $this->plate_engine->render('events_settings_tab', array(
+        'default_value' => array(
+          'title' => Tribe__Settings_Manager::get_option('index_settings_title'),
+          'header_image' => Tribe__Settings_Manager::get_option('index_settings_image')
+        )
+      ));
+  }
+
+  public function tribe_settings_validate_tab_index_settings() {
+    $settings_keys = array('index_settings_title', 'index_settings_image');
+    foreach ($settings_keys as $setting) {
+      if (isset($_POST[$setting])) {
+        Tribe__Settings_Manager::set_option($setting, $_POST[$setting]);
+      }
+    }
+  }
 }
