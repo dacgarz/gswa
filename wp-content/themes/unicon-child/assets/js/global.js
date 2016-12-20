@@ -25,17 +25,19 @@ jQuery(document).ready(function($){
   }.init();
 
   var blog_index = {
-    $posts: $('.blog-gswa .post, .yarpp-related .post'),
+    elements: [
+      '.blog-gswa .post, .yarpp-related .post',
+      'body.home .boxes-beneath .iconbox h3',
+      'body.home .boxes-beneath .iconbox .iconbox-content'
+    ],
     init: function () {
       var self = this;
-      if (self.$posts.length > 0) {
-        self.$posts.matchHeight({
-          byRow: true,
-          property: 'min-height'
-          // target: null,
-          // remove: false
-        })
-      }
+      self.elements.forEach(function (selector, index) {
+        var element = $(selector);
+        if (element.length > 0) {
+          element.matchHeight({ byRow: true, property: 'min-height' })
+        }
+      });
     }
   }.init();
 

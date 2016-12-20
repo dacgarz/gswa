@@ -29,6 +29,36 @@
   }
 }
 
+.fa.gswa-fish-icon.boxicon {
+  background: url("#{$image-folder}/affiliate-headericonblue.png") center center no-repeat;
+  background-size: contain;
+  height: 52px;
+  width: 120px;
+  max-width: 100%;
+  margin-bottom: 21px;
+}
+
+.boxes-beneath {
+  .iconbox {
+
+    .iconbox-content {
+      text-align: justify;
+      padding-bottom: 50px;
+      position: relative;
+
+      a.button {
+        position: absolute;
+        bottom: 5px;
+        display: block;
+        width: 40%;
+        margin: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 767px) {
 
   body.home .standard-section.wpb_row {
