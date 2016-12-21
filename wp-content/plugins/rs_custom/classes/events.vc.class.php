@@ -183,11 +183,12 @@ class homepageEventsWidget {
       while ($posts->have_posts()) {
         $posts->the_post();
         $id = get_the_ID();
+        $post = get_post($id);
         $events[] = array(
           'id' => $id,
           'image' => get_post_thumbnail_id($id),
-          'title' => get_the_title($id),
-          'desc' => '',
+          'title' => $post->post_title,
+          'desc' => wp_trim_words($post->post_content, 30),
           'link_attrs' => $this->generate_link_attrs(array( 'url' => get_permalink($id))),
           'link_title' => 'Read More'
         );
