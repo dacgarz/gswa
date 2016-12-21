@@ -67,6 +67,27 @@
   }
 }
 
+.our-mission-boxes {
+  .wpb_wrapper {
+    text-align: center;
+  }
+
+  .box-content {
+    text-align: justify;
+  }
+
+  a.button.small.color-full {
+    margin-right: 0;
+    background: #73a041;
+    border-color: #73a041;
+
+    &:hover {
+      background: #333333;
+      border-color: #333333;
+    }
+  }
+}
+
 @media only screen and (max-width: 767px) {
 
   body.home .standard-section.wpb_row {
