@@ -43,7 +43,7 @@
 
     .iconbox-content {
       text-align: justify;
-      padding-bottom: 50px;
+      padding-bottom: 55px;
       position: relative;
 
       a.button {
@@ -56,6 +56,14 @@
         transform: translateX(-50%);
       }
     }
+  }
+}
+
+.events-row-wrapper {
+  padding-bottom: 20px;
+  h3.headline {
+    margin: 20px 0;
+    color: #76bfc9;
   }
 }
 

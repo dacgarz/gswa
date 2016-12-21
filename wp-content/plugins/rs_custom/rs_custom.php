@@ -14,3 +14,6 @@ $plate_engine = new League\Plates\Engine(__DIR__ . "/templates");
 
 require_once "classes/events.class.php";
 new rsEvents($plate_engine);
+
+require_once "classes/events.vc.class.php";
+new homepageEventsWidget($plate_engine);

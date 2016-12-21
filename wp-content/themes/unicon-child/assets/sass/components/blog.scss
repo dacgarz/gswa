@@ -1,3 +1,4 @@
+.events-row-wrapper,
 .yarpp-related,
 .blog-page.blog-gswa {
 
@@ -54,10 +55,15 @@
         font-family: "Open Sans", sans-serif;
         font-size: 16px;
         display: inline-block;
+        font-weight: 600;
 
         &:hover {
           text-decoration: underline;
         }
+      }
+
+      .entry-content {
+        text-align: justify;
       }
 
       .entry-readmore-wrapper {

@@ -26,7 +26,11 @@ jQuery(document).ready(function($){
 
   var blog_index = {
     elements: [
-      '.blog-gswa .post, .yarpp-related .post',
+      '.blog-gswa .post',
+      '.yarpp-related .post',
+      '.events-row-wrapper .post .entry-image',
+      '.events-row-wrapper .post .entry-title',
+      '.events-row-wrapper .post .entry-content',
       'body.home .boxes-beneath .iconbox h3',
       'body.home .boxes-beneath .iconbox .iconbox-content'
     ],
