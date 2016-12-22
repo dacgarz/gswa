@@ -74,10 +74,10 @@ a.button .fa {
     color: #e87e2b;
 }
 
-.boxes-beneath, .our-mission-boxes {
-    font-family: "GothamBook", sans-serif;
-    font-size: 14px;
-}
+/*.boxes-beneath, .our-mission-boxes {*/
+    /*font-family: "GothamBook", sans-serif;*/
+    /*font-size: 14px;*/
+/*}*/
 
 .boxes-beneath .iconbox h3 {
     color: #215072;
