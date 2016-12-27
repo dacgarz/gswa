@@ -40,7 +40,7 @@ jQuery(document).ready(function($){
       self.elements.forEach(function (selector, index) {
         var element = $(selector);
         if (element.length > 0) {
-          element.matchHeight({ byRow: true, property: 'min-height' })
+          element.matchHeight({ byRow: true })
         }
       });
     }
