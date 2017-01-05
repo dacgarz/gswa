@@ -42,3 +42,15 @@ function is_tribe_calendar() {
   }
   return FALSE;
 }
+
+function remove_redux_section($section) {
+  if (isset($section['4']['fields'])) {
+    foreach ($section['4']['fields'] as $key => $value) {
+      if ($value['id'] == 'switch_stickyheader') {
+        unset($section['4']['fields'][$key]);
+      }
+    }
+  }
+  return $section;
+}
+add_filter('redux-sections','remove_redux_section');

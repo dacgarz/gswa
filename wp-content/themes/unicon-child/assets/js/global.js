@@ -1,5 +1,29 @@
 jQuery(document).ready(function($){
 
+  var header = {
+    $header: $('.fullheader-wrapper'),
+    transparentHeader: function () {
+      var self = this;
+      if ($(document).scrollTop() >= 60) {
+        self.$header.find('#header.header-v1').removeClass('header-transparent');
+      } else {
+        self.$header.find('#header.header-v1.stuck').addClass('header-transparent');
+      }
+    },
+    init: function () {
+      var self = this;
+      if (self.$header.length > 0) {
+        // if (/Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent) === false) {
+          self.$header.waypoint('sticky');
+          if ($("body").hasClass("header-is-transparent")) {
+            $(document).scroll(function() { self.transparentHeader(); });
+            self.transparentHeader();
+          }
+        // }
+      }
+    }
+  }.init();
+
   var homepage_slider = {
     $slider: $('.rev_slider_wrapper.fullwidthbanner-container'),
     slides: null,
