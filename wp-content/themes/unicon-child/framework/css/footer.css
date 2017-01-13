@@ -59,6 +59,12 @@
     padding: 20px 10px;
     width: auto;
     margin: 10px 0 0;
+    background: #018755;
+    border-color: #018755;
+}
+#wysiwyg_widgets_widget-2 #donate:hover {
+    background: #ffffff;
+    color: #018755 !important;
 }
 
 #footer #wysiwyg_widgets_widget-2 img {
@@ -126,6 +132,13 @@ form.ctct-form input[type="submit"] {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     margin-right: 0;
+    background: #018755;
+    border-color: #018755;
+}
+
+form.ctct-form input[type="submit"]:hover {
+    background: #ffffff;
+    color: #018755 !important;
 }
 
 form.ctct-form input[type="hidden"],

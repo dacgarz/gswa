@@ -40,7 +40,14 @@
     padding: 20px;
     width: 120px;
     border-radius: 3px;
+    background: #018755;
+    border-color: #018755;
 }
+
+/*#donate:hover {*/
+    /*background: #ffffff;*/
+    /*color: #018755 !important;*/
+/*}*/
 
 #navigation .sub-menu li a,
 #navigation .sub-menu ul li a {
