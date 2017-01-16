@@ -1186,7 +1186,7 @@ if (!function_exists('minti_member_function')) {
 			}
 
 			if($mail != '') {
-				$return7 = '<li class="social-iconweflkwejfojweoi social-email"><a href="mailto:' .esc_attr($mail). '" title="Mail"><i class="fa fa-envelope-o"></i></a></li>';
+				$return7 = '<li class="social-icon social-email"><a href="mailto:' .esc_attr($mail). '" title="Mail"><i class="fa fa-envelope-o"></i></a></li>';
 			}
 			else{
 				$return7 = '';
