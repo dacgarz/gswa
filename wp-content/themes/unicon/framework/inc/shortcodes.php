@@ -1156,25 +1156,25 @@ if (!function_exists('minti_member_function')) {
 			if($twitter != '') {
 				$return2 = '<li class="social-icon social-twitter"><a href="' .esc_url($twitter). '" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>';
 			} else{
-				$return2 = ''; 
+				$return2 = '';
 			}
 
 			if($facebook != '') {
 				$return3 = '<li class="social-icon social-facebook"><a href="' .esc_url($facebook). '" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>';
 			} else{
-				$return3 = ''; 
+				$return3 = '';
 			}
 
 			if($skype != '') {
 				$return4 = '<li class="social-icon social-skype"><a href="' .esc_url($skype). '" target="_blank" title="Skype"><i class="fa fa-skype"></i></a></li>';
 			} else{
-				$return4 = ''; 
+				$return4 = '';
 			}
 
 			if($google != '') {
 				$return5 = '<li class="social-icon social-google"><a href="' .esc_url($google). '" target="_blank" title="Google+"><i class="fa fa-google-plus"></i></a></li>';
 			} else{
-				$return5 = ''; 
+				$return5 = '';
 			}
 
 
@@ -1182,27 +1182,34 @@ if (!function_exists('minti_member_function')) {
 				$return6 = '<li class="social-icon social-linkedin"><a href="' .esc_url($linkedin). '" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>';
 			}
 			else{
-				$return6 = ''; 
+				$return6 = '';
 			}
 
 			if($mail != '') {
-				$return7 = '<li class="social-icon social-email"><a href="mailto:' .esc_attr($mail). '" title="Mail"><i class="fa fa-send-o"></i></a></li>';
+				$return7 = '<li class="social-icon social-email"><a href="mailto:' .esc_attr($mail). '" title="Mail"><i class="fa fa-envelope-o"></i></a></li>';
 			}
 			else{
-				$return7 = ''; 
+				$return7 = '';
 			}
 		}  else {
 			$return2 = '';
-			$return3 = ''; 
-			$return4 = ''; 
-			$return5 = ''; 
-			$return6 = ''; 
+			$return3 = '';
+			$return4 = '';
+			$return5 = '';
+			$return6 = '';
 			$return7 = '';
-			$return8 = ''; 
-			$return9 = ''; 
-		}   
+			$return8 = '';
+			$return9 = '';
+		}
 		
-		return '<div class="member wpb_content_element">' .$return. '<h4>' .esc_html($name). '</h4><div class="member-role">' .esc_html($role). '</div><div class="member-content"><p>' . do_shortcode($content) . '</p></div>' .$return8. '' .$return2. '' .$return3. '' .$return4. '' .$return5. '' .$return6. '' .$return7. '' .$return9. '</div>';
+		return '<div class="member wpb_content_element">' .$return.
+		       '<h4>' .esc_html($name). '</h4>
+		       <div class="member-role">' .esc_html($role). '</div>'.
+		       $return8. '' .$return2. '' .$return3. '' .$return4. '' .$return5. '' .$return6. '' .$return7. '' .$return9.
+		       '<div class="member-content"><p>' . do_shortcode($content) . '</p>
+		       </div>'.
+
+		       '</div>';
 	}
 	add_shortcode('minti_member', 'minti_member_function');
 }

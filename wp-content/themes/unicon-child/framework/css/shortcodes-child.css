@@ -1817,6 +1817,12 @@ ul.styled-list li i{
 .member{
   margin: 0;
 }
+.page-id-15801 .member-img img,
+.page-id-15533 .member-img img{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
 
 .member-img img{
   width: 100%;
