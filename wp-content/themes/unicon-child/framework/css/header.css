@@ -44,10 +44,10 @@
     border-color: #018755;
 }
 
-/*#donate:hover {*/
-    /*background: #ffffff;*/
-    /*color: #018755 !important;*/
-/*}*/
+#donate:hover {
+    background: #4482AC;
+    border-color: #4482AC;
+}
 
 #navigation .sub-menu li a,
 #navigation .sub-menu ul li a {

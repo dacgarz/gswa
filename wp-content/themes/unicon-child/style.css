@@ -135,3 +135,44 @@ body.home .rev_slider_wrapper.fullwidthbanner-container .tp-caption a{
     overflow-y: auto;
 
 }
+.blog-single #content{
+    padding-top: 2px;
+}
+.blog-single .post h1{
+    margin-bottom: -5px;
+}
+.blog-single .post h1 a{
+    color: #73A041;
+    font-size: 40px;
+}
+.blog-single .post .entry-meta{
+    display: none;
+}
+
+.blog-single .post .yarpp-related h3{
+    color: #73A041;
+    font-size: 24px;
+}
+
+.blog-single .post .yarpp-related .post-wrapper .post .entry-readmore-wrapper {
+    margin-top: 10px;
+}
+.yarpp-related .post-wrapper .post .entry-image {
+    margin-bottom: 10px;
+}
+
+.call_to_action_button {
+    display: block;
+    padding: 20px 50px;
+    border-radius: 3px;
+    background: #018755;
+    border-color: #018755;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: "Gotham", sans-serif;
+}
+
+.call_to_action_button:hover {
+    background: #4482AC;
+    border-color: #4482AC;
+}
