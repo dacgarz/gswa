@@ -55,6 +55,7 @@
 }
 
 #wysiwyg_widgets_widget-2 #donate {
+    float: none;
     display: block;
     padding: 20px 10px;
     width: auto;
