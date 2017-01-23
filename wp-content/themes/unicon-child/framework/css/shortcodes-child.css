@@ -1626,6 +1626,7 @@ a.catimage:hover .catimage-text{
 
 .single_image.align-center{
   text-align: center !important;
+  margin-bottom: 15px;
 }
 
 .single_image img{}
