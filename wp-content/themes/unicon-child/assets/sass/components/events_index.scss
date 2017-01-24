@@ -87,8 +87,14 @@
 }
 
 .tribe-events-list {
+
+
+  .tribe-events-list-separator-month + .type-tribe_events {
+    border-top: 0;
+  }
+
   .type-tribe_events {
-    border-bottom: 1px solid #c2c2c2;
+    border-top: 1px solid #c2c2c2;
 
     .event-image-wrapper {
       float: left;
