@@ -9,7 +9,7 @@
 * @category  UserAccessManager
 * @package   UserAccessManager
 * @author    Alexander Schneider <alexanderschneider85@googlemail.com>
-* @copyright 2008-2013 Alexander Schneider
+* @copyright 2008-2016 Alexander Schneider
 * @license   http://www.gnu.org/licenses/gpl-2.0.html  GNU General Public License, version 2
 * @version   SVN: $Id$
 * @link      http://wordpress.org/extend/plugins/user-access-manager/
@@ -17,7 +17,7 @@
 
 if (!function_exists('walkPath')) {
     /**
-     * Retruns the html code for the recursive access.
+     * Returns the html code for the recursive access.
      * 
      * @param mixed  $oObject     The object.
      * @param string $sObjectType The type of the object.
@@ -44,9 +44,12 @@ if (!function_exists('walkPath')) {
     }
 }
 ?>
-<div class="tooltip">
+<div class="uam_tooltip">
 <ul class="uam_group_info">
 <?php
+/**
+ * @var UserAccessManager $oUserAccessManager
+ */
 global $oUserAccessManager;
 
 foreach ($oUserAccessManager->getAccessHandler()->getAllObjectTypes() as $sCurObjectType) {
@@ -94,10 +97,10 @@ if ($oUamUserGroup->getWriteAccess()  == "all") {
             </li>
             <li>
                 <?php echo TXT_UAM_GROUP_ROLE; ?>: <?php
-if ($oUamUserGroup->getObjectsFromType('role')) {
+if ($oUamUserGroup->getObjectsFromType(UserAccessManager::ROLE_OBJECT_TYPE)) {
     $sOut = '';
     
-    foreach ($oUamUserGroup->getObjectsFromType('role') as $sKey => $sRole) {
+    foreach ($oUamUserGroup->getObjectsFromType(UserAccessManager::ROLE_OBJECT_TYPE) as $sKey => $sRole) {
         $sOut .= trim($sKey).', ';
     }
     
