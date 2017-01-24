@@ -1,6 +1,7 @@
 <?php
 
 require_once "framework/inc/overrid/shortcodes.php";
+require_once "tribe-events/custom/functions.php";
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles');
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles_last', 100);
