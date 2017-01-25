@@ -59,3 +59,10 @@ add_filter('redux-sections','remove_redux_section');
 add_action( 'init', function() {
   add_image_size('post-thumbnail-link', 300, 400, FALSE);
 });
+
+add_filter( 'searchwp_basic_auth_creds', function() {
+  return array(
+    'username' => 'admin', // the HTTP BASIC AUTH username
+    'password' => 'dev1'  // the HTTP BASIC AUTH password
+  );
+} );
