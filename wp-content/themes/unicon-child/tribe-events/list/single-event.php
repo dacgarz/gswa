@@ -73,7 +73,7 @@ $organizer = tribe_get_organizer();
 	<!-- Event Content -->
 	<?php do_action( 'tribe_events_before_the_content' ) ?>
 	<div class="tribe-events-list-event-description tribe-events-content">
-		<?php echo custom_tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ), ($venue_details ? 20 : 35) ); ?>
+		<?php echo custom_tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ), ($venue_details ? 110 : 145) ); ?>
 	</div><!-- .tribe-events-list-event-description -->
 </div>
 <?php

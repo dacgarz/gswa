@@ -1,4 +1,31 @@
 #tribe-events-bar {
+
+  .tribe-bar-views-list .tribe-bar-views-option a,
+  .tribe-bar-views-inner,
+  #tribe-bar-form {
+    background: #4482AC !important;
+    color: white;
+  }
+
+  #tribe-bar-form {
+    input[type="text"] {
+      background: white;
+      border-bottom: none;
+    }
+
+    input[type="submit"] {
+      margin-top: 13px;
+      border-radius: 2px;
+      background: #EE9137;
+      border: 1px solid #EE9137;
+
+      &:hover {
+        background: #ffffff;
+        color: #EE9137;
+      }
+    }
+  }
+
   .tribe-bar-search-category-filter,
   .tribe-bar-search-filter,
   .tribe-bar-date-filter,
@@ -21,11 +48,28 @@
 
     li.tribe-bar-views-option {
       display: block;
+      -webkit-transition: transform 0.25s ease-out;
+      -moz-transition: transform 0.25s ease-out;
+      -o-transition: transform 0.25s ease-out;
+      transition: transform 0.25s ease-out;
 
       &.tribe-bar-active {
         font-weight: bold;
       }
+
+      &:hover {
+        transform: translateX(5px);
+      }
     }
+
+    .tribe-bar-views-list span.tribe-icon-month {
+      background-image: url("#{$image-folder}/events/icon-month-hover.png");
+    }
+
+    .tribe-bar-views-list span.tribe-icon-list {
+      background-image: url("#{$image-folder}/events/icon-list-hover.png");
+    }
+
   }
 
   select {
@@ -33,23 +77,26 @@
   }
 
   .selectric-wrapper {
+    background: white;
+
     .selectric {
       border: none;
-      border-bottom: 1px dashed #b9b9b9;
+      background: white;
 
       .label {
         line-height: 20px;
         padding: 5px;
-        height: 27px;
-        margin-right: 27px;
+        height: 30px;
+        margin-right: 30px;
         margin-left: 0;
         font-size: 15px;
       }
 
       .button {
-        height: 27px;
-        width: 27px;
+        height: 30px;
+        width: 30px;
         font-size: 0;
+        background: white !important;
       }
     }
     .selectric-items li {
@@ -67,15 +114,21 @@
     .selectric-wrapper .selectric {
       .label {
         font-size: 12px;
-        height: 25px;
+        height: 27px;
       }
       .button {
-        height: 25px;
+        height: 27px;
       }
     }
   }
 
   .tribe-bar-collapse {
+
+    #tribe-bar-collapse-toggle {
+      background: transparent;
+      padding: 28px 15px;
+    }
+
     .tribe-bar-search-category-filter,
     .tribe-bar-search-filter,
     .tribe-bar-date-filter,
@@ -88,6 +141,13 @@
 
 .tribe-events-list {
 
+  .events-intro-wrapper {
+    font-weight: bold;
+  }
+
+  .tribe-events-loop {
+    max-width: none;
+  }
 
   .tribe-events-list-separator-month + .type-tribe_events {
     border-top: 0;

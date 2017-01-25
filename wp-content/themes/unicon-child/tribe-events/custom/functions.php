@@ -138,3 +138,21 @@ function custom_tribe_events_has_meta($data) {
 
   return !empty($data);
 }
+
+function custom_tribe_events_intro_text() {
+  $currently_displaying = 'list';
+  if ( ( ! empty( $_GET['tribe_event_display'] ) && 'past' === $_GET['tribe_event_display'] )
+    || ( ! empty( $_POST['tribe_event_display'] ) && 'past' === $_POST['tribe_event_display'] ) ) {
+    $currently_displaying = 'past';
+  }
+  
+  if ($currently_displaying == 'past') {
+    $href = "?tribe_event_display=list";
+    return "Visit the <a href='$href' >Events index page</a>";
+  } else {
+    $href = "?tribe_event_display=past";
+    return "Looking for older events? Visit the <a href='$href' >Events Archive</a>";
+  }
+
+  return NULL;
+}
