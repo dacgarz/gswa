@@ -55,3 +55,7 @@ function remove_redux_section($section) {
   return $section;
 }
 add_filter('redux-sections','remove_redux_section');
+
+add_action( 'init', function() {
+  add_image_size('post-thumbnail-link', 300, 400, FALSE);
+});
