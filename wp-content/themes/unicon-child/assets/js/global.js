@@ -38,13 +38,20 @@ jQuery(document).ready(function($){
     }
   }.init();
 
-  var event_index = {
-    $select_element: $('.tribe-bar-search-category-filter>select'),
+  var selectric_init = {
+    select_elements: [
+      '.tribe-bar-search-category-filter>select',
+      '.publications-gswa select'
+      ],
     init: function(){
       var self = this;
-      if (self.$select_element.length > 0) {
-        self.$select_element.selectric();
-      }
+      self.select_elements.forEach(function(selector, index) {
+        var $element = $(selector);
+        if ($element.length > 0) {
+          $element.selectric();
+        }
+      });
+
     }
   }.init();
 
@@ -55,6 +62,7 @@ jQuery(document).ready(function($){
       '.events-row-wrapper .post .entry-image',
       '.events-row-wrapper .post .entry-title',
       '.events-row-wrapper .post .entry-content',
+      '.publications-gswa .post',
       '.our-mission-boxes .box',
       'body.home .boxes-beneath .iconbox h3',
       'body.home .boxes-beneath .iconbox .iconbox-content'

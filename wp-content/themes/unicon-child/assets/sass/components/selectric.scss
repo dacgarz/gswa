@@ -1,0 +1,37 @@
+.selectric-wrapper {
+  background: white;
+
+  .selectric {
+    border: none;
+    background: white;
+
+    .label {
+      line-height: 20px;
+      padding: 5px;
+      height: 30px;
+      margin-right: 30px;
+      margin-left: 0;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+
+    .button {
+      height: 30px;
+      width: 30px;
+      font-size: 0;
+      background: white !important;
+    }
+  }
+  .selectric-items {
+    background: white;
+  }
+  .selectric-items li {
+    padding: 5px;
+  }
+
+  &.selectric-open {
+    .selectric {
+      border-color: transparent;
+    }
+  }
+}
