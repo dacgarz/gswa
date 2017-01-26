@@ -85,7 +85,7 @@
 						}
 					?>
 
-					<a id="donate" href="#" class="button">Donate</a>
+					<a id="donate" href="<?php echo site_url(); ?>/donate" class="button">Donate</a>
 				</div>
 
 			</div>
