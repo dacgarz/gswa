@@ -1,17 +1,9 @@
 <?php
 
-//@TODO PAGER
-//@TODO CHANGE THEMING FOR FILE/PDF SEARCH
-//@TODO SKIP FILE/PDF IF IT ISN'T ON POST  !!!!!!
-
 //@TODO CHECK WIKI
 //@TODO CHANGE PAGINATION
-//@TODO OPEN FILES IN NEW TAB
 
 //@TODO RESPONSIVE CSS
-
-//@TODO FINISH THEME FOR EACH POST FORMAT
-
 
 add_filter( 'searchwp_basic_auth_creds', function() {
   return array(
@@ -27,6 +19,27 @@ add_filter( 'the_permalink', function( $permalink, $post ) {
   }
   return esc_url( $permalink );
 }, 10, 2 );
+
+add_action( 'post_updated', function($post_ID, $post_after, $post_before) {
+  if (is_object($post_after) && property_exists($post_after, 'post_type') && ($post_after->post_type == 'post')) {
+    $format = get_post_format($post_ID);
+    if ($format == 'link') {
+      $type = get_post_meta( $post_ID, 'minti_blog-link-type', true );
+      $file = get_post_meta( $post_ID, 'minti_blog-link-file', true );
+      if ($type == 'File' && (!empty($file))) {
+        wp_update_post(
+          array(
+            'ID' => $file,
+            'post_parent' => $post_ID
+          )
+        );
+      }
+    }
+  }
+}, 10, 3 );
+
+
+/**********************************************************************************************************************/
 
 function custom_get_link_post_type($post_id) {
   $type = get_post_meta( $post_id, 'minti_blog-link-type', true );
@@ -86,23 +99,6 @@ function get_recent_post_for_category($category_id) {
   return (empty($recent_posts) ? NULL : $recent_posts[0]);
 }
 
-add_action( 'post_updated', function($post_ID, $post_after, $post_before) {
-  if (is_object($post_after) && property_exists($post_after, 'post_type') && ($post_after->post_type == 'post')) {
-    $format = get_post_format($post_ID);
-    if ($format == 'link') {
-      $type = get_post_meta( $post_ID, 'minti_blog-link-type', true );
-      $file = get_post_meta( $post_ID, 'minti_blog-link-file', true );
-      if ($type == 'File' && (!empty($file))) {
-        wp_update_post(
-          array(
-            'ID' => $file,
-            'post_parent' => $post_ID
-          )
-        );
-      }
-    }
-  }
-}, 10, 3 );
 
 
 //add_action('searchwp_log', function($msg){

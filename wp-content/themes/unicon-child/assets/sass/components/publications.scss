@@ -65,9 +65,22 @@
     .post-wrapper {
       width: 20%;
 
-      .category-footer {
-        margin-top: 50px;
+      .entry-title {
         text-align: center;
+      }
+
+      .category-footer {
+        margin: 50px 0;
+        text-align: center;
+        a {
+          color: #203E5F;
+          font-weight: 600;
+          font-size: 16px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
