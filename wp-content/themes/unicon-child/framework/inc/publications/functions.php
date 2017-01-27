@@ -101,8 +101,6 @@ function get_recent_post_for_category($category_id) {
   return (empty($recent_posts) ? NULL : $recent_posts[0]);
 }
 
-
-
 //add_action('searchwp_log', function($msg){
 //  print "<div class='FFFFFFFF' style='outline: 1px solid red'>$msg</div>";
 //});

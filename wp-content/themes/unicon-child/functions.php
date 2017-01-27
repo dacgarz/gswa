@@ -2,9 +2,9 @@
 
 require_once "framework/inc/overrid/shortcodes.php";
 require_once "tribe-events/custom/functions.php";
-require_once "framework/inc/search/functions.php";
+require_once "framework/inc/publications/functions.php";
 
-require_once "framework/inc/meta-boxes.php";
+require_once "framework/inc/overrid/meta-boxes.php";
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles');
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles_last', 100);
