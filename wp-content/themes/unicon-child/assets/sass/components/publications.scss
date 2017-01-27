@@ -1,0 +1,88 @@
+.publications-gswa {
+
+  .search-box {
+    background: #4482AC!important;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 50px;
+
+    .element-wrapper {
+      display: inline-block;
+      vertical-align: top;
+      width: 25%;
+      padding: 15px 40px 15px 15px;
+      box-sizing: border-box;
+      text-align: left;
+
+      label {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0 0 5px;
+        padding: 0;
+        text-transform: uppercase;
+      }
+
+      select {
+        display: none;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        color: black;
+        box-sizing: border-box;
+        border-radius: 0;
+        line-height: 1em;
+        font-size: 15px;
+        margin-bottom: 0;
+        background: white;
+        padding: 5px;
+        border: none !important;
+      }
+
+      input[type="submit"] {
+        margin-top: 14px;
+        border-radius: 2px;
+        background: #EE9137;
+        border: 1px solid #EE9137;
+        box-sizing: border-box;
+        padding: 10px;
+        letter-spacing: 0;
+        width: 100%;
+
+        &:hover {
+          background: #ffffff;
+          color: #EE9137;
+        }
+      }
+
+    }
+  }
+
+  .publications-index {
+    .post-wrapper {
+      width: 20%;
+
+      .entry-title {
+        text-align: center;
+      }
+
+      .category-footer {
+        margin: 50px 0;
+        text-align: center;
+        a {
+          color: #203E5F;
+          font-weight: 600;
+          font-size: 16px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+}
