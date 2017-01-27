@@ -259,7 +259,7 @@ function custom_rw_register_meta_boxes()
 	$meta_boxes[] = array(
 		'id' => 'pagesettings',
 		'title' => 'Blog Post Settings',
-		'pages' => array( 'post' ),
+		'pages' => array( 'post', 'envira_album' ),
 		'context' => 'normal',
 		'priority' => 'high',
 	
