@@ -109,13 +109,14 @@ class  rsEvents {
     print $this->plate_engine->render('events_settings_tab', array(
         'default_value' => array(
           'title' => Tribe__Settings_Manager::get_option('index_settings_title'),
-          'header_image' => Tribe__Settings_Manager::get_option('index_settings_image')
+          'header_image' => Tribe__Settings_Manager::get_option('index_settings_image'),
+          'title_style' => Tribe__Settings_Manager::get_option('index_settings_title_style')
         )
       ));
   }
 
   public function tribe_settings_validate_tab_index_settings() {
-    $settings_keys = array('index_settings_title', 'index_settings_image');
+    $settings_keys = array('index_settings_title', 'index_settings_image', 'index_settings_title_style');
     foreach ($settings_keys as $setting) {
       if (isset($_POST[$setting])) {
         Tribe__Settings_Manager::set_option($setting, $_POST[$setting]);

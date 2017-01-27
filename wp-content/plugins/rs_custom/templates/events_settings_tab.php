@@ -9,6 +9,13 @@
   </fieldset>
   <div class="clear"></div>
   <fieldset>
+    <legend class="tribe-field-label">Title CSS Style</legend>
+    <div class="tribe-field-wrap">
+      <input name='index_settings_title_style' value='<?php print $default_value['title_style']; ?>'>
+    </div>
+  </fieldset>
+  <div class="clear"></div>
+  <fieldset>
     <legend class="tribe-field-label">Header Image</legend>
     <div class="tribe-field-wrap">
       <img id="preview" src="<?php print $default_value['header_image']; ?>" style="width: auto; height: 100px;">
