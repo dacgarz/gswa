@@ -6,9 +6,13 @@ $blog_index_id = 3208;
   <div class="container">
 	  <div class="sixteen columns">
 			<?php if (is_archive()): ?>
-				<h1><?php print the_archive_title(); ?></h1>
+				<div class="header-wrapper">
+					<h1 <?php custom_generate_style_for_header($blog_index_id) ?> ><?php print the_archive_title(); ?></h1>
+				</div>
 			<?php else: ?>
-				<h1><?php print get_the_title($blog_index_id); ?></h1>
+				<div class="header-wrapper">
+					<h1 <?php custom_generate_style_for_header($blog_index_id) ?> ><?php print get_the_title($blog_index_id); ?></h1>
+				</div>
 			<?php endif; ?>
 		</div>
 	</div>

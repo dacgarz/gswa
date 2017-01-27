@@ -13,7 +13,9 @@ $bg_image = Tribe__Settings_Manager::get_option('index_settings_image');
 <div id="fullimagecenter" class="titlebar" style="background-image: url( <?php print $bg_image; ?> );">
   <div class="container">
 	  <div class="sixteen columns">
-		  <h1><?php print $title; ?></h1>
+			<div class="header-wrapper">
+		  	<h1 <?php custom_generate_style_for_header($event_id, TRUE) ?> ><?php print $title; ?></h1>
+			</div>
 		</div>
 	</div>
 </div>

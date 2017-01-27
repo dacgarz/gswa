@@ -162,6 +162,13 @@ function custom_rw_register_meta_boxes()
 					'tab'  => 'header',
 			),
 			array(
+				'name'		=> 'Titlebar Text CSS style',
+				'id'		=> $prefix . "headertext_style",
+				'type'		=> 'text',
+				'desc' => '',
+				'tab'  => 'header',
+			),
+			array(
 					'name'		=> 'Footer Widgets',
 					'id'		=> $prefix . "footerwidgets",
 					'type'		=> 'select',
@@ -291,6 +298,13 @@ function custom_rw_register_meta_boxes()
 					'type'		=> 'image_advanced',
 					'max_file_uploads' => 1,
 					'desc' => 'Upload Titlebar Image for the Titlebar Style.',
+			),
+			array(
+				'name'		=> 'Titlebar Text CSS style',
+				'id'		=> $prefix . "headertext_style",
+				'type'		=> 'text',
+				'desc' => '',
+				'tab'  => 'header',
 			),
 			array(
 				'name'		=> 'Hide Featured Image?',

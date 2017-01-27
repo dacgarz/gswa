@@ -63,3 +63,15 @@ add_action( 'init', function() {
   add_image_size('post-thumbnail-link', 300, 400, FALSE);
   add_image_size('post-thumbnail-cropped', 300, 300, TRUE);
 });
+
+function custom_generate_style_for_header($post_id, $is_event = FALSE) {
+  if ($is_event) {
+    $style = Tribe__Settings_Manager::get_option('index_settings_title_style');
+  } else {
+    $style = get_post_meta( $post_id, 'minti_headertext_style', true );
+  }
+  if (!empty($style)) {
+    print "style='$style'";
+  }
+  return NULL;
+}

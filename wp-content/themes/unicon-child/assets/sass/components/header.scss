@@ -40,17 +40,23 @@
   }
 }
 
+#transparentimage,
 #fullimagecenter {
-  height: 320px;
+  height: 350px;
   * {
     height: 100%;
   }
   .columns {
     display: table;
-    h1 {
+    .header-wrapper {
       display: table-cell;
       vertical-align: middle;
-      padding: 0;
+      text-align: center;
+      h1 {
+        height: auto;
+        padding: 5px;
+        display: inline-block;
+      }
     }
   }
 }
