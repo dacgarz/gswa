@@ -34,7 +34,7 @@
 		} elseif(is_tribe_calendar()) {
 			get_template_part( 'framework/inc/titlebar_events' );
 		} else  {
-			//get_template_part( 'framework/inc/titlebar' );
+			get_template_part( 'framework/inc/titlebar' );
 		}
 	}
 	?>
