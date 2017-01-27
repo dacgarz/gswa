@@ -9,6 +9,13 @@ $blog_index_id = 3208;
 				<div class="header-wrapper">
 					<h1 <?php custom_generate_style_for_header($blog_index_id) ?> ><?php print the_archive_title(); ?></h1>
 				</div>
+			<?php elseif(is_search()): ?>
+				<div class="header-wrapper">
+					<h1 <?php custom_generate_style_for_header($blog_index_id) ?> ><?php print sprintf(
+							__( 'Search Results for &#8220;%s&#8221;' ),
+							get_search_query()
+						); ?></h1>
+				</div>
 			<?php else: ?>
 				<div class="header-wrapper">
 					<h1 <?php custom_generate_style_for_header($blog_index_id) ?> ><?php print get_the_title($blog_index_id); ?></h1>
