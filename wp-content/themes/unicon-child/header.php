@@ -29,7 +29,7 @@
 		}
 
 		// Include Titlebar
-		if (is_single() && get_post_type() == 'post') {
+		if ((is_single() && get_post_type() == 'post') || is_archive()) {
 			get_template_part( 'framework/inc/titlebar_post' );
 		} elseif(is_tribe_calendar()) {
 			get_template_part( 'framework/inc/titlebar_events' );
