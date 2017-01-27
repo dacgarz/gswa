@@ -63,6 +63,7 @@ jQuery(document).ready(function($){
       '.events-row-wrapper .post .entry-title',
       '.events-row-wrapper .post .entry-content',
       '.publications-gswa .post',
+      '.publications-gswa .post-inner',
       '.our-mission-boxes .box',
       'body.home .boxes-beneath .iconbox h3',
       'body.home .boxes-beneath .iconbox .iconbox-content'

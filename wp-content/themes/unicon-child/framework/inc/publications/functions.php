@@ -1,10 +1,5 @@
 <?php
 
-//@TODO CHECK WIKI
-//@TODO CHANGE PAGINATION
-
-//@TODO RESPONSIVE CSS
-
 //@TODO MAYBE CHANGE POST TYPE - FORMAT/CUSTOM CATEGORY
 
 add_filter( 'searchwp_basic_auth_creds', function() {

@@ -7,62 +7,53 @@ global $post;
 // retrieve our search query if applicable
 $query = isset($_REQUEST['swpquery']) ? sanitize_text_field($_REQUEST['swpquery']) : '';
 $category_filter = isset($_REQUEST['swp_category_limiter']) ? intval(sanitize_text_field($_REQUEST['swp_category_limiter'])) : NULL;
-
-// retrieve our pagination if applicable
 $swppg = isset($_REQUEST['swppg']) ? absint($_REQUEST['swppg']) : 1;
 
+$is_default_search = empty($query);
+
 if (class_exists('SWP_Query')) {
-
-  $engine = 'publications'; // taken from the SearchWP settings screen
-
+  $engine = 'publications';
   $search_args = array(
     'posts_per_page' => 12,
     's' => $query,
     'engine' => $engine,
     'page' => $swppg
   );
+  $search_args['tax_query'] = array(
+    array(
+      'taxonomy' => 'category',
+      'field'    => 'term_id',
+      'terms'    => custom_publications_index_content(TRUE),
+      'operator' => 'IN',
+    )
+  );
   if (!empty($category_filter)) {
-    $search_args['tax_query'] = array(
-      array(
-        'taxonomy' => 'category',
-        'field'    => 'term_id',
-        'terms'    => $category_filter//,
-      )
-    );
-  } else {
-    $search_args['tax_query'] = array(
-      array(
-        'taxonomy' => 'category',
-        'field'    => 'term_id',
-        'terms'    => custom_publications_index_content(TRUE),
-        'operator' => 'IN',
-      )
-    );
+    if (isset($search_args['tax_query'][0]['operator'])) {
+      unset($search_args['tax_query'][0]['operator']);
+    }
+    $search_args['tax_query'][0]['terms'] = $category_filter;
   }
 
-  if (empty($query)) {
+  $pagination = array(
+    'prev_text' => '<i class="fa fa-chevron-left"></i>',
+    'next_text' => '<i class="fa fa-chevron-right"></i>',
+    'type' => 'list',
+    'current' => $swppg,
+    'format' => '?swppg=%#%',
+  );
 
+  if ($is_default_search) {
+    if (isset($search_args['page'])) unset($search_args['page']);
+    $search_args['paged'] =$swppg;
     $swp_query = new WP_Query($search_args);
-    $pagination = paginate_links(array(
-//      'format' => '?swppg=%#%',
-//      'current' => $swppg,
-//      'total' => $swp_query->max_num_pages,
-    ));
-
   } else {
     $swp_query = new SWP_Query(
     // see all args at https://searchwp.com/docs/swp_query/
       $search_args
     );
-
-    // set up pagination
-    $pagination = paginate_links(array(
-      'format' => '?swppg=%#%',
-      'current' => $swppg,
-      'total' => $swp_query->max_num_pages,
-    ));
   }
-
+  $pagination['total'] = $swp_query->max_num_pages;
+  $pagination = paginate_links($pagination);
 }
 
 get_header(); ?>
@@ -77,8 +68,7 @@ get_header(); ?>
         <div class="element-wrapper">
           <label for="swp_category_limiter">Category</label>
           <?php
-          // output all of our Categories
-          // for more information see http://codex.wordpress.org/Function_Reference/wp_dropdown_categories
+          // see http://codex.wordpress.org/Function_Reference/wp_dropdown_categories
           $swp_cat_dropdown_args = array(
             'show_option_all' => __('Select Category'),
             'name' => 'swp_category_limiter',
@@ -101,47 +91,61 @@ get_header(); ?>
       </form>
     </div>
     <!-- end search form -->
-
-    <?php
-    $is_open_tag = FALSE;
-    if (((!empty($query)) || (!empty($category_filter))) && isset($swp_query) && !empty($swp_query->posts)) {
-    foreach ($swp_query->posts as $index => $post) {
-    setup_postdata($post);
-    ?>
-    <?php if ($index % 4 === 0): ?>
-    <?php if ($index !== 0) {
-      print '</div>';
-      $is_open_tag = FALSE;
-    } ?>
-    <?php $is_open_tag = TRUE; ?>
-    <div class="row-wrapper">
-      <?php endif; ?>
-
-      <div class="post-wrapper">
-        <?php get_template_part('framework/inc/post-format/gswa/entry', get_post_format()); ?>
+    <?php if ((!empty($query)) || (!empty($category_filter))): ?>
+      <div class="current-filters">
+        <?php if (!empty($category_filter)): ?>
+          <span>
+            &#8220;<?php print get_cat_name($category_filter); ?>&#8221;
+          </span>
+        <?php endif; ?>
+        <?php if ((!empty($query)) && (!empty($category_filter))): ?>
+          +
+        <?php endif; ?>
+        <?php if (!empty($query)): ?>
+          <span>
+            &#8220;<?php print $query; ?>&#8221;
+          </span>
+        <?php endif; ?>
       </div>
+    <?php endif; ?>
+    <div class="publications-content">
       <?php
-      }
-      if ($is_open_tag == TRUE) {
-        print '</div>';
-      }
-      wp_reset_postdata();
+      $is_open_tag = FALSE;
+      if (((!empty($query)) || (!empty($category_filter))) && isset($swp_query) && !empty($swp_query->posts)) {
+        foreach ($swp_query->posts as $index => $post) {
+          setup_postdata($post);
+          ?>
+          <?php if ($index % 4 === 0): ?>
+            <?php if ($index !== 0) {
+              print '</div>';
+              $is_open_tag = FALSE;
+            } ?>
+            <?php $is_open_tag = TRUE; ?>
+            <div class="row-wrapper">
+          <?php endif; ?>
 
-      // pagination
-      if ($swp_query->max_num_pages > 1) { ?>
-        <div class="navigation pagination" role="navigation">
-          <h2 class="screen-reader-text">Posts navigation</h2>
-          <div class="nav-links">
-            <?php echo wp_kses_post($pagination); ?>
+          <div class="post-wrapper">
+            <?php get_template_part('framework/inc/post-format/gswa/entry', get_post_format()); ?>
           </div>
-        </div>
-      <?php }
-      } elseif (empty($query) && empty($category_filter)) {
-        get_template_part('framework/inc/publications/index');
-      } else {
-        ?><p>No results found.</p><?php
-      } ?>
+          <?php
+          }
+          if ($is_open_tag == TRUE) {
+            print '</div>';
+          }
+          wp_reset_postdata();
 
+          // pagination
+          if ($swp_query->max_num_pages > 1) { ?>
+            <div class="pagination clearfix" role="navigation" id="pagination">
+              <?php echo wp_kses_post($pagination); ?>
+            </div>
+          <?php }
+        } elseif (empty($query) && empty($category_filter)) {
+          get_template_part('framework/inc/publications/index');
+        } else {
+          ?><p class="no-results">No results found.</p><?php
+        } ?>
+      </div>
       <!-- ----------------------------------------------------------------------------------------------------------- -->
     </div>
   </div>
