@@ -1,7 +1,5 @@
 <?php
 
-//@TODO MAYBE CHANGE POST TYPE - FORMAT/CUSTOM CATEGORY
-
 add_filter( 'searchwp_basic_auth_creds', function() {
   return array(
     'username' => 'admin', // the HTTP BASIC AUTH username
@@ -35,6 +33,41 @@ add_action( 'post_updated', function($post_ID, $post_after, $post_before) {
   }
 }, 10, 3 );
 
+add_action( 'init', function() {
+  $labels = array(
+    'name'              => 'Post Type',
+    'singular_name'     => 'Post Type',
+    'search_items'      => 'Search Post Type',
+    'all_items'         => 'All Post Types',
+    'parent_item'       => 'Parent Type',
+    'parent_item_colon' => 'Parent Type:',
+    'edit_item'         => 'Edit Post Type',
+    'update_item'       => 'Update Post Type',
+    'add_new_item'      => 'Add New Post Type',
+    'new_item_name'     => 'New Post Type',
+    'menu_name'         => 'Post Type',
+  );
+  $args = array(
+    'hierarchical'      => TRUE,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => FALSE,
+    'rewrite'           => array( 'slug' => 'post_type' ),
+  );
+
+  register_taxonomy( 'post_type', array( 'post' ), $args );
+}, 0 );
+
+add_action( 'wp', function(){
+  $term = get_queried_object();
+  if (!empty($term)) {
+    if ($term->taxonomy == 'post_type') {
+      wp_redirect("publications?swp_category_limiter=" . $term->term_id);
+    }
+  }
+}, 100);
+
 
 /**********************************************************************************************************************/
 
@@ -55,13 +88,15 @@ function custom_get_link_post_type($post_id) {
 }
 
 function custom_publications_index_content($get_categories = FALSE) {
-  $categories = array(
-    '39' => array('footer' => 'Previous Presentations'),
-    '40' => array('footer' => 'Previous Issues'),
-    '41' => array('footer' => 'Previous Issues'),
-    '42' => array('footer' => 'Previous Issues'),
-    '43' => array('footer' => 'Blog Archive')
-  );
+  $categories = get_terms( array(
+    'hide_empty' => false,
+    'taxonomy' => 'post_type'
+  ) );
+  if (!empty($categories) && is_array($categories)) {
+    $categories = array_map(function($item){
+      return $item->term_id;
+    }, $categories);
+  }
 
   if ($get_categories) {
     return array_keys($categories);
@@ -71,8 +106,8 @@ function custom_publications_index_content($get_categories = FALSE) {
     'posts' => array(),
     'categories' => $categories
   );
-  foreach ($categories as $category_id => $data ) {
-    $post = get_recent_post_for_category($category_id);
+  foreach ($categories as $category_id ) {
+    $post = get_recent_post_for_post_tyle($category_id);
     if (!empty($post)) {
       $render_array['posts'][$category_id] = $post;
     }
@@ -80,22 +115,24 @@ function custom_publications_index_content($get_categories = FALSE) {
   return $render_array;
 }
 
-function get_recent_post_for_category($category_id) {
+function get_recent_post_for_post_tyle($category_id) {
   $args = array(
     'numberposts' => 1,
     'offset' => 0,
-    'category' => $category_id,
     'orderby' => 'post_date',
     'order' => 'DESC',
     'post_type' => 'post',
     'post_status' => 'publish',
-    'suppress_filters' => true
+    'suppress_filters' => true,
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'post_type',
+        'field' => 'term_id',
+        'terms' => $category_id
+      )
+    )
   );
 
   $recent_posts = wp_get_recent_posts( $args, OBJECT);
   return (empty($recent_posts) ? NULL : $recent_posts[0]);
 }
-
-//add_action('searchwp_log', function($msg){
-//  print "<div class='FFFFFFFF' style='outline: 1px solid red'>$msg</div>";
-//});

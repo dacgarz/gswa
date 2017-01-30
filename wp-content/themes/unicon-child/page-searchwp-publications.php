@@ -21,7 +21,7 @@ if (class_exists('SWP_Query')) {
   );
   $search_args['tax_query'] = array(
     array(
-      'taxonomy' => 'category',
+      'taxonomy' => 'post_type',
       'field'    => 'term_id',
       'terms'    => custom_publications_index_content(TRUE),
       'operator' => 'IN',
@@ -72,7 +72,7 @@ get_header(); ?>
           $swp_cat_dropdown_args = array(
             'show_option_all' => __('Select Category'),
             'name' => 'swp_category_limiter',
-            'child_of' => 44,
+            'taxonomy' => 'post_type',
             'class' => 'category-dropdown'
           );
           if (!empty($category_filter)) {
