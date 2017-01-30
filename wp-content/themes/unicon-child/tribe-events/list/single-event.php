@@ -58,7 +58,9 @@ $organizer = tribe_get_organizer();
 			<div class="author <?php echo esc_attr( $has_venue_address ); ?>">
 				<!-- Venue Display Info -->
 				<div class="tribe-events-venue-details">
-					<?php echo implode( ', ', $venue_details ); ?>
+					<?php echo strip_tags($venue_details['linked_name']).', ' ?>
+					<?php echo $venue_details['address'] ?>
+<!--					--><?php //echo implode( ', ', $venue_details); ?>
 					<?php
 					if ( tribe_get_map_link() ) {
 						echo tribe_get_map_link_html();
