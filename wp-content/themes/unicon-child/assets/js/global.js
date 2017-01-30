@@ -80,4 +80,9 @@ jQuery(document).ready(function($){
     }
   }.init();
 
+
+  if($('article').hasClass('envira_album')){
+    $('article').append('<a class="" href="/view-our-galleries/">Other Galleries</a>')
+  }
+
 });
