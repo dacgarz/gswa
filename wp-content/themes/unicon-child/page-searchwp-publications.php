@@ -70,7 +70,7 @@ get_header(); ?>
           <?php
           // see http://codex.wordpress.org/Function_Reference/wp_dropdown_categories
           $swp_cat_dropdown_args = array(
-            'show_option_all' => __('Select Category'),
+            'show_option_all' => __('All Publications'),
             'name' => 'swp_category_limiter',
             'taxonomy' => 'post_type',
             'class' => 'category-dropdown'

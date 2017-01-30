@@ -99,7 +99,7 @@ function custom_publications_index_content($get_categories = FALSE) {
   }
 
   if ($get_categories) {
-    return array_keys($categories);
+    return $categories;
   }
 
   $render_array = array(
