@@ -81,11 +81,11 @@ get_header(); ?>
           wp_dropdown_categories($swp_cat_dropdown_args);
           ?>
         </div>
-        <div class="element-wrapper">
+        <div class="element-wrapper search-text-wrapper">
           <label for="swpquery">Topic</label>
           <input type="text" class="search-field" placeholder="Search …" value="<?php if (!empty($query)) print $query; ?>" name="swpquery" id="swpquery" title="Search for:">
         </div>
-        <div class="element-wrapper">
+        <div class="element-wrapper search-button-wrapper">
           <input type="submit" value="Search"/>
         </div>
       </form>

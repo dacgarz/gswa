@@ -80,6 +80,23 @@ jQuery(document).ready(function($){
     }
   }.init();
 
+  var publications = {
+    $category: $('.publications-gswa select'),
+    init: function() {
+      var self = this;
+      if (self.$category.length > 0) {
+        self.$category.on('selectric-select', function(event, element, selectric){
+          var val = parseInt($(element).val());
+          if (val > 0) {
+            window.location.href = '/publications/?swp_category_limiter=' + val;
+          }
+        });
+      }
+    }
+
+    //selectric-select
+  }.init();
+
 
   if($('article').hasClass('envira_album')){
     $('article').append('<a class="" href="/view-our-galleries/">Other Galleries</a>')
