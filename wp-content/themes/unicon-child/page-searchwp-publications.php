@@ -91,21 +91,21 @@ get_header(); ?>
       </form>
     </div>
     <!-- end search form -->
-    <?php if ((!empty($query)) || (!empty($category_filter))): ?>
+    <?php if (/*(!empty($query)) || */(!empty($category_filter))): ?>
       <div class="current-filters">
         <?php if (!empty($category_filter)): ?>
           <span>
-            &#8220;<?php print get_cat_name($category_filter); ?>&#8221;
+            <?php print get_cat_name($category_filter); ?>
           </span>
         <?php endif; ?>
-        <?php if ((!empty($query)) && (!empty($category_filter))): ?>
+        <?php /* if ((!empty($query)) && (!empty($category_filter))): ?>
           +
         <?php endif; ?>
         <?php if (!empty($query)): ?>
           <span>
             &#8220;<?php print $query; ?>&#8221;
           </span>
-        <?php endif; ?>
+        <?php endif; */ ?>
       </div>
     <?php endif; ?>
     <div class="publications-content">
