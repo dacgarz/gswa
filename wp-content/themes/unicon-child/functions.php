@@ -64,6 +64,9 @@ add_action( 'init', function() {
   add_image_size('post-thumbnail-cropped', 300, 300, TRUE);
 });
 
+//HIDE EVENT PRICE
+add_filter('tribe_events_admin_show_cost_field', '__return_false', 100);
+
 function custom_generate_style_for_header($post_id, $is_event = FALSE) {
   if ($is_event) {
     $style = Tribe__Settings_Manager::get_option('index_settings_title_style');

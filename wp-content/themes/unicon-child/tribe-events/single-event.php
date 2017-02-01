@@ -38,9 +38,18 @@ $event_id = get_the_ID();
 		<?php if ( tribe_get_venue() ) : ?>
 			<h2 class="tribe-events-venue"><?php echo tribe_get_venue() ?></h2>
 		<?php endif; ?>
-		<?php if ( tribe_get_cost() ) : ?>
+		<?php if ( tribe_get_cost() && FALSE ) : ?>
 			<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
 		<?php endif; ?>
+		<div class="custom-price-info-wrapper">
+			<?php
+			$prices = get_post_meta( get_the_ID(), 'event_price', true );
+			if ((!empty($prices)) && is_array($prices)): ?>
+				<?php foreach ($prices as $price): ?>
+					<h2><?php print $price['price']; ?></h2>
+				<?php endforeach; ?>
+			<?php endif; ?>
+		</div>
 	</div>
 
 	<!-- Event header -->

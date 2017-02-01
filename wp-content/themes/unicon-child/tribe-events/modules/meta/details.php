@@ -118,11 +118,21 @@ $website = tribe_get_event_website_link();
 
 		<?php
 		// Event Cost
-		if ( ! empty( $cost ) ) : ?>
+		if ( ! empty( $cost ) && FALSE ) : ?>
 
 			<dt> <?php esc_html_e( 'Cost:', 'the-events-calendar' ) ?> </dt>
 			<dd class="tribe-events-event-cost"> <?php esc_html_e( $cost ); ?> </dd>
 		<?php endif ?>
+
+		<dt>Cost:</dt>
+		<dd class="custom-price-info-wrapper"><?php
+			$prices = get_post_meta( get_the_ID(), 'event_price', true );
+			if ((!empty($prices)) && is_array($prices)): ?>
+				<?php foreach ($prices as $price): ?>
+					<div><?php print $price['price']; ?></div>
+				<?php endforeach; ?>
+			<?php endif; ?></dd>
+
 		<?php
 		// Event Website
 		if ( ! empty( $website ) ) : ?>
