@@ -7,6 +7,10 @@ if ((!empty($event_id)) && (get_post_type($event_id) == 'tribe_events')) {
 	$title = Tribe__Settings_Manager::get_option('index_settings_title');
 }
 
+if ((!empty($_GET['tribe_event_display'])) && ($_GET['tribe_event_display'] == 'past')) {
+	$title .= " Archive";
+}
+
 $bg_image = Tribe__Settings_Manager::get_option('index_settings_image');
 
 ?>
