@@ -3,7 +3,8 @@
     <?php if ( has_post_thumbnail() ) { ?>
     <div class="entry-image">
         <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__('Permalink to %s', 'minti'), the_title_attribute('echo=0') ); ?>" rel="bookmark">
-            <?php the_post_thumbnail(); ?>
+            <?php image_resize($image_filepath, $width, $height, true); ?>
+            <?php the_post_thumbnail(BLOG_IMAGES); ?>
         </a>
     </div>
     <?php } ?>

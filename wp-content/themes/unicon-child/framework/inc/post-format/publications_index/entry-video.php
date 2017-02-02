@@ -21,5 +21,16 @@
         </div>
 
     </div>
-
+  <?php
+  $category_id = NULL;
+  if (!empty($GLOBALS['current_post_category'])) {
+    $category_id = $GLOBALS['current_post_category'];
+    unset($GLOBALS['current_post_category']);
+  }
+  ?>
+  <?php if(!empty($category_id)): ?>
+    <div class="category-footer">
+      <a class="button" href="?swp_category_limiter=<?php print $category_id; ?>"><?php print category_description($category_id); ?></a>
+    </div>
+  <?php endif; ?>
 </article><!-- #post -->

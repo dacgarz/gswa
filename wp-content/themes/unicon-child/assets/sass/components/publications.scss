@@ -105,20 +105,42 @@
         width: 50%;
       }
 
+      .entry-image {
+        max-height: 210px;
+        img {
+          height: 100%;
+          width: auto;
+          max-width: none;
+        }
+      }
+
       .entry-title {
         text-align: center;
       }
 
       .category-footer {
-        margin: 50px 0;
+        margin: 0;
         text-align: center;
-        a {
-          color: #203E5F;
-          font-weight: 600;
-          font-size: 16px;
-
+        padding-bottom: 10px;
+        a.button {
+          margin: 20px 0 0;
+          padding: 20px;
+          width: 120px;
+          border-radius: 3px;
+          background: #018755;
+          border-color: #018755;
+          @media only screen and (min-width: 767px) and (max-width: 1200px) {
+            padding: 20px 0;
+            font-size: 12px;
+            border-radius: 0;
+            width: 100%;
+          }
+          p {
+            margin-bottom: 0;
+          }
           &:hover {
-            text-decoration: underline;
+            background: #4482AC;
+            border-color: #4482AC;
           }
         }
       }
@@ -130,7 +152,8 @@
   }
 
   .row-wrapper {
-    background: transparent;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .current-filters {

@@ -59,9 +59,10 @@ function remove_redux_section($section) {
 }
 add_filter('redux-sections','remove_redux_section');
 
+define('BLOG_IMAGES', 'post-thumbnail-cropped-new');
 add_action( 'init', function() {
   add_image_size('post-thumbnail-link', 300, 400, FALSE);
-  add_image_size('post-thumbnail-cropped', 300, 300, TRUE);
+  add_image_size(BLOG_IMAGES, 288, 229, TRUE);
 });
 
 //HIDE EVENT PRICE

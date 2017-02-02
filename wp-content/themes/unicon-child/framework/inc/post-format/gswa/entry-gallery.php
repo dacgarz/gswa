@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 
-    <div class="entry-gallery">
+    <div class="entry-gallery entry-image">
 
         <div class="flexslider">
             <ul class="slides">

@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 
 	<?php if (get_post_meta( get_the_ID(), 'minti_blog-video', true ) != '') {  ?>
-    <div class="entry-video">
+    <div class="entry-video entry-image">
        <?php   
             if (get_post_meta( get_the_ID(), 'minti_blog-videosource', true ) == 'videourl') {  
                 $embed_code = wp_oembed_get(esc_url(get_post_meta( get_the_ID(), 'minti_blog-video', true )));
