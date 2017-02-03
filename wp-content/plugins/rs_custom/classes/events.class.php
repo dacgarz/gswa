@@ -9,6 +9,7 @@ class  rsEvents {
     $this->plate_engine = $plate_engine;
 //    self::$access_to_private_events = $this->access_to_private();
     add_filter( 'tribe-events-bar-filters', array( $this, 'setup_category_search_in_bar' ) , 1, 1 );
+    add_filter( 'tribe-events-bar-filters', array( $this, 'change_search_in_bar' ) , 100, 1 );
     add_action( 'pre_get_posts', array( $this, 'pre_get_posts' ), 51 );
     add_action( 'init', array( $this, 'access_to_private' ));
 
@@ -16,6 +17,24 @@ class  rsEvents {
     add_action( 'tribe_settings_content_tab_index_settings', array($this, 'tribe_settings_content_tab_index_settings'));
 
     add_action( 'tribe_settings_validate_tab_index_settings', array($this, 'tribe_settings_validate_tab_index_settings'));
+
+    add_filter('the_posts', array($this, 'tribe_past_reverse_chronological'), 100, 2);
+  }
+
+
+  public function tribe_past_reverse_chronological ($post_object, $wp_query) {
+    if(is_object($wp_query) && property_exists($wp_query, 'tribe_is_past') && $wp_query->tribe_is_past) {
+      $post_object = array_reverse($post_object);
+    }
+    return $post_object;
+  }
+
+
+  public function change_search_in_bar($filters) {
+    if (is_array($filters) && (!empty($filters['tribe-bar-date']))){
+      $filters['tribe-bar-date']['caption'] = 'START DATE';
+    }
+    return $filters;
   }
 
 
