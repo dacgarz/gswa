@@ -23,6 +23,14 @@
       <input id="upload-button" type="button" class="button" value="Upload Image" />
     </div>
   </fieldset>
+  <div class="clear"></div>
+  <fieldset>
+    <legend class="tribe-field-label">Photo Credit</legend>
+    <div class="tribe-field-wrap">
+      <input name='index_settings_photo_credit' value='<?php print $default_value['photo_credit']; ?>'>
+    </div>
+  </fieldset>
+  <div class="clear"></div>
   <script type="text/javascript">
     jQuery(document).ready(function($){
       var mediaUploader;

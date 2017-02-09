@@ -79,3 +79,13 @@ function custom_generate_style_for_header($post_id, $is_event = FALSE) {
   }
   return NULL;
 }
+
+function custom_photo_credit_for_header( $post_id, $is_event = FALSE ) {
+  if ( $is_event ) {
+    $photo_credit = Tribe__Settings_Manager::get_option( 'index_settings_photo_credit' );
+  } else {
+    $photo_credit = get_post_meta( $post_id, 'minti_headerphoto_credit', TRUE );
+  }
+
+  return $photo_credit;
+}

@@ -23,3 +23,24 @@ $bg_image = Tribe__Settings_Manager::get_option('index_settings_image');
 		</div>
 	</div>
 </div>
+
+<?php if ( ! empty( custom_photo_credit_for_header( $event_id, TRUE ) ) ) { ?>
+	<div class="container">
+		<div class="sixteen columns">
+			<div class="wpb_row vc_row-fluid standard-section section section-no-parallax stretch" style="margin-bottom: 20px">
+				<div class="col span_12 color-dark left">
+					<div class="vc_col-sm-12 wpb_column column_container col no-padding color-dark">
+						<div class="wpb_wrapper">
+							<div class="wpb_text_column wpb_content_element ">
+								<div class="wpb_wrapper">
+									<h6 style="text-align: right;">
+										CREDIT: <?php echo custom_photo_credit_for_header( $event_id, TRUE ) ?></h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php } ?>

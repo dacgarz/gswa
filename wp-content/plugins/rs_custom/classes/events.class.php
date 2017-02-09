@@ -129,13 +129,14 @@ class  rsEvents {
         'default_value' => array(
           'title' => Tribe__Settings_Manager::get_option('index_settings_title'),
           'header_image' => Tribe__Settings_Manager::get_option('index_settings_image'),
-          'title_style' => Tribe__Settings_Manager::get_option('index_settings_title_style')
+          'title_style' => Tribe__Settings_Manager::get_option('index_settings_title_style'),
+          'photo_credit' => Tribe__Settings_Manager::get_option('index_settings_photo_credit')
         )
       ));
   }
 
   public function tribe_settings_validate_tab_index_settings() {
-    $settings_keys = array('index_settings_title', 'index_settings_image', 'index_settings_title_style');
+    $settings_keys = array('index_settings_title', 'index_settings_image', 'index_settings_title_style','index_settings_photo_credit');
     foreach ($settings_keys as $setting) {
       if (isset($_POST[$setting])) {
         Tribe__Settings_Manager::set_option($setting, $_POST[$setting]);
