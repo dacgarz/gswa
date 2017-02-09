@@ -1,0 +1,14 @@
+.fu-upload-form{
+  width: 50%;
+  float: right;
+  margin-bottom: 20px !important;
+  box-sizing: border-box;
+  max-width: 500px;
+  @media screen and (max-width: 768px){
+    width: 100%;
+    float: none;
+  }
+  input,textarea{
+    box-sizing: border-box;
+  }
+}

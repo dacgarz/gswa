@@ -82,9 +82,9 @@ get_header(); ?>
 			<?php } ?>
 	
 		<?php endwhile; endif; ?>
-		<?php if (in_array(get_post_type(), array('envira_album', 'envira'))): ?>
-			<?php print do_shortcode('[fu-upload-form title="Submit your own images"]'); ?>
-		<?php endif; ?>
+<!--		--><?php //if (in_array(get_post_type(), array('envira_album', 'envira'))): ?>
+<!--			--><?php //print do_shortcode('[fu-upload-form title="Submit your own images"]'); ?>
+<!--		--><?php //endif; ?>
 	</div>
 
 	<?php if($sidebar != 'no-sidebar'){ ?>
