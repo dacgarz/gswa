@@ -24,7 +24,7 @@ $bg_image = Tribe__Settings_Manager::get_option('index_settings_image');
 	</div>
 </div>
 
-<?php if ( ! empty( custom_photo_credit_for_header( $event_id, TRUE ) ) ) { ?>
+<?php if ( custom_photo_credit_for_header( $event_id, TRUE ) != '' ) { ?>
 	<div class="container">
 		<div class="sixteen columns">
 			<div class="wpb_row vc_row-fluid standard-section section section-no-parallax stretch" style="margin-bottom: 20px">

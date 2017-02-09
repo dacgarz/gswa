@@ -16,8 +16,8 @@
 					</div>
 				</div>
 			</div>
-			
-			<?php if ( ! empty( custom_photo_credit_for_header( get_the_ID() ) ) ) { ?>
+
+			<?php if ( custom_photo_credit_for_header( get_the_ID() ) != '' ) { ?>
 				<div class="container">
 					<div class="sixteen columns">
 						<div class="wpb_row vc_row-fluid standard-section section section-no-parallax stretch" style="margin-bottom: 20px">
@@ -52,7 +52,7 @@
 				</div>
 			</div>
 			
-			<?php if ( ! empty( custom_photo_credit_for_header( get_the_ID() ) ) ) { ?>
+			<?php if ( custom_photo_credit_for_header( get_the_ID() ) != '' ) { ?>
 				<div class="container">
 					<div class="sixteen columns">
 						<div class="wpb_row vc_row-fluid standard-section section section-no-parallax stretch" style="margin-bottom: 20px">
@@ -87,7 +87,7 @@
 				</div>
 			</div>
 
-			<?php if ( ! empty( custom_photo_credit_for_header( get_the_ID() ) ) ) { ?>
+			<?php if ( custom_photo_credit_for_header( get_the_ID() ) != '' ) { ?>
 				<div class="container">
 					<div class="sixteen columns">
 						<div class="wpb_row vc_row-fluid standard-section section section-no-parallax stretch" style="margin-bottom: 20px">
