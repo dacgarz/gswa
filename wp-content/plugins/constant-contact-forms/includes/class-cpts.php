@@ -208,7 +208,7 @@ class ConstantContact_CPTS {
 			3 => __( 'Custom field deleted.', 'constant-contact-forms' ),
 			4 => __( 'Form updated.', 'constant-contact-forms' ),
 			5 => isset( $_GET['revision'] ) ? sprintf( __( 'Form restored to revision from %s', 'constant-contact-forms' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,  // Input var okay.
-			6 => __( 'Form published.', 'constant-contact-forms' ),
+			6 => sprintf( __( 'Success! Here\'s the shortcode: %s. Just paste it into a post or page editor to publish', 'constant-contact-forms' ), '<strong>' . constant_contact_display_shortcode( $post->ID ) . '</strong>' ),
 			7 => __( 'Form saved.', 'constant-contact-forms' ),
 			8 => __( 'Form submitted.', 'constant-contact-forms' ),
 			9 => __( 'Form scheduled for: <strong>%1$s</strong>.', 'constant-contact-forms' ), date_i18n( 'M j, Y @ G:i', strtotime( $post->post_date ) ),
@@ -251,9 +251,15 @@ class ConstantContact_CPTS {
 	}
 
 	/**
-	 * Returns array of form ids
+	 * Returns array of form ids.
+	 *
+	 * Can return more information with `true` passed to the first parameter. Caches results, pass `true` to the second
+	 * parameter to bust the cache.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param bool $expanded_data Set `true` to process the retrieved posts.
+	 * @param bool $bust_cache    Set `true` to bust the cached forms.
 	 *
 	 * @return array
 	 */

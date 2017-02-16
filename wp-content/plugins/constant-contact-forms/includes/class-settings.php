@@ -14,49 +14,50 @@
 class ConstantContact_Settings {
 
 	/**
-	 * Option key, and option page slug
+	 * Option key, and option page slug.
 	 *
 	 * @var string
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
 	private $key = 'ctct_options_settings';
 
 	/**
-	 * Settings page metabox id
+	 * Settings page metabox id.
 	 *
 	 * @var string
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
 	private $metabox_id = 'ctct_option_metabox_settings';
 
 	/**
-	 * Settings Page title
+	 * Settings Page title.
 	 *
 	 * @var string
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
 	protected $title = '';
 
 	/**
-	 * Settings Page hook
+	 * Settings Page hook.
 	 *
 	 * @var string
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
 	protected $options_page = '';
 
 	/**
-	 * Parent plugin class
+	 * Parent plugin class.
 	 *
-	 * @var   class
-	 * @since 0.0.1
+	 * @var class
+	 * @since 1.0.0
 	 */
 	protected $plugin = null;
 
 	/**
 	 * Constructor
 	 *
-	 * @since  1.0.0
+	 * @since 1.0.0
+	 *
 	 * @param object $plugin parent plugin instance.
 	 */
 	public function __construct( $plugin ) {
@@ -65,7 +66,7 @@ class ConstantContact_Settings {
 	}
 
 	/**
-	 * Initiate our hooks
+	 * Initiate our hooks.
 	 *
 	 * @since 1.0.0
 	 */
@@ -93,9 +94,9 @@ class ConstantContact_Settings {
 	}
 
 	/**
-	 * Hook in all our form opt-in injects, decide to show or not when we are at the display point
+	 * Hook in all our form opt-in injects, decide to show or not when we are at the display point.
 	 *
-	 * @since   1.0.0
+	 * @since 1.0.0
 	 */
 	public function inject_optin_form_hooks() {
 
@@ -103,15 +104,21 @@ class ConstantContact_Settings {
 		add_action( 'login_form', array( $this, 'optin_form_field_login' ) );
 
 		// Comment Form.
-		add_action( 'comment_form_after_fields', array( $this, 'optin_form_field_comment' ) );
+		add_action( 'comment_form', array( $this, 'optin_form_field_comment' ) );
 
 		// Registration form.
 		add_action( 'register_form', array( $this, 'optin_form_field_registration' ) );
 		add_action( 'signup_extra_fields', array( $this, 'optin_form_field_registration' ) );
+		add_action( 'login_head', array( $this, 'optin_form_field_login_css' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'scripts' ) );
+
+		if ( ! $this->privacy_policy_status() ) {
+			add_action( 'admin_footer', array( $this, 'privacy_notice_markup' ) );
+		}
 	}
 
 	/**
-	 * Register our setting to WP
+	 * Register our setting to WP.
 	 *
 	 * @since 1.0.0
 	 */
@@ -120,38 +127,58 @@ class ConstantContact_Settings {
 	}
 
 	/**
-	 * Add menu options page
+	 * Add some login page CSS.
+	 *
+	 * @since 1.2.0
+	 */
+	public function optin_form_field_login_css() {
+		?>
+		<style>
+		.login .ctct-disclosure {
+			margin: 0 0 15px;
+		}
+		</style>
+		<?php
+	}
+
+	/**
+	 * Enqueue our styles.
+	 *
+	 * @since unknown.
+	 */
+	public function scripts() {
+		wp_enqueue_style( 'constant-contact-forms' );
+	}
+
+	/**
+	 * Add menu options page.
 	 *
 	 * @since 1.0.0
 	 */
 	public function add_options_page() {
 
-		// Only show our settings page if we're connected to CC.
-		if ( constant_contact()->api->is_connected() ) {
+		$this->options_page = add_submenu_page(
+			'edit.php?post_type=ctct_forms',
+			__( 'Constant Contact Forms Settings', 'constant-contact-forms' ),
+			__( 'Settings', 'constant-contact-forms' ),
+			'manage_options',
+			$this->key,
+			array( $this, 'admin_page_display' )
+		);
 
-			$this->options_page = add_submenu_page(
-				'edit.php?post_type=ctct_forms',
-				__( 'Advanced Opt-in', 'constant-contact-forms' ),
-				__( 'Advanced Opt-in', 'constant-contact-forms' ),
-				'manage_options',
-				$this->key,
-				array( $this, 'admin_page_display' )
-			);
-
-			// Include CMB CSS in the head to avoid FOUC.
-			add_action( "admin_print_styles-{$this->options_page}", array( 'CMB2_hookup', 'enqueue_cmb_css' ) );
-		}
+		// Include CMB CSS in the head to avoid FOUC.
+		add_action( "admin_print_styles-{$this->options_page}", array( 'CMB2_hookup', 'enqueue_cmb_css' ) );
 	}
 
 	/**
-	 * Admin page markup. Mostly handled by CMB2
+	 * Admin page markup. Mostly handled by CMB2.
 	 *
 	 * @since 1.0.0
 	 */
 	public function admin_page_display() {
 		?>
 		<div class="wrap cmb2-options-page <?php echo esc_attr( $this->key ); ?>">
-			<h2><?php esc_attr_e( 'Advanced Opt-in', 'constant-contact-forms' ); ?></h2>
+			<h2><?php echo get_admin_page_title(); ?></h2>
 			<?php
 			if ( function_exists( 'cmb2_metabox_form' ) ) {
 				cmb2_metabox_form( $this->metabox_id, $this->key );
@@ -167,8 +194,9 @@ class ConstantContact_Settings {
 	/**
 	 * Are we on the settings page?
 	 *
-	 * @since   1.0.0
-	 * @return  boolean  if we are on the settings page or not
+	 * @since 1.0.0
+	 *
+	 * @return boolean If we are on the settings page or not.
 	 */
 	public function on_settings_page() {
 
@@ -180,9 +208,9 @@ class ConstantContact_Settings {
 	}
 
 	/**
-	 * Add the options metabox to the array of metaboxes
+	 * Add the options metabox to the array of metaboxes.
 	 *
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
 	function add_options_page_metabox() {
 
@@ -194,10 +222,10 @@ class ConstantContact_Settings {
 
 			// Start our new field.
 			$cmb = new_cmb2_box( array(
-				'id'		 => $this->metabox_id,
-				'hookup'	 => false,
+				'id'         => $this->metabox_id,
+				'hookup'     => false,
 				'cmb_styles' => false,
-				'show_on'	=> array(
+				'show_on'    => array(
 					'key'   => 'options-page',
 					'value' => array( $this->key ),
 				),
@@ -209,82 +237,110 @@ class ConstantContact_Settings {
 	}
 
 	/**
-	 * Helper to show our lists field for settings
+	 * Helper to show our lists field for settings.
 	 *
-	 * @since   1.0.0
+	 * @since 1.0.0
+	 *
 	 * @param object $cmb CMB fields object.
 	 */
 	public function do_lists_field( $cmb ) {
 
-		// Get our lists.
-		$lists = constant_contact()->builder->get_lists();
+		$cmb->add_field( array(
+			'name' => __( 'Google Analytics&trade; tracking opt-in.', 'constant-contact-forms' ),
+			'id'   => '_ctct_data_tracking',
+			'type' => 'checkbox',
+			'desc' => __( 'Allow Constant Contact to use Google Analytics&trade; to track your usage across the Constant Contact Forms plugin.<br/> NOTE &mdash; Your website and users will not be tracked. See our <a href="https://www.constantcontact.com/legal/privacy-statement"> Privacy Statement</a> information about what is and is not tracked.', 'constant-contact-forms' ),
+		) );
 
-		if ( $lists && is_array( $lists ) ) {
+		// Only show our settings page if we're connected to CC.
+		if ( constant_contact()->api->is_connected() ) {
 
-			// Set our CMB2 fields.
+			// Add field to disable e-mail notifications.
 			$cmb->add_field( array(
-				'name' 	=> __( 'Opt-in Location', 'constant-contact-forms' ),
-				'id'   	=> '_ctct_optin_forms',
-				'type'	=> 'multicheck',
-				'options' => $this->get_optin_show_options(),
+				'name'       => __( 'Disable E-mail Notifications', 'constant-contact-forms' ),
+				'desc'       => __( 'This option will disable e-mail notifications when someone submits a form and you have a connected Constant Contact account.', 'constant-contact-forms' ),
+				'id'         => '_ctct_disable_email_notifications',
+				'type'       => 'checkbox',
+				'before_row' => '<hr/>',
 			) );
 
-			// Tack on 'select a list' to our lists array.
-			$lists[0] = __( 'Select a list', 'constant-contact-forms' );
+			// Get our lists.
+			$lists = constant_contact()->builder->get_lists();
 
-			$cmb->add_field( array(
-				'name' 	=> __( 'Add subscribers to', 'constant-contact-forms' ),
-				'id'   	=> '_ctct_optin_list',
-				'type'	=> 'select',
-				'show_option_none' => false,
-				'default'          => __( 'Select a list', 'constant-contact-forms' ),
-				'options'		   => $lists,
-			) );
+			if ( $lists && is_array( $lists ) ) {
 
-			// Get the business name and address.
-			$business_name = get_bloginfo( 'name' ) ?: __( 'Business Name', 'constant-contact-forms' );
-			$business_addr = '';
+				$before_optin = sprintf(
+					'<hr/><h2>%s</h2>',
+					esc_html__( 'Advanced Opt-in', 'constant-contact-forms' )
+				);
 
-			// We might be able to get it from the API?
-			$disclosure_info = $this->plugin->api->get_disclosure_info( true );
-			if ( ! empty( $disclosure_info ) ) {
-				// Make sure no one can edit.
-				$business_name = $disclosure_info['name']    ?: $business_name;
-				$business_addr = isset( $disclosure_info['address'] ) ?: '';
-			}
-
-			$cmb->add_field( array(
-				'name' 	  => __( 'Opt-in Affirmation', 'constant-contact-forms' ),
-				'id'   	  => '_ctct_optin_label',
-				'type'    => 'text',
-				'default' => sprintf( __( 'Yes, I would like to receive emails from %s. Sign me up!', 'constant-contact-forms' ), $business_name ),
-			) );
-
-			if ( empty( $disclosure_info ) ) {
+				// Set our CMB2 fields.
 				$cmb->add_field( array(
-					'name'       => __( 'Disclosure Name', 'constant-contact-forms' ),
-					'id'         => '_ctct_disclose_name',
-					'type'       => 'text',
-					'default'    => $business_name,
-					'attributes' => strlen( $business_name ) ? array( 'readonly' => 'readonly' ) : array(),
+					'name'       => __( 'Opt-in Location', 'constant-contact-forms' ),
+					'id'         => '_ctct_optin_forms',
+					'type'       => 'multicheck',
+					'options'    => $this->get_optin_show_options(),
+					'before_row' => $before_optin,
 				) );
 
+				// Tack on 'select a list' to our lists array.
+				$lists[0] = __( 'Select a list', 'constant-contact-forms' );
+
 				$cmb->add_field( array(
-					'name'       => __( 'Disclosure Address', 'constant-contact-forms' ),
-					'id'         => '_ctct_disclose_address',
-					'type'       => 'text',
-					'default'    => $business_addr,
-					'attributes' => strlen( $business_addr ) ? array( 'readonly' => 'readonly' ) : array(),
+					'name'             => __( 'Add subscribers to', 'constant-contact-forms' ),
+					'id'               => '_ctct_optin_list',
+					'type'             => 'select',
+					'show_option_none' => false,
+					'default'          => __( 'Select a list', 'constant-contact-forms' ),
+					'options'          => $lists,
 				) );
+
+				// Get the business name and address.
+				$business_name = get_bloginfo( 'name' ) ?: __( 'Business Name', 'constant-contact-forms' );
+				$business_addr = '';
+
+				// We might be able to get it from the API?
+				$disclosure_info = $this->plugin->api->get_disclosure_info( true );
+				if ( ! empty( $disclosure_info ) ) {
+					// Make sure no one can edit.
+					$business_name = $disclosure_info['name'] ?: $business_name;
+					$business_addr = isset( $disclosure_info['address'] ) ?: '';
+				}
+
+				$cmb->add_field( array(
+					'name'    => __( 'Opt-in Affirmation', 'constant-contact-forms' ),
+					'id'      => '_ctct_optin_label',
+					'type'    => 'text',
+					'default' => sprintf( __( 'Yes, I would like to receive emails from %s. Sign me up!', 'constant-contact-forms' ), $business_name ),
+				) );
+
+				if ( empty( $disclosure_info ) ) {
+					$cmb->add_field( array(
+						'name'       => __( 'Disclosure Name', 'constant-contact-forms' ),
+						'id'         => '_ctct_disclose_name',
+						'type'       => 'text',
+						'default'    => $business_name,
+						'attributes' => strlen( $business_name ) ? array( 'readonly' => 'readonly' ) : array(),
+					) );
+
+					$cmb->add_field( array(
+						'name'       => __( 'Disclosure Address', 'constant-contact-forms' ),
+						'id'         => '_ctct_disclose_address',
+						'type'       => 'text',
+						'default'    => $business_addr,
+						'attributes' => strlen( $business_addr ) ? array( 'readonly' => 'readonly' ) : array(),
+					) );
+				}
 			}
 		}
 	}
 
 	/**
-	 * Get array of options for our 'optin show' settings
+	 * Get array of options for our 'optin show' settings.
 	 *
-	 * @since   1.0.0
-	 * @return  array  array of options
+	 * @since 1.0.0
+	 *
+	 * @return array Array of options.
 	 */
 	public function get_optin_show_options() {
 
@@ -307,9 +363,10 @@ class ConstantContact_Settings {
 	 * Based on a type of form we pass in, check if the saved option
 	 * for that form is checked or not in the admin
 	 *
-	 * @since   1.0.0
+	 * @since 1.0.0
+	 *
 	 * @param string $type Allowed values: 'login_form', 'comment_form', 'reg_form'.
-	 * @return  boolean        if should show or not
+	 * @return boolean If should show or not.
 	 */
 	public function check_if_optin_should_show( $type ) {
 
@@ -331,8 +388,7 @@ class ConstantContact_Settings {
 	 * and determine whether or not they should have been hooked in when we get
 	 * to displaying them, rather than on potentially pages we dont care about.
 	 *
-	 * @since   1.0.0
-	 * @return  void
+	 * @since 1.0.0
 	 */
 	public function optin_form_field_login() {
 
@@ -343,10 +399,9 @@ class ConstantContact_Settings {
 	}
 
 	/**
-	 * Potentially add our opt-in form to comment forms
+	 * Potentially add our opt-in form to comment forms.
 	 *
-	 * @since   1.0.0
-	 * @return  void
+	 * @since 1.0.0
 	 */
 	public function optin_form_field_comment() {
 
@@ -357,10 +412,9 @@ class ConstantContact_Settings {
 	}
 
 	/**
-	 * Potentially add our opt-in form to the registration form
+	 * Potentially add our opt-in form to the registration form.
 	 *
-	 * @since   1.0.0
-	 * @return  void
+	 * @since 1.0.0
 	 */
 	public function optin_form_field_registration() {
 
@@ -371,10 +425,9 @@ class ConstantContact_Settings {
 	}
 
 	/**
-	 * Opt in field checkbox
+	 * Opt in field checkbox.
 	 *
 	 * @since 1.0.0
-	 * @return void
 	 */
 	public function optin_form_field() {
 
@@ -395,17 +448,19 @@ class ConstantContact_Settings {
 	        	<input type="checkbox" value="<?php echo esc_attr( $list ); ?>" class="checkbox" id="ctct_optin" name="ctct_optin_list" />
 				<?php echo esc_attr( $label ); ?>
 			</label>
+			<?php echo constant_contact()->display->get_disclose_text(); ?>
 			<?php wp_nonce_field( 'ct_ct_add_to_optin', 'ct_ct_optin', true, true ); ?>
 	    </p><?php
 
 	}
 
 	/**
-	 * Sends contact to CTCT if optin checked
+	 * Sends contact to CTCT if optin checked.
 	 *
-	 * @since  1.0.0
-	 * @param  array $comment_data comment form data.
-	 * @return array comment form data
+	 * @since 1.0.0
+	 *
+	 * @param array $comment_data comment form data.
+	 * @return array Comment form data.
 	 */
 	public function process_optin_comment_form( $comment_data ) {
 
@@ -429,11 +484,12 @@ class ConstantContact_Settings {
 	}
 
 	/**
-	 * Process our comment data and send to CC
+	 * Process our comment data and send to CC.
 	 *
-	 * @since   1.0.0
+	 * @since 1.0.0
+	 *
 	 * @param array $comment_data Array of comment data.
-	 * @return  array                 passed in comment data
+	 * @return array Passed in comment data
 	 */
 	public function _process_comment_data_for_optin( $comment_data ) {
 
@@ -644,6 +700,72 @@ class ConstantContact_Settings {
 		}
 
 		throw new Exception( 'Invalid property: ' . $field );
+	}
+
+	/**
+	 * Returns the status of our privacy policy acceptance.
+	 *
+	 * @since 1.2.0
+	 *
+	 * @return bool
+	 */
+	public function privacy_policy_status() {
+		$status = get_option( 'ctct_privacy_policy_status', '' );
+		if ( '' === $status || 'false' === $status ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Outputs the markup for the privacy policy modal popup.
+	 *
+	 * @since 1.2.0
+	 */
+	public function privacy_notice_markup() {
+		if ( $this->privacy_policy_status() ) {
+			return;
+		}
+		?>
+		<div id="ctct-privacy-modal" class="ctct-modal">
+			<div class="ctct-modal-dialog" role="document">
+				<div class="ctct-modal-content">
+					<div class="ctct-modal-header">
+						<a href="#" class="ctct-modal-close" aria-hidden="true">&times;</a>
+						<h2 class="ctct-logo"><img src="<?php echo constant_contact()->url . '/assets/images/constant-contact-logo.png' ?>" alt="<?php esc_attr_e( 'Constant Contact logo', 'constant-contact-forms' ); ?>" /></h2>
+					</div>
+					<div class="ctct-modal-body ctct-privacy-modal-body">
+						<?php
+						echo $this->privacy_notice_modal_content();
+						?>
+					</div><!-- modal body -->
+					<div id="ctct-modal-footer-privacy" class="ctct-modal-footer ctct-modal-footer-privacy">
+						<a class="button button-blue ctct-connect" data-agree="true"><?php esc_html_e( 'Agree', 'constant-contact-forms' ); ?></a>
+						<a class="button no-bg" data-agree="false"><?php esc_html_e( 'Disagree', 'constant-contact-forms' ); ?></a>
+					</div>
+				</div><!-- .modal-content -->
+			</div><!-- .modal-dialog -->
+		</div>
+		<?php
+	}
+
+	/**
+	 * Returns the remote privacy policy page content for Constant Contact.
+	 *
+	 * @since 1.2.0
+	 *
+	 * @return mixed
+	 */
+	public function privacy_notice_modal_content() {
+		$policy_output = wp_remote_get( 'https://www.constantcontact.com/legal/privacy-statement' );
+		if ( ! is_wp_error( $policy_output ) && 200 === wp_remote_retrieve_response_code( $policy_output ) ) {
+			$content = wp_remote_retrieve_body( $policy_output );
+			preg_match( '/<body[^>]*>(.*?)<\/body>/si', $content, $match );
+			$output = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $match[1] );
+			$output = preg_replace( '@<section class=header>.*?</section>@si', '', $output );
+			return $output;
+		}
 	}
 }
 

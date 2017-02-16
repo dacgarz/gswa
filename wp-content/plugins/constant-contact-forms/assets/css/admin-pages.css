@@ -8,6 +8,10 @@
   }
 }
 
+.constant-contact-about .ctct-section {
+  margin-bottom: 50px;
+}
+
 .constant-contact-about h1.about-header {
   color: #1a5285;
   font-size: 26px;
@@ -192,11 +196,10 @@
 }
 
 .constant-contact-about .plugin-badge {
-  position: absolute;
-  top: 10px;
-  right: 0;
+  float: right;
   max-height: 180px;
   max-width: 160px;
+  margin-left: 40px;
 }
 
 @media screen and (max-width: 482px) {
@@ -312,4 +315,21 @@
   font-size: 16px;
   font-weight: 300;
   color: #2b5e8c;
+}
+
+.section-try-us .ctct-bonus-points {
+  margin-bottom: 50px;
+}
+
+.section-try-us a.button {
+  margin-right: 40px;
+}
+
+.section-try-us a.ctct-connect {
+  font-weight: bold;
+}
+
+.section-marketing-tips #subbox {
+  height: 40px;
+  width: 50%;
 }

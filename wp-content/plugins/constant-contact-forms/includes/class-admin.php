@@ -344,8 +344,10 @@ class ConstantContact_Admin {
 	 * Scripts.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param array $extra_localizations An array of arrays of `array( $handle, $name, $data )` passed to wp_localize_script.
 	 */
-	public function scripts() {
+	public function scripts( $extra_localizations = array() ) {
 
 		global $pagenow;
 
@@ -379,6 +381,36 @@ class ConstantContact_Admin {
 				'move_down'    => __( 'move down', 'constant-contact-forms' ),
 			) )
 		);
+		$privacy_settings = get_option( 'ctct_privacy_policy_status', '' );
+
+		wp_localize_script(
+			'ctct_form',
+			'ctct_settings',
+			array(
+				'privacy_set' => ( empty( $privacy_settings ) ) ? 'no' : 'yes',
+			)
+		);
+
+		if ( constant_contact_maybe_display_optin_notification() || ( isset( $_GET['page'] ) && 'ctct_options_settings' == $_GET['page'] ) ) {
+			wp_enqueue_script( 'ctct_form' );
+		}
+
+		// Some admin_enqueue_scripts action calls pass the pagenow string value and not an array.
+		if ( ! is_array( $extra_localizations ) ) {
+			return;
+		}
+
+		// If we have extra localizations, iterate and call with `wp_localize_script`.
+		if ( ! empty( $extra_localizations ) ) {
+			// We only have a single array, put it in another array.
+			if ( ! is_array( $extra_localizations[0] ) ) {
+				$extra_localizations = array( $extra_localizations );
+			}
+
+			foreach ( $extra_localizations as $localization_set ) {
+				call_user_func_array( 'wp_localize_script', $localization_set );
+			}
+		}
 
 		/**
 		 * Filters the allowed pages to enqueue the ctct_form script on.

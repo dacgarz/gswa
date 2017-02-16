@@ -9,10 +9,62 @@
   width: 100%;
 }
 
+.ctct_options_connect hr {
+  margin-bottom: 45px;
+}
+
 @media screen and (max-width: 782px) {
   .ctct_options_connect {
     padding: 30px 30px 0;
     margin-left: -10px;
+  }
+}
+
+.ctct_options_connect .ctct-call-to-action {
+  margin-bottom: 45px;
+  overflow: hidden;
+  text-align: left;
+  width: 100%;
+}
+
+.ctct_options_connect .ctct-call-to-action p {
+  float: left;
+  margin: 0;
+}
+
+.ctct_options_connect .ctct-call-to-action a {
+  float: right;
+  text-align: center;
+}
+
+@media screen and (max-width: 782px) {
+  .ctct_options_connect .ctct-call-to-action a {
+    float: none;
+  }
+}
+
+.ctct_options_connect .ctct-call-to-action .ctct-call-to-action-text a {
+  float: none;
+}
+
+.ctct_options_connect .ctct-call-to-action .ctct-call-to-action-text small {
+  line-height: 1.2px;
+}
+
+.ctct_options_connect .ctct-call-to-action #subbox {
+  height: 40px;
+  margin: 15px 0;
+  width: 50%;
+}
+
+.ctct_options_connect .ctct-call-to-action #subbutton {
+  color: #0078C3;
+  float: right;
+}
+
+@media screen and (max-width: 782px) {
+  .ctct_options_connect .ctct-call-to-action #subbutton {
+    float: none;
   }
 }
 
@@ -33,11 +85,12 @@
 .ctct_options_connect p {
   color: #606d78;
   font-size: 14.7px;
+  margin: 0;
 }
 
 .ctct_options_connect p.ctct-description {
   font-size: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   margin-top: 5px;
 }
 
@@ -45,7 +98,6 @@
   color: #747e88;
   font-size: 13.3px;
   margin: 15px auto 0;
-  max-width: 60%;
 }
 
 @media screen and (max-width: 782px) {
@@ -65,6 +117,21 @@
   clear: both;
   content: "";
   display: table;
+}
+
+.ctct_options_connect .ctct-body .ctct-call-to-action-text {
+  float: left;
+  width: 75%;
+}
+
+@media screen and (max-width: 782px) {
+  .ctct_options_connect .ctct-body .ctct-call-to-action-text {
+    width: 100%;
+  }
+}
+
+.ctct_options_connect .ctct-body .ctct-call-to-action-text h3 {
+  margin-top: 0;
 }
 
 .ctct_options_connect .ctct-body .clear {

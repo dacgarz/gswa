@@ -89,9 +89,17 @@
 }
 
 .ctct-modal .ctct-modal-content .ctct-modal-header p {
-  color: #333333;
+  color: #fff;
   font-size: 16px;
   margin-bottom: 0;
+}
+
+.ctct-modal .ctct-modal-content .ctct-modal-header p .displayed-shortcode {
+  color: #333333;
+}
+
+.ctct-modal .ctct-modal-content .ctct-modal-header .ctct-logo img {
+  max-width: 75%;
 }
 
 .ctct-modal .ctct-modal-content .ctct-modal-header .ctct-modal-close {
@@ -136,6 +144,46 @@
   text-decoration: underline;
 }
 
+.ctct-modal .ctct-modal-content .ctct-modal-footer.ctct-modal-footer-privacy a {
+  text-decoration: none;
+}
+
+.ctct-modal .ctct-modal-content .ctct-modal-footer .button {
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  height: auto;
+  line-height: 1;
+  margin-bottom: 10px;
+  min-width: 180px;
+  padding: 14px 30px;
+}
+
+.ctct-modal .ctct-modal-content .ctct-modal-footer .button.no-bg {
+  border: none;
+  box-shadow: none;
+  color: #0078C3;
+}
+
+.ctct-modal .ctct-modal-content .ctct-modal-footer .button.button-orange {
+  background-color: #FFA901;
+  border: 1px solid #cd8800;
+}
+
+.ctct-modal .ctct-modal-content .ctct-modal-footer .button.button-orange:hover, .ctct-modal .ctct-modal-content .ctct-modal-footer .button.button-orange:focus {
+  background-color: #cd8800;
+}
+
+.ctct-modal .ctct-modal-content .ctct-modal-footer .button.button-blue {
+  background-color: #0078C3;
+  border: 1px solid #005990;
+}
+
+.ctct-modal .ctct-modal-content .ctct-modal-footer .button.button-blue:hover, .ctct-modal .ctct-modal-content .ctct-modal-footer .button.button-blue:focus {
+  background-color: #005990;
+}
+
 .ctct-modal .ctct-modal-content .ctct-modal-body {
   padding: 15px;
   position: relative;
@@ -145,6 +193,11 @@
   clear: both;
   content: "";
   display: table;
+}
+
+.ctct-modal .ctct-modal-content .ctct-modal-body.ctct-privacy-modal-body {
+  overflow: scroll;
+  height: 350px;
 }
 
 .ctct-modal .ctct-modal-content .ctct-modal-body .ctct-modal-left,
@@ -188,6 +241,10 @@
 .ctct-modal .ctct-modal-content .ctct-modal-body .ctct-modal-left small,
 .ctct-modal .ctct-modal-content .ctct-modal-body .ctct-modal-right small {
   font-style: italic;
+}
+
+.ctct-modal .ctct-modal-content .ctct-modal-body .now-what {
+  text-align: center;
 }
 
 .ctct-modal .ctct-modal-content .ctct-modal-body .ctct-modal-left {
@@ -242,7 +299,7 @@
   background-color: #005990;
 }
 
-.misc-pub-section.misc-pub-visibility, .misc-pub-section.misc-pub-curtime {
+.post-type-ctct_forms .misc-pub-section.misc-pub-visibility, .post-type-ctct_forms .misc-pub-section.misc-pub-curtime {
   display: none;
 }
 
@@ -370,4 +427,8 @@ body.post-type-ctct_forms #titlediv #title {
 
 #ctct_1_optin_metabox .cmb-th + .cmb-td {
   width: 70%;
+}
+
+#ctct_option_metabox_settings span.cmb2-metabox-description {
+  color: #444444;
 }

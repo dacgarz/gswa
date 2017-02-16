@@ -3,7 +3,7 @@
 @import 'modal';
 
 
-.misc-pub-section {
+.post-type-ctct_forms .misc-pub-section {
 	&.misc-pub-visibility,
 	&.misc-pub-curtime {
 		display: none;
@@ -114,4 +114,10 @@ body.post-type-ctct_forms #titlediv #title {
 	.cmb-th + .cmb-td {
 		width: 70%;
 	}
+}
+
+#ctct_option_metabox_settings {
+  span.cmb2-metabox-description {
+	color: rgb(68, 68, 68);
+  }
 }

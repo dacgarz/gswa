@@ -1,0 +1,2872 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Total Donations v1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Tue Jun 07 2016 07:44:35 GMT-0700 (Pacific Daylight Time)\n"
+"POT-Revision-Date: Tue Jun 07 2016 08:26:06 GMT-0700 (Pacific Daylight Time)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2"
+
+#. Name of the plugin
+msgid "Total Donations"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://totaldonations.com"
+msgstr ""
+
+#. Description of the plugin
+msgid "A plugin for accepting donations."
+msgstr ""
+
+#. Author of the plugin
+msgid "Binti Brindamour and Astried Silvanie"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://calmar-webmedia.com"
+msgstr ""
+
+#: ../migla-donation.php:646
+msgid ""
+"Please fill in the notification email, your email name and your email "
+"address. Go to "
+msgstr ""
+
+#: ../migla-donation.php:647
+msgid " General Settings"
+msgstr ""
+
+#: ../migla-donation.php:657
+msgid ""
+"Please fill in your PayPal account details in Total Donations. It is "
+"required to begin accepting donations. Go to "
+msgstr ""
+
+#: ../migla-donation.php:658
+msgid " Paypal Settings"
+msgstr ""
+
+#: ../migla-donation.php:663
+msgid ""
+"Total Donations is currently in PayPal's sandbox mode. To switch to "
+"production mode, please go to "
+msgstr ""
+
+#: ../migla-donation.php:664
+msgid " PayPal Settings"
+msgstr ""
+
+#: ../migla-donation.php:664
+msgid " and change the payment method to PayPal"
+msgstr ""
+
+#: ../migla-donation.php:675
+msgid ""
+"Total Donations is currently in Stripe's test mode. To switch to Live mode, "
+"please go to "
+msgstr ""
+
+#: ../migla-donation.php:676 ../migla-donation.php:680
+msgid " Stripe Settings"
+msgstr ""
+
+#: ../migla-donation.php:676
+msgid " and change the payment method to Live"
+msgstr ""
+
+#: ../migla-donation.php:679
+msgid ""
+"Please fill in your Stripe Keys in Total Donations if you wish to use Stripe."
+" Go to "
+msgstr ""
+
+#: ../migla-donation.php:691
+msgid "Please fill in the API key and Transaction Key for Authorize.Net . Go to "
+msgstr ""
+
+#: ../migla-donation.php:692 ../migla-donation.php:715
+msgid " Authorize.Net Settings"
+msgstr ""
+
+#: ../migla-donation.php:696
+msgid ""
+"Total Donations is currently in Authorize.net's test mode. To switch to the "
+"Live mode, please go to "
+msgstr ""
+
+#: ../migla-donation.php:697
+msgid " Authorize.Net's Settings"
+msgstr ""
+
+#: ../migla-donation.php:709
+msgid "Welcome to Total Donations "
+msgstr ""
+
+#: ../migla-donation.php:710
+msgid "Please choose at least one payment method. Either "
+msgstr ""
+
+#: ../migla-donation.php:711
+msgid " Stripe"
+msgstr ""
+
+#: ../migla-donation.php:713
+msgid " Paypal"
+msgstr ""
+
+#. Name of the plugin
+msgid "Total Donations Recent Donor Wall"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://calmar-webmedia.com/testing-area/wp-plugin-dev"
+msgstr ""
+
+#. Description of the plugin
+msgid "A widget that displays list of donations in Total Donations."
+msgstr ""
+
+#: ../migla-donation-widget.php:38
+msgid "A widget that displays list of recent donations in total donation"
+msgstr ""
+
+#: ../migla-donation-widget.php:44
+msgid "Total Donations Recent Donors Wall"
+msgstr ""
+
+#: ../migla-donation-widget.php:249 ../migla-top-donor-widget.php:205
+msgid "Title of the Donor Wall:"
+msgstr ""
+
+#: ../migla-donation-widget.php:257 ../migla-circle-widget.php:341 ../migla-bar-
+#: widget.php:369
+msgid "Current Campaign : "
+msgstr ""
+
+#: ../migla-donation-widget.php:260 ../migla-circle-widget.php:351 ../migla-bar-
+#: widget.php:372
+msgid "Choose a campaign to show :"
+msgstr ""
+
+#: ../migla-donation-widget.php:271 ../migla-top-donor-widget.php:218
+msgid "Show All Campaign"
+msgstr ""
+
+#: ../migla-donation-widget.php:375 ../migla-top-donor-widget.php:315
+msgid "Text of button:"
+msgstr ""
+
+#: ../migla-donation-widget.php:385
+msgid "Hide Date:"
+msgstr ""
+
+#. Name of the plugin
+msgid "Total Donations Circle Widget"
+msgstr ""
+
+#. Description of the plugin
+msgid "A widget that displays the progress-bar for each campaign in Total Donations."
+msgstr ""
+
+#: ../migla-circle-widget.php:38
+msgid "A widget that displays a circle progress bar for Total Donations"
+msgstr ""
+
+#: ../migla-circle-widget.php:322
+msgid "Title of the circle progress bar:"
+msgstr ""
+
+#: ../migla-circle-widget.php:344 ../migla-bar-widget.php:403
+msgid "Form ID : "
+msgstr ""
+
+#: ../migla-circle-widget.php:348 ../migla-bar-widget.php:407
+msgid "URL : "
+msgstr ""
+
+#: ../migla-circle-widget.php:391
+msgid "Circle Size in Pixels :"
+msgstr ""
+
+#: ../migla-circle-widget.php:396
+msgid "Circle Thickness :"
+msgstr ""
+
+#: ../migla-circle-widget.php:401
+msgid "Circle Start Angle :"
+msgstr ""
+
+#: ../migla-circle-widget.php:406
+msgid "reverse:"
+msgstr ""
+
+#: ../migla-circle-widget.php:408 ../migla-circle-widget.php:410 ../admin-
+#: files/admin-paypal-settings.php:334 ../admin-files/admin-paypal-settings.php:336
+msgid "Yes"
+msgstr ""
+
+#: ../migla-circle-widget.php:408 ../migla-circle-widget.php:410
+msgid "No"
+msgstr ""
+
+#: ../migla-circle-widget.php:415 ../admin-files/admin-custom-theme.php:570 ..
+#: /admin-files/admin_campaign_creator.php:562
+msgid "Line Cap:"
+msgstr ""
+
+#: ../migla-circle-widget.php:417 ../migla-circle-widget.php:419 ../admin-
+#: files/admin-custom-theme.php:572 ../admin-files/admin-custom-theme.php:574 ..
+#: /admin-files/admin_campaign_creator.php:564 ../admin-
+#: files/admin_campaign_creator.php:566
+msgid "Square"
+msgstr ""
+
+#: ../migla-circle-widget.php:417 ../migla-circle-widget.php:419 ../admin-
+#: files/admin-custom-theme.php:572 ../admin-files/admin-custom-theme.php:574 ..
+#: /admin-files/admin_campaign_creator.php:564 ../admin-
+#: files/admin_campaign_creator.php:566
+msgid "Round"
+msgstr ""
+
+#: ../migla-circle-widget.php:424 ../admin-files/admin-custom-theme.php:532 ..
+#: /admin-files/admin_campaign_creator.php:556
+msgid "Fill:"
+msgstr ""
+
+#: ../migla-circle-widget.php:429 ../admin-files/admin-custom-theme.php:579 ..
+#: /admin-files/admin_campaign_creator.php:571
+msgid "Animation:"
+msgstr ""
+
+#: ../migla-circle-widget.php:432 ../migla-circle-widget.php:436 ../migla-circle-
+#: widget.php:440 ../migla-circle-widget.php:453 ../migla-circle-widget.php:458 ..
+#: /migla_class_form.php:697 ../admin-files/admin-custom-theme.php:582 ../admin-
+#: files/admin-custom-theme.php:586 ../admin-files/admin-custom-theme.php:590 ..
+#: /admin-files/admin-custom-theme.php:599 ../admin-files/admin-custom-theme.php:
+#: 603 ../admin-files/admin-custom-theme.php:607 ../admin-
+#: files/admin_campaign_creator.php:574 ../admin-files/admin_campaign_creator.php:
+#: 578 ../admin-files/admin_campaign_creator.php:582 ../admin-
+#: files/admin_campaign_creator.php:591 ../admin-files/admin_campaign_creator.php:
+#: 595 ../admin-files/admin_campaign_creator.php:599 ../admin-files/admin-form-
+#: options.php:1144 ../admin-files/admin-form-options.php:1148 ../admin-
+#: files/admin-form-options.php:1152
+msgid "None"
+msgstr ""
+
+#: ../migla-circle-widget.php:432 ../migla-circle-widget.php:436 ../migla-circle-
+#: widget.php:440 ../admin-files/admin-custom-theme.php:582 ../admin-files/admin-
+#: custom-theme.php:586 ../admin-files/admin-custom-theme.php:590 ../admin-
+#: files/admin_campaign_creator.php:574 ../admin-files/admin_campaign_creator.php:
+#: 578 ../admin-files/admin_campaign_creator.php:582
+msgid "Normal"
+msgstr ""
+
+#: ../migla-circle-widget.php:432 ../migla-circle-widget.php:436 ../migla-circle-
+#: widget.php:440 ../admin-files/admin-custom-theme.php:582 ../admin-files/admin-
+#: custom-theme.php:586 ../admin-files/admin-custom-theme.php:590 ../admin-
+#: files/admin_campaign_creator.php:574 ../admin-files/admin_campaign_creator.php:
+#: 578 ../admin-files/admin_campaign_creator.php:582
+msgid "Back and Forth"
+msgstr ""
+
+#: ../migla-circle-widget.php:450
+msgid "Inside Text:"
+msgstr ""
+
+#: ../migla-circle-widget.php:454 ../migla-circle-widget.php:459 ../admin-
+#: files/admin-custom-theme.php:599 ../admin-files/admin-custom-theme.php:603 ..
+#: /admin-files/admin-custom-theme.php:607 ../admin-files/admin_campaign_creator.
+#: php:591 ../admin-files/admin_campaign_creator.php:595 ../admin-
+#: files/admin_campaign_creator.php:599
+msgid "Donation Percentage"
+msgstr ""
+
+#: ../migla-circle-widget.php:490 ../migla-bar-widget.php:530
+msgid "Text on button:"
+msgstr ""
+
+#: ../migla-circle-widget.php:494
+msgid "Text Alignment and Orientation:"
+msgstr ""
+
+#: ../migla-circle-widget.php:530
+msgid "Current Amount Label:"
+msgstr ""
+
+#: ../migla-circle-widget.php:535
+msgid "Target Amount Label:"
+msgstr ""
+
+#: ../migla-circle-widget.php:540
+msgid "Total Supporters Label:"
+msgstr ""
+
+#: ../migla-circle-widget.php:545 ../migla-circle-widget.php:548
+msgid "shortcodes allowed: [amount]	[target] [campaign] [backers] [percentage]"
+msgstr ""
+
+#: ../migla_class_form.php:519 ../migla_class_form.php:522 ../migla_class_form.
+#: php:551
+msgid "yes"
+msgstr ""
+
+#: ../migla_class_form.php:563 ../migla_class_form.php:874 ../migla_class_form.
+#: php:926 ../migla_class_form.php:959
+msgid "Please choose one"
+msgstr ""
+
+#. Name of the plugin
+msgid "Total Donations Bar Widget"
+msgstr ""
+
+#: ../migla-bar-widget.php:48
+msgid "A widget that displays progress bar for total donation"
+msgstr ""
+
+#: ../migla-bar-widget.php:360
+msgid "Title of the progress bar:"
+msgstr ""
+
+#: ../migla-bar-widget.php:412
+msgid "Border:"
+msgstr ""
+
+#: ../migla-bar-widget.php:415
+msgid "Top Left:"
+msgstr ""
+
+#: ../migla-bar-widget.php:418
+msgid "Top Right:"
+msgstr ""
+
+#: ../migla-bar-widget.php:421
+msgid "Bottom Left:"
+msgstr ""
+
+#: ../migla-bar-widget.php:425
+msgid "Bottom Right:"
+msgstr ""
+
+#: ../migla-bar-widget.php:430 ../admin-files/admin-custom-theme.php:1035
+msgid "Well Box Shadow:"
+msgstr ""
+
+#: ../migla-bar-widget.php:433
+msgid "H-Shadow:"
+msgstr ""
+
+#: ../migla-bar-widget.php:436
+msgid "V-Shadow:"
+msgstr ""
+
+#: ../migla-bar-widget.php:439
+msgid "Blur:"
+msgstr ""
+
+#: ../migla-bar-widget.php:442
+msgid "Spread:"
+msgstr ""
+
+#: ../migla-bar-widget.php:445
+msgid "Well Box Shadow Color:"
+msgstr ""
+
+#: ../migla-bar-widget.php:450 ../admin-files/admin-custom-theme.php:1015
+msgid "Bar Color:"
+msgstr ""
+
+#: ../migla-bar-widget.php:455 ../admin-files/admin-custom-theme.php:1024
+msgid "Well Background:"
+msgstr ""
+
+#: ../migla-bar-widget.php:460
+msgid "Well Shadows:"
+msgstr ""
+
+#: ../migla-bar-widget.php:465
+msgid "Stripes Effect:"
+msgstr ""
+
+#: ../migla-bar-widget.php:475
+msgid "Animated Stripes Effect (stripes must be on):"
+msgstr ""
+
+#: ../migla-bar-widget.php:485
+msgid "Pulse Effect:"
+msgstr ""
+
+#: ../migla-bar-widget.php:495
+msgid "Percentage:"
+msgstr ""
+
+#: ../migla-bar-widget.php:534
+msgid "Add HTML or Plain Text above:"
+msgstr ""
+
+#: ../migla-bar-widget.php:535 ../migla-bar-widget.php:538
+msgid "shortcodes allowed: [campaign] [percentage] [backers] [amount]"
+msgstr ""
+
+#: ../migla-bar-widget.php:537
+msgid "Add HTML or Plain Text below:"
+msgstr ""
+
+#: ../migla_class_email_handler.php:85
+msgid "You have just received a donation"
+msgstr ""
+
+#: ../migla_class_email_handler.php:102
+msgid ""
+"You have just received a donation. Here is the information about that "
+"donation: "
+msgstr ""
+
+#: ../migla_class_email_handler.php:157
+msgid "Click here for more detailed information about this donation"
+msgstr ""
+
+#: ../migla_ajax_gateways.php:200 ../migla_ajax_gateways.php:488 ..
+#: /migla_ajax_gateways.php:833 ../migla_ajax_gateways.php:1292 ..
+#: /migla_ajax_gateways.php:1514 ../migla_ajax_gateways.php:1783 ..
+#: /migla_ajax_gateways.php:2053 ../migla_ajax_gateways.php:2310 ..
+#: /migla_ajax_gateways.php:2535 ../migla_ajax_gateways.php:2856 ..
+#: /migla_ajax_gateways.php:3115 ../migla_ajax_gateways.php:3480
+msgid "Nonce is not recognize"
+msgstr ""
+
+#. Name of the plugin
+msgid "Total Donations Top Donor Wall"
+msgstr ""
+
+#. Description of the plugin
+msgid "A widget that displays list of top donors in Total Donations."
+msgstr ""
+
+#: ../migla-top-donor-widget.php:38
+msgid "A widget that displays list of top donor in total donation"
+msgstr ""
+
+#. Author of the plugin
+msgid "Olivier PLATHEY"
+msgstr ""
+
+#: ../shortcodes/migla_sc_progress_bar.php:41
+msgid "Add attribute ID or the campaign ID so the progress bar can be shown"
+msgstr ""
+
+#: ../admin-files/admin-help.php:11 ../admin-files/admin-help.php:12
+msgid "Help & Advanced"
+msgstr ""
+
+#: ../admin-files/admin-help.php:21
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: ../admin-files/admin-help.php:26
+msgid "Help"
+msgstr ""
+
+#: ../admin-files/admin-help.php:57
+msgid " erase"
+msgstr ""
+
+#: ../admin-files/admin-help.php:59
+msgid ""
+"Clicking this button will erase old cache data stored in WordPress by Total "
+"Donations"
+msgstr ""
+
+#: ../admin-files/admin-help.php:65 ../admin-files/admin-help.php:67
+msgid "Use nonce security on frontend form"
+msgstr ""
+
+#: ../admin-files/admin-help.php:69
+msgid ""
+"This is security against xss attacks. Disable if you have issues with "
+"compatibility"
+msgstr ""
+
+#: ../admin-files/admin-help.php:75 ../admin-files/admin-help.php:77
+msgid "Reset all settings to default when plugin is deactivated"
+msgstr ""
+
+#: ../admin-files/admin-help.php:79
+msgid "When the plugin is activated again it will use the default settings"
+msgstr ""
+
+#: ../admin-files/admin-help.php:88
+msgid "Change the ajax caller to the default Wordpress Ajax caller. "
+msgstr ""
+
+#: ../admin-files/admin-help.php:90
+msgid "Change the ajax caller to the default Wordpress Ajax caller."
+msgstr ""
+
+#: ../admin-files/admin-help.php:92
+msgid "Do this if your site wont save settings. It is not as fast but might help."
+msgstr ""
+
+#: ../admin-files/admin-help.php:102
+msgid "Allows across domain request (CORS) for the AJAX caller. "
+msgstr ""
+
+#: ../admin-files/admin-help.php:104
+msgid "Allows a cross domain request (CORS) for the AJAX caller. "
+msgstr ""
+
+#: ../admin-files/admin-help.php:106
+msgid ""
+"Use this if your site blocks the AJAX caller from Total Donation on the "
+"front-end form."
+msgstr ""
+
+#: ../admin-files/admin-help.php:115
+msgid "Load javascript on"
+msgstr ""
+
+#: ../admin-files/admin-help.php:126 ../admin-files/admin-help.php:148 ../admin-
+#: files/admin-authorize.php:167 ../admin-files/admin-authorize.php:243 ../admin-
+#: files/admin-authorize.php:409 ../admin-files/admin-authorize.php:485 ../admin-
+#: files/admin-authorize.php:500 ../admin-files/admin-stripe.php:279 ../admin-
+#: files/admin-stripe.php:423 ../admin-files/admin-stripe.php:486 ../admin-
+#: files/admin-stripe.php:494 ../admin-files/admin-stripe.php:506 ../admin-
+#: files/admin-offline-settings.php:246 ../admin-files/admin-offline-settings.php:
+#: 276 ../admin-files/admin-offline-settings.php:333 ../admin-files/admin-offline-
+#: settings.php:348 ../admin-files/admin-offline-settings.php:363 ../admin-
+#: files/admin-campaigns.php:169 ../admin-files/admin-campaigns.php:449 ../admin-
+#: files/admin-campaigns.php:565 ../admin-files/admin-settings.php:106 ../admin-
+#: files/admin-settings.php:117 ../admin-files/admin-settings.php:126 ../admin-
+#: files/admin-settings.php:166 ../admin-files/admin-settings.php:208 ../admin-
+#: files/admin-settings.php:299 ../admin-files/admin-settings.php:509 ../admin-
+#: files/admin-custom-theme.php:489 ../admin-files/admin-custom-theme.php:526 ..
+#: /admin-files/admin-custom-theme.php:534 ../admin-files/admin-custom-theme.php:
+#: 561 ../admin-files/admin-custom-theme.php:576 ../admin-files/admin-custom-
+#: theme.php:593 ../admin-files/admin-custom-theme.php:610 ../admin-files/admin-
+#: custom-theme.php:834 ../admin-files/admin-custom-theme.php:1299 ../admin-
+#: files/admin-paypal-settings.php:229 ../admin-files/admin-paypal-settings.php:
+#: 376 ../admin-files/admin-paypal-settings.php:493 ../admin-files/admin-paypal-
+#: settings.php:924 ../admin-files/admin-paypal-settings.php:1048 ../admin-
+#: files/admin-paypal-settings.php:1061 ../admin-files/admin-paypal-settings.php:
+#: 1076 ../admin-files/admin_campaign_creator.php:118 ../admin-
+#: files/admin_campaign_creator.php:513 ../admin-files/admin_campaign_creator.php:
+#: 550 ../admin-files/admin_campaign_creator.php:558 ../admin-
+#: files/admin_campaign_creator.php:568 ../admin-files/admin_campaign_creator.php:
+#: 585 ../admin-files/admin_campaign_creator.php:602 ../admin-files/admin-form-
+#: options.php:296 ../admin-files/admin-form-options.php:440 ../admin-files/admin-
+#: form-options.php:466 ../admin-files/admin-form-options.php:580 ../admin-
+#: files/admin-form-options.php:884 ../admin-files/admin-form-options.php:1077
+msgid " save"
+msgstr ""
+
+#: ../admin-files/admin-help.php:126
+msgid "Here you can change where the Javascript gets loaded."
+msgstr ""
+
+#: ../admin-files/admin-help.php:137
+msgid "Load stylesheet  on"
+msgstr ""
+
+#: ../admin-files/admin-help.php:148
+msgid "Here you can change where the stylesheet gets loaded."
+msgstr ""
+
+#: ../admin-files/admin-help.php:167
+msgid "Give access to these user :"
+msgstr ""
+
+#: ../admin-files/admin-help.php:240
+msgid " save user access"
+msgstr ""
+
+#: ../admin-files/admin-help.php:262
+msgid "Get started by going"
+msgstr ""
+
+#: ../admin-files/admin-help.php:262
+msgid " here "
+msgstr ""
+
+#: ../admin-files/admin-help.php:264 ../admin-files/admin-help.php:266
+msgid "Visit "
+msgstr ""
+
+#: ../admin-files/admin-help.php:264
+msgid "here for complete documentation "
+msgstr ""
+
+#: ../admin-files/admin-help.php:266
+msgid "here for shortcode examples and arguments"
+msgstr ""
+
+#: ../admin-files/admin-help.php:282
+msgid "ShortCode List"
+msgstr ""
+
+#: ../admin-files/admin-help.php:282
+msgid ""
+"See all the attributes for these shortcodes by clicking on the shortcode "
+"example link above"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:11 ../admin-files/admin-authorize.php:12 ..
+#: /admin-files/admin-authorize.php:92
+msgid "Authorize.Net Settings"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:65 ../admin-files/admin-stripe.php:68 ..
+#: /admin-files/admin-reports.php:82 ../admin-files/admin-offline-settings.php:82 
+#: ../admin-files/admin-campaigns.php:895 ../admin-files/admin-settings.php:84 ..
+#: /admin-files/admin-custom-theme.php:662 ../admin-files/admin-offline-donations.
+#: php:120 ../admin-files/admin-main.php:81 ../admin-files/admin-paypal-settings.
+#: php:90 ../admin-files/admin_campaign_creator.php:618 ../admin-files/admin-form-
+#: options.php:139
+msgid ""
+"You do not have sufficient permissions to access this page. Please contact "
+"your web administrator"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:97
+msgid "Authorize.Net Donation Form"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:104 ../admin-files/admin-stripe.php:108 ..
+#: /admin-files/admin-offline-settings.php:104 ../admin-files/admin-paypal-
+#: settings.php:116
+msgid "Choose the gateway(s) you'd like to use and their order:"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:162
+msgid "Authorize.Net Tab Label:"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:178
+msgid "Authorize.Net Silent Post"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:181
+msgid "Authorize.Net Silent Post URL on Front-End"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:185
+msgid " Go to Authorize.net"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:189
+msgid ""
+"Total Donations uses Silent Post URL to record ongoing recurring donations. "
+"Copy the URL above and save it to silent post on Authorize.Net."
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:199
+msgid "Authorize.Net Info"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:203 ../admin-files/admin-form-options.php:
+#: 1169 ../admin-files/admin-form-options.php:1238
+msgid "API Key:"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:207
+msgid "The API Key"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:210
+msgid "Transaction Key:"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:214
+msgid "Transaction Key"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:224 ../admin-files/admin-authorize.php:233 .
+#: ./admin-files/admin-paypal-settings.php:355 ../admin-files/admin-paypal-
+#: settings.php:365
+msgid "Type:"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:226
+msgid "Sandbox Authorize.Net"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:229
+msgid "Authorize.Net"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:235
+msgid "Sand Box Authorize.NET"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:238
+msgid "Authorize.NET"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:256
+msgid "Security Issue"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:261 ../admin-files/admin-stripe.php:297 ..
+#: /admin-files/admin-paypal-settings.php:736
+msgid "Force to verify SSL by using ca.pem:"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:264 ../admin-files/admin-authorize.php:266
+msgid ""
+"If checked Total Donations will check if the SSL certificate belongs to "
+"Authorize.net before processing the donation. This is to prevent against "
+"fraudulent sites pretending to be Authorize.net."
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:271 ../admin-files/admin-stripe.php:306 ..
+#: /admin-files/admin-paypal-settings.php:744
+msgid "Force to verify Credit Card pattern and length:"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:274 ../admin-files/admin-authorize.php:276
+msgid " Force Total Donations to check credit card before it send to Authorize.Net"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:281
+msgid ""
+"Address Verification System (AVS) provide additional levels of confirmation "
+"that the person using the card is the legitimate owner of the card, this is "
+"useful to identify and avoid fraud."
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:282
+msgid ""
+" To setup this feature go to your Authorize.net Account, on Tools > Fraud "
+"Detection Suite."
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:283 ../admin-files/admin-paypal-settings.
+#: php:760 ../admin-files/admin-paypal-settings.php:765
+msgid " You have to make the address and postal code fields mandatory on the form."
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:303 ../admin-files/admin-stripe.php:339 ..
+#: /admin-files/admin-paypal-settings.php:806
+msgid "Force Total Donations to verifiy using captcha:"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:309 ../admin-files/admin-authorize.php:315 .
+#: ./admin-files/admin-stripe.php:345
+msgid ""
+"Re-Captcha is used to prevent your form being attack by spam bot. Register "
+"here: "
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:322 ../admin-files/admin-stripe.php:358 ..
+#: /admin-files/admin-paypal-settings.php:825
+msgid "Captcha Site Key"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:328 ../admin-files/admin-stripe.php:364 ..
+#: /admin-files/admin-paypal-settings.php:831
+msgid "Captcha Secret Key"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:337 ../admin-files/admin-stripe.php:374 ..
+#: /admin-files/admin-paypal-settings.php:651 ../admin-files/admin-paypal-
+#: settings.php:697 ../admin-files/admin-paypal-settings.php:839 ../admin-
+#: files/admin-form-options.php:1115 ../admin-files/admin-form-options.php:1155 ..
+#: /admin-files/admin-form-options.php:1171 ../admin-files/admin-form-options.php:
+#: 1175
+msgid " Save"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:352
+msgid "Authorize.NET Credit Card Tab"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:360 ../admin-files/admin-paypal-settings.
+#: php:890
+msgid "First and Last Name/Placeholder"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:390 ../admin-files/admin-stripe.php:403 ..
+#: /admin-files/admin-paypal-settings.php:902
+msgid "Card Number/Placeholder"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:397 ../admin-files/admin-stripe.php:410 ..
+#: /admin-files/admin-paypal-settings.php:909
+msgid "CVC/Placeholder"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:405 ../admin-files/admin-stripe.php:419 ..
+#: /admin-files/admin-paypal-settings.php:918
+msgid "Text displayed while redirecting/processing."
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:469 ../admin-files/admin-authorize.php:491 .
+#: ./admin-files/admin-stripe.php:497 ../admin-files/admin-offline-settings.php:
+#: 326 ../admin-files/admin-offline-settings.php:354 ../admin-files/admin-paypal-
+#: settings.php:993 ../admin-files/admin-paypal-settings.php:1067
+msgid "Button"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:476 ../admin-files/admin-stripe.php:488 ..
+#: /admin-files/admin-offline-settings.php:339 ../admin-files/admin-paypal-
+#: settings.php:1052
+msgid "Upload Your Own Button"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:478 ../admin-files/admin-stripe.php:488 ..
+#: /admin-files/admin-offline-settings.php:341 ../admin-files/admin-paypal-
+#: settings.php:1054
+msgid "Upload:"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:484 ../admin-files/admin-stripe.php:492 ..
+#: /admin-files/admin-offline-settings.php:347 ../admin-files/admin-paypal-
+#: settings.php:1060
+msgid " upload"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:489 ../admin-files/admin-stripe.php:497 ..
+#: /admin-files/admin-offline-settings.php:352 ../admin-files/admin-paypal-
+#: settings.php:1065
+msgid "Choose a CSS Button"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:494 ../admin-files/admin-authorize.php:496 .
+#: ./admin-files/admin-stripe.php:500 ../admin-files/admin-stripe.php:502 ..
+#: /admin-files/admin-offline-settings.php:357 ../admin-files/admin-offline-
+#: settings.php:359 ../admin-files/admin-paypal-settings.php:1070 ../admin-
+#: files/admin-paypal-settings.php:1072
+msgid "Your Default Form Button"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:494 ../admin-files/admin-authorize.php:496 .
+#: ./admin-files/admin-stripe.php:500 ../admin-files/admin-stripe.php:502 ..
+#: /admin-files/admin-offline-settings.php:357 ../admin-files/admin-offline-
+#: settings.php:359 ../admin-files/admin-paypal-settings.php:1070 ../admin-
+#: files/admin-paypal-settings.php:1072
+msgid "Grey Button"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:500 ../admin-files/admin-stripe.php:486 ..
+#: /admin-files/admin-stripe.php:506 ../admin-files/admin-offline-settings.php:
+#: 363 ../admin-files/admin-paypal-settings.php:1076
+msgid "Button Text"
+msgstr ""
+
+#: ../admin-files/admin-authorize.php:500 ../admin-files/admin-stripe.php:506 ..
+#: /admin-files/admin-offline-settings.php:363 ../admin-files/admin-paypal-
+#: settings.php:1076
+msgid "Add CSS class (theme button only)"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:11 ../admin-files/admin-stripe.php:12 ../admin-
+#: files/admin-stripe.php:75
+msgid "Stripe Settings"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:101
+msgid "Stripe Donation Form"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:163
+msgid "Stripe Tab Label:"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:166 ../admin-files/admin-offline-settings.php:
+#: 166 ../admin-files/admin-offline-settings.php:204 ../admin-files/admin-offline-
+#: donations.php:603
+msgid " save "
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:179
+msgid "Stripe's Webhook"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:184
+msgid "Webhook's URL (Front End)"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:188
+msgid "Webhook's URL (Back End)"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:192
+msgid " Go to Stripe"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:198
+msgid ""
+"Copy one of the URLs above and add it into the webhook area inside the admin "
+"panel on Stripe's website. Please read Stripe's documentation for more "
+"detailed information."
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:212
+msgid "Stripe Info"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:219
+msgid "Test Secret Key"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:222
+msgid "Test Publishable Key"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:228
+msgid "Live Secret Key"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:231
+msgid "Live Publishable Key"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:246
+msgid "Test Stripe"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:252 ../admin-files/admin-stripe.php:269
+msgid "Live Stripe"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:263
+msgid "Testing Stripe"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:293
+msgid " Stripe Security Options"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:300 ../admin-files/admin-stripe.php:302
+msgid ""
+"If checked Total Donations will check if the SSL certificate belongs to "
+"Stripe before processing the donation. This is to prevent against fraudulent "
+"sites pretending to be Stripe. "
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:309 ../admin-files/admin-stripe.php:311
+msgid ""
+" If checked Total Donations will check the credit card pattern and length "
+"before sending it to Stripe"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:314
+msgid "Use Stripe.JS :"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:318 ../admin-files/admin-stripe.php:321
+msgid ""
+"Make Total Donations use the JavaScript provided by Stripe for creating "
+"token. This is recommend for easier PCI Compliance"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:325
+msgid "Use Address Verification Service (AVS):"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:329
+msgid ""
+"Address Verification System (AVS) provides additional levels of confirmation "
+"that the person using the card is the legitimate owner of the card. This is "
+"useful to identify and avoid fraud. "
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:330
+msgid " You have to make address and postal code fields mandatory on the form"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:333
+msgid ""
+"Address Verification System (AVS) provides additional levels of confirmation "
+"that the person using the card is the legitimate owner of the card. This is "
+"useful to identify and avoid fraud.   "
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:334
+msgid " You have to make address and postal code fields mandatory on the form."
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:351
+msgid ""
+"Re-Captcha is used to prevent your form being attack by spam bot. Register "
+"here:"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:389
+msgid "Stripe Credit Card Tab"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:395
+msgid "Name/Placeholder"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:481
+msgid "Stripe Button"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:486
+msgid "Choose the default Stripe Button"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:524
+msgid "List of Stripe Plans"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:534 ../admin-files/admin-stripe.php:545 ..
+#: /admin-files/admin-offline-donations.php:629
+msgid "Detail"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:535 ../admin-files/admin-stripe.php:546
+msgid "Created"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:536 ../admin-files/admin-stripe.php:547
+msgid "id"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:537 ../admin-files/admin-stripe.php:548
+msgid "Name"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:538 ../admin-files/admin-stripe.php:549 ..
+#: /admin-files/admin-form-options.php:946
+msgid "Interval"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:539 ../admin-files/admin-stripe.php:550 ..
+#: /admin-files/admin-reports.php:121 ../admin-files/admin-reports.php:146 ..
+#: /admin-files/admin-offline-donations.php:634 ../admin-files/admin-offline-
+#: donations.php:656
+msgid "Amount"
+msgstr ""
+
+#: ../admin-files/admin-stripe.php:558
+msgid " Synchronize Plans with Stripe "
+msgstr ""
+
+#: ../admin-files/admin-reports.php:12 ../admin-files/admin-reports.php:13 ..
+#: /admin-files/admin-reports.php:96
+msgid "Online Donations"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:105
+msgid "Reports"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:117 ../admin-files/admin-offline-donations.
+#: php:630
+msgid "Date"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:118 ../admin-files/admin-reports.php:143 ..
+#: /admin-files/admin-offline-donations.php:631 ../admin-files/admin-offline-
+#: donations.php:653
+msgid "FirstName"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:119 ../admin-files/admin-reports.php:144 ..
+#: /admin-files/admin-offline-donations.php:632 ../admin-files/admin-offline-
+#: donations.php:654
+msgid "LastName"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:120 ../admin-files/admin-reports.php:145 ..
+#: /admin-files/admin-campaigns.php:149 ../admin-files/admin-campaigns.php:237 ..
+#: /admin-files/admin-offline-donations.php:633 ../admin-files/admin-offline-
+#: donations.php:655 ../admin-files/admin_campaign_creator.php:101
+msgid "Campaign"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:122 ../admin-files/admin-reports.php:147 ..
+#: /admin-files/admin-offline-donations.php:266 ../admin-files/admin-offline-
+#: donations.php:635 ../admin-files/admin-offline-donations.php:657
+msgid "Country"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:123 ../admin-files/admin-reports.php:148
+msgid "Transaction"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:159
+msgid "REMOVE "
+msgstr ""
+
+#: ../admin-files/admin-reports.php:162 ../admin-files/admin-offline-donations.
+#: php:671
+msgid " Unselect All "
+msgstr ""
+
+#: ../admin-files/admin-reports.php:191
+msgid " This Report "
+msgstr ""
+
+#: ../admin-files/admin-reports.php:196 ../admin-files/admin-offline-donations.
+#: php:704
+msgid " All Donations"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:209 ../admin-files/admin-offline-donations.
+#: php:717
+msgid " Grand Total:"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:247
+msgid " All Online Donations:"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:283 ../admin-files/admin-campaigns.php:299 ..
+#: /admin-files/admin_campaign_creator.php:223
+msgid "Confirm Delete"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:295
+msgid "Are you sure you want to delete? This cannot be undone"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:301 ../admin-files/admin-reports.php:327 ..
+#: /admin-files/admin-campaigns.php:312 ../admin-files/admin-campaigns.php:580 ..
+#: /admin-files/admin-campaigns.php:824 ../admin-files/admin-campaigns.php:876 ..
+#: /admin-files/admin-custom-theme.php:1344 ../admin-files/admin-offline-
+#: donations.php:796 ../admin-files/admin-offline-donations.php:833 ../admin-
+#: files/admin_campaign_creator.php:235 ../admin-files/admin-form-options.php:595 
+#: ../admin-files/admin-form-options.php:1335 ../admin-files/admin-form-options.
+#: php:1387
+msgid "Cancel"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:302 ../admin-files/admin-campaigns.php:313 ..
+#: /admin-files/admin-offline-donations.php:628 ../admin-files/admin-offline-
+#: donations.php:834 ../admin-files/admin_campaign_creator.php:236
+msgid "Delete"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:309 ../admin-files/admin-offline-donations.
+#: php:803
+msgid "You will delete these records:"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:310 ../admin-files/admin-offline-donations.
+#: php:804
+msgid "Do you want to proceed?"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:311
+msgid ""
+"A donation you wish to delete is reoccurring. Deleting this record will "
+"<strong>NOT</strong> stop those donations. Reoccurring donations must be "
+"stopped by PayPal or Stripe"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:321 ../admin-files/admin-offline-donations.
+#: php:790
+msgid "Edit Record Form"
+msgstr ""
+
+#: ../admin-files/admin-reports.php:328 ../admin-files/admin-offline-donations.
+#: php:797
+msgid " Save changes"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:13 ../admin-files/admin-offline-
+#: settings.php:14
+msgid "Offline Payment Settings"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:90 ../admin-files/admin-offline-
+#: donations.php:133
+msgid "Offline donations"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:97
+msgid "Offline donation form"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:161
+msgid "Offline Tab Label"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:172
+msgid "Info on Offline Payment Panel:"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:204
+msgid ""
+" This is the text that appears on the frontend inside the offline tab. Use "
+"this to tell your donors how to send you a donation offline."
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:214
+msgid "Instructions Emailed to Offline Donor before Payment is approved:"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:220 ../admin-files/admin-offline-
+#: settings.php:225
+msgid " Send an email to Offline donator?"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:221 ../admin-files/admin-offline-
+#: settings.php:226
+msgid ""
+"Check this if you want your donors to receive an email with instructions on "
+"how to donate offline."
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:230 ../admin-files/admin-settings.
+#: php:252
+msgid " Email Subject:"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:232
+msgid " Directions for Offline Donations. Email Body:"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:236
+msgid " Signature:"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:240
+msgid "  Use the following shortcodes in the email body:"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:242 ../admin-files/admin-settings.
+#: php:293 ../admin-files/admin-settings.php:373
+msgid " Donor's First Name"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:242 ../admin-files/admin-settings.
+#: php:293 ../admin-files/admin-settings.php:373
+msgid " Donor's Last Name"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:242 ../admin-files/admin-settings.
+#: php:293
+msgid " Donation Amount"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:242
+msgid " Donation date"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:242
+msgid "  Line Break"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:268
+msgid "Offline Donation Text Waiting/Thank you"
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:272
+msgid "Text displayed while redirecting/completed."
+msgstr ""
+
+#: ../admin-files/admin-offline-settings.php:333
+msgid "Hide Button on Form"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:12 ../admin-files/admin-campaigns.php:13
+msgid "Campaigns"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:153
+msgid "Add a Campaign"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:154
+msgid "Add New Campaigns"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:159
+msgid "Campaign Name"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:162
+msgid "Enter the name of the Campaign (e.g. Bulid a School)"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:164
+msgid "Donation Target"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:167
+msgid "No currency symbol. Leave blank if you don't want the progress bar."
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:176
+msgid "List of Available Campaigns"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:189
+msgid "You do not have any campaigns yet"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:241
+msgid "Target"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:265 ../admin-files/admin-campaigns.php:732 .
+#: ./admin-files/admin-campaigns.php:739 ../admin-files/admin-campaigns.php:745 ..
+#: /admin-files/admin-campaigns.php:751 ../admin-files/admin-campaigns.php:757 ..
+#: /admin-files/admin-form-options.php:761 ../admin-files/admin-form-options.php:
+#: 768 ../admin-files/admin-form-options.php:774 ../admin-files/admin-form-
+#: options.php:780 ../admin-files/admin-form-options.php:786 ../admin-files/admin-
+#: form-options.php:975 ../admin-files/admin-form-options.php:978
+msgid " Show"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:266 ../admin-files/admin-form-options.php:
+#: 975 ../admin-files/admin-form-options.php:978
+msgid " Deactivate"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:285
+msgid " update list of campaigns"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:306
+msgid ""
+"Deleting this campaign will also delete any changes you've made on its "
+"unique form. The donation data will be not deleted."
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:337
+msgid " Go back to Main Campaign Page"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:349
+msgid "Suggested Levels"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:350
+msgid "Form Settings"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:367
+msgid "Suggested Giving Level Options"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:373 ../admin-files/admin-form-options.php:186
+msgid "Hide Custom Amount on Form:"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:382 ../admin-files/admin-form-options.php:195
+msgid "Check this if you want your donors not to be able to choose a custom amount"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:396 ../admin-files/admin-form-options.php:211
+msgid "Custom Amount Text:"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:402 ../admin-files/admin-form-options.php:217
+msgid "Choose the style of the giving level amounts:"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:421 ../admin-files/admin-form-options.php:276
+msgid "Choose the length of the giving level amount boxes:"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:454 ../admin-files/admin-form-options.php:302
+msgid "Giving Levels"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:454 ../admin-files/admin-form-options.php:302
+msgid " Drag and drop the amounts into the order you want"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:457 ../admin-files/admin-form-options.php:305
+msgid "Add a suggested giving level"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:461 ../admin-files/admin-form-options.php:309
+msgid "Add a giving level description (optional)"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:501 ../admin-files/admin-form-options.php:362
+msgid "No amounts have been added. Add some amounts above."
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:514
+msgid "Error Message Options"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:537 ../admin-files/admin-form-options.php:552
+msgid "Error Message Label for the General Fields:"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:545 ../admin-files/admin-form-options.php:560
+msgid "Error Message Label for the Email Field:"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:553 ../admin-files/admin-form-options.php:568
+msgid "Error Message Label for the Amount:"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:573 ../admin-files/admin-form-options.php:588
+msgid "Form Fields"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:573 ../admin-files/admin-form-options.php:588
+msgid "Drag and drop fields and groups or add new ones"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:573 ../admin-files/admin-form-options.php:588
+msgid " save form"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:573 ../admin-files/admin-form-options.php:588
+msgid "Add Group"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:578 ../admin-files/admin-form-options.php:593
+msgid "insert new header for group"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:579 ../admin-files/admin-campaigns.php:613 .
+#: ./admin-files/admin-campaigns.php:616 ../admin-files/admin-campaigns.php:618 ..
+#: /admin-files/admin-form-options.php:594 ../admin-files/admin-form-options.php:
+#: 639 ../admin-files/admin-form-options.php:641 ../admin-files/admin-form-
+#: options.php:643
+msgid "Toggle"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:580 ../admin-files/admin-form-options.php:595
+msgid " Save Group"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:606 ../admin-files/admin-form-options.php:647
+msgid "Add Field"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:624 ../admin-files/admin-form-options.php:649
+msgid "Delete Group"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:698 ../admin-files/admin-form-options.php:721
+msgid "text"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:699 ../admin-files/admin-form-options.php:722
+msgid "checkbox"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:700 ../admin-files/admin-form-options.php:723
+msgid "textarea"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:701 ../admin-files/admin-form-options.php:724
+msgid "select"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:702 ../admin-files/admin-form-options.php:725
+msgid "radio"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:703 ../admin-files/admin-form-options.php:726
+msgid "multiple checkbox"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:711 ../admin-files/admin-form-options.php:734
+msgid "Enter Values"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:733 ../admin-files/admin-campaigns.php:740 .
+#: ./admin-files/admin-campaigns.php:746 ../admin-files/admin-campaigns.php:752 ..
+#: /admin-files/admin-campaigns.php:758 ../admin-files/admin-form-options.php:762 
+#: ../admin-files/admin-form-options.php:769 ../admin-files/admin-form-options.
+#: php:775 ../admin-files/admin-form-options.php:781 ../admin-files/admin-form-
+#: options.php:787
+msgid " Hide"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:734 ../admin-files/admin-campaigns.php:741 .
+#: ./admin-files/admin-campaigns.php:747 ../admin-files/admin-campaigns.php:753 ..
+#: /admin-files/admin-campaigns.php:759 ../admin-files/admin-form-options.php:763 
+#: ../admin-files/admin-form-options.php:770 ../admin-files/admin-form-options.
+#: php:776 ../admin-files/admin-form-options.php:782 ../admin-files/admin-form-
+#: options.php:788
+msgid " Mandatory"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:781 ../admin-files/admin-form-options.php:808
+msgid "  save form"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:781 ../admin-files/admin-form-options.php:808
+msgid "  Restore to Default"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:808 ../admin-files/admin-form-options.php:
+#: 1319
+msgid " Confirm Restore"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:818 ../admin-files/admin-form-options.php:
+#: 1329
+msgid "Are you sure you want to restore to default fields? This cannot be undone"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:825 ../admin-files/admin-custom-theme.php:
+#: 1345 ../admin-files/admin-form-options.php:1336
+msgid "Restore to default"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:839 ../admin-files/admin-form-options.php:
+#: 1350
+msgid " Edit Values"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:851 ../admin-files/admin-form-options.php:
+#: 1362
+msgid "Value"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:852 ../admin-files/admin-form-options.php:
+#: 1363
+msgid "The value stored in your database"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:856 ../admin-files/admin-form-options.php:
+#: 832 ../admin-files/admin-form-options.php:943 ../admin-files/admin-form-
+#: options.php:1367
+msgid "Label"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:858 ../admin-files/admin-form-options.php:
+#: 1369
+msgid "What the user sees on the form"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:858 ../admin-files/admin-form-options.php:
+#: 315 ../admin-files/admin-form-options.php:1369
+msgid " Add"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:862
+msgid ""
+"You can drag the list items to reorganize. Here are the available list "
+"values:"
+msgstr ""
+
+#: ../admin-files/admin-campaigns.php:876 ../admin-files/admin-form-options.php:
+#: 1387
+msgid "great, I'm done"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:11 ../admin-files/admin-settings.php:12
+msgid "General Settings"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:91
+msgid "Settings"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:98
+msgid "Notifications and Email Settings"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:103
+msgid "emails to notify upon new donations"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:106
+msgid "Use commas to separate emails"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:113
+msgid "Email Address: "
+msgstr ""
+
+#: ../admin-files/admin-settings.php:117
+msgid ""
+"The is the address all your emails will appear from when a donor receives an "
+"email"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:123
+msgid "Email Name : "
+msgstr ""
+
+#: ../admin-files/admin-settings.php:126
+msgid "This is the name that all of your emails will appear from"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:132
+msgid "The Thank You Page From Short Code:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:141
+msgid "Set The Thank You Page Here:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:161 ../admin-files/admin-settings.php:163
+msgid "Default (Go to Donation Form)"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:166
+msgid ""
+" If you set the thank you page to any page other than the default, you must "
+"add this shortcode to this page:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:166
+msgid "[totaldonations_thank_you_page]"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:187
+msgid "Thank You Page"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:187
+msgid "The page that appears after you donate"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:214
+msgid " Preview"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:239
+msgid "Thank you Email"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:243
+msgid "Disable thank you emails:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:244 ../admin-files/admin-settings.php:247
+msgid ""
+" Check this if you'd like no thank you email to be sent to your donors after "
+"they donate"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:246 ../admin-files/admin-settings.php:321 ..
+#: /admin-files/admin-settings.php:323
+msgid " Disable thank you emails:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:254
+msgid " Thank you Email Text Body: "
+msgstr ""
+
+#: ../admin-files/admin-settings.php:263 ../admin-files/admin-settings.php:343
+msgid "Repeating Donations:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:268 ../admin-files/admin-settings.php:348
+msgid "Anonymous Donations:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:287 ../admin-files/admin-settings.php:367 ..
+#: /admin-files/admin-paypal-settings.php:578
+msgid "Signature:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:291 ../admin-files/admin-settings.php:371
+msgid " Use the following shortcodes in the email body:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:293
+msgid " Donation date "
+msgstr ""
+
+#: ../admin-files/admin-settings.php:293
+msgid " Line Break "
+msgstr ""
+
+#: ../admin-files/admin-settings.php:306
+msgid "Email address for Test:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:309 ../admin-files/admin-settings.php:391
+msgid " Preview Email"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:309
+msgid " Use this to preivew what your donors will see when they donate."
+msgstr ""
+
+#: ../admin-files/admin-settings.php:317
+msgid "Honoree Email"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:321 ../admin-files/admin-settings.php:323
+msgid ""
+" Check this if you'd like no thank you email to be sent to the Honoree after "
+"someone has donated in their honor"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:326
+msgid "Email Subject:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:328
+msgid "Thank you Email Text Body: "
+msgstr ""
+
+#: ../admin-files/admin-settings.php:339
+msgid "Custom Message Intro:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:373
+msgid " Honoree's Name"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:373
+msgid "Donation Amount"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:373
+msgid " Line Break"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:377
+msgid "save"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:388
+msgid "Email address for Honoree Email Test:"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:391
+msgid " Use this to preivew what the honoree will see when they receive a message."
+msgstr ""
+
+#: ../admin-files/admin-settings.php:443
+msgid " Default Time Zone Section"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:447
+msgid "Set Date Language"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:471
+msgid "Set Date Format"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:496
+msgid "Set Time Zone"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:499
+msgid "Server Time"
+msgstr ""
+
+#: ../admin-files/admin-settings.php:510
+msgid " Set your timezone here"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:11 ../admin-files/admin-custom-theme.php:
+#: 12
+msgid "Customize Theme"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:345 ../admin-
+#: files/admin_campaign_creator.php:377
+msgid "Circle Text Info Alignment :"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:390 ../admin-
+#: files/admin_campaign_creator.php:422
+msgid "Text Info :"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:451 ../admin-
+#: files/admin_campaign_creator.php:475
+msgid "Size:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:471 ../admin-
+#: files/admin_campaign_creator.php:495
+msgid "Thickness:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:496 ../admin-
+#: files/admin_campaign_creator.php:520
+msgid "Start Angle:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:518 ../admin-
+#: files/admin_campaign_creator.php:542
+msgid "Reverse:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:521 ../admin-files/admin-custom-theme.
+#: php:523 ../admin-files/admin_campaign_creator.php:545 ../admin-
+#: files/admin_campaign_creator.php:547
+msgid "This reverses the direction of the circle"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:540
+msgid "Inner Font Size:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:596 ../admin-
+#: files/admin_campaign_creator.php:588
+msgid "Inner Value:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:670
+msgid "Theme Customization"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:679
+msgid "Customize the Form"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:679
+msgid "Add your color/width or leave blank"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:689
+msgid "Panel Background:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:694
+msgid "This is the background color of the panel in the form. Default is grey."
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:703
+msgid "Panel Border"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:710 ../admin-files/admin-custom-theme.
+#: php:769
+msgid "Width"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:733
+msgid " This is the panel's border color and width in the form."
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:748
+msgid "Giving Level Background:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:753
+msgid "  This is the background color of the suggested giving level."
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:763
+msgid "Giving Level Border"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:791
+msgid "  This is the panel's border color and width for the suggested giving level. "
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:802
+msgid "Active Giving Level Background:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:807
+msgid ""
+"  This is the background color of the suggested giving level when it has "
+"been selected."
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:807
+msgid " Note: This only works with the button option. "
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:825
+msgid "Inactive Tab Background:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:830
+msgid ""
+"This is the background color of the your inactive tab when using more than "
+"one gateway"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:843
+msgid " Customize Progress Bar"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:850
+msgid "Progress Bar info:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:854
+msgid ""
+" This is the information that is above the progress bar. You can use the "
+"following shortcodes:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:867
+msgid "  Well Border Radius:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:871
+msgid "top-left"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:903
+msgid "top-right"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:950
+msgid "bottom-left"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:983
+msgid "bottom-right"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1000
+msgid "This controls the round corners of the bar."
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1018
+msgid " This is the color of the progress bar. "
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1027
+msgid " This is for the background inlay of the progress bar."
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1051
+msgid "h-shadow"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1082
+msgid "v-shadow"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1128
+msgid "Blur"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1159
+msgid "Spread"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1204
+msgid "This controls the inlay shadow."
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1225
+msgid "Bar Styling and Effects:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1239
+msgid "Stripes"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1242
+msgid "Pulse"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1245
+msgid "Animated Stripes"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1245
+msgid "(Stripes must be on)"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1248
+msgid "Percentage"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1251
+msgid ""
+"This controls the progress bar's effects and styling. Settings are "
+"automatically saved."
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1288
+msgid "Preview:"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1313
+msgid "Restore to Default"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1326
+msgid "Confirm Restore"
+msgstr ""
+
+#: ../admin-files/admin-custom-theme.php:1338
+msgid ""
+"Are you sure you want to restore all of the styling to their default styles? "
+"This can not be undone"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:12 ../admin-files/admin-offline-
+#: donations.php:13
+msgid "Offline Donations"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:147
+msgid "Add Offline Donation"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:154
+msgid "Choose Campaign : "
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:179
+msgid "Date: "
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:186
+msgid "Time (hh:mm:ss): "
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:235
+msgid "Transaction Type: "
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:240
+msgid "Organization: "
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:278
+msgid "Province"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:290
+msgid "State"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:304
+msgid "Honoree's country"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:316
+msgid "Honoree's Province"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:328
+msgid "Honoree's State"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:617
+msgid "Reports "
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:636 ../admin-files/admin-offline-
+#: donations.php:658 ../admin-files/admin-main.php:209
+msgid "Status"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:649
+msgid "to"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:668
+msgid " remove "
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:699
+msgid " This Report"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:756
+msgid " All Offline Donations:"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:765
+msgid "Export All data in CSV Excel format"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:805
+msgid ""
+"A donation you wish to delete is reoccurring. Deleting this record will NOT "
+"stop those donations. Reoccurring donations must be stopped by PayPal"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:815
+msgid " Confirm Delete"
+msgstr ""
+
+#: ../admin-files/admin-offline-donations.php:827
+msgid " Are you sure you want to delete? This cannot be undone"
+msgstr ""
+
+#: ../admin-files/admin-main.php:96
+msgid "Total Donations Dashboard"
+msgstr ""
+
+#: ../admin-files/admin-main.php:112
+msgid "Latest Online Donations"
+msgstr ""
+
+#: ../admin-files/admin-main.php:115
+msgid "Timeline"
+msgstr ""
+
+#: ../admin-files/admin-main.php:125
+msgid " Read More"
+msgstr ""
+
+#: ../admin-files/admin-main.php:149
+msgid "Total Donations:"
+msgstr ""
+
+#: ../admin-files/admin-main.php:157 ../admin-files/admin-main.php:184
+msgid " view reports"
+msgstr ""
+
+#: ../admin-files/admin-main.php:176
+msgid "This Month:"
+msgstr ""
+
+#: ../admin-files/admin-main.php:200
+msgid "Campaign Progress"
+msgstr ""
+
+#: ../admin-files/admin-main.php:208
+msgid "Project"
+msgstr ""
+
+#: ../admin-files/admin-main.php:210
+msgid "Progress"
+msgstr ""
+
+#: ../admin-files/admin-main.php:257 ../admin-files/admin-main.php:320
+msgid "Change TimeZone"
+msgstr ""
+
+#: ../admin-files/admin-main.php:282
+msgid "Donation Graph"
+msgstr ""
+
+#: ../admin-files/admin-main.php:289
+msgid "Time Period"
+msgstr ""
+
+#: ../admin-files/admin-main.php:290 ../admin-files/admin-main.php:292
+msgid "One Month"
+msgstr ""
+
+#: ../admin-files/admin-main.php:291 ../admin-files/admin-main.php:292
+msgid "Six Months"
+msgstr ""
+
+#: ../admin-files/admin-main.php:292
+msgid "Time Period "
+msgstr ""
+
+#: ../admin-files/admin-main.php:292
+msgid "One Year"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:11 ../admin-files/admin-paypal-
+#: settings.php:12 ../admin-files/admin-paypal-settings.php:97
+msgid "Paypal Settings"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:109
+msgid "PayPal Account Settings"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:175
+msgid "Paypal Method"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:196
+msgid "Paypal Standard / Paypal Data Tansfer (PDT)"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:197
+msgid "Paypal Pro and Paypal Standard / Paypal Data Tansfer (PDT)"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:198
+msgid "Paypal Pro"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:224
+msgid "Tab Name"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:242
+msgid "PayPal Standard/PDT Settings"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:245
+msgid "Choose which method you want to use:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:263
+msgid "Business Email"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:266
+msgid "The PayPal address you use for accepting donations. "
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:277
+msgid "Use the IPN listener on the frontend ?"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:279 ../admin-files/admin-paypal-
+#: settings.php:281
+msgid "Warning: "
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:279 ../admin-files/admin-paypal-
+#: settings.php:281
+msgid ""
+" Check this only if need to use the IPN listener on the frontend. See the "
+"documentation for details "
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:287
+msgid "IPN Listener:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:298
+msgid "IPN ChatBack:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:300 ../admin-files/admin-paypal-
+#: settings.php:308
+msgid ""
+" Check this if you'd like to disable chatback with PayPal. See documentation "
+"for details"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:303 ../admin-files/admin-paypal-
+#: settings.php:311
+msgid "Warning: Could not resolved PayPal hostname. Chat Back has failed."
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:305
+msgid "Success:  Hostname was resolved successfully! "
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:313
+msgid "Success:   Hostname was resolved successfully! "
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:322
+msgid "Paypal Data Transfer Token ID"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:332
+msgid "Force Certificate Authority verify on Paypal Data Transfer (PDT)"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:343
+msgid "Send FEC Data to PayPal:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:347 ../admin-files/admin-paypal-
+#: settings.php:349
+msgid "This sends data required by political donations in the USA to PayPal STD"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:360 ../admin-files/admin-paypal-
+#: settings.php:370
+msgid "Sandbox PayPal"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:361 ../admin-files/admin-paypal-
+#: settings.php:371
+msgid "PayPal"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:430
+msgid "PayPal Payment Type"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:447
+msgid "Item name:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:451
+msgid ""
+"This is the name of the item that shows up in PayPal, You can change it to "
+"something else: donation, backing, support. etc"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:475
+msgid "Payment Type"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:479
+msgid "Donation"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:485
+msgid "Payment"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:504
+msgid "Paypal Pro API Keys and Signature (Live and Testing)"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:512
+msgid "PayPal Type:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:546
+msgid "Curl Version / Number :"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:562
+msgid "User Name:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:570 ../admin-files/admin-paypal-
+#: settings.php:688
+msgid "Password:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:587
+msgid "Recurring Method:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:664
+msgid "Vendor:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:672
+msgid "User:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:680
+msgid "Partner:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:732
+msgid "PayPal Security Options"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:739 ../admin-files/admin-paypal-
+#: settings.php:741
+msgid ""
+" If checked Total Donations will check if the SSL certificate belongs to "
+"PayPal before processing the donation. This is to prevent against fraudulent "
+"sites pretending to be PayPal. "
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:747 ../admin-files/admin-paypal-
+#: settings.php:749
+msgid ""
+" If checked Total Donations will check the credit card pattern and length "
+"before sending it to PayPal"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:753
+msgid "Force Total Donations to use Address Verification Service:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:757 ../admin-files/admin-paypal-
+#: settings.php:763
+msgid ""
+"Address Verification System (AVS) provides additional levels of confirmation "
+"that the person using the card is the legitimate owner of the card. This is "
+"useful to identify and avoid fraud."
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:759
+msgid ""
+" For PayPal Flow, the Fraud Management Filter is set from inside the PayPal "
+"Flow Manager and not inside Total Donations."
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:764
+msgid ""
+" For PayPal Flow the Fraud Management Filter is set from inside PayPalFlow "
+"Manager not from Total Donations."
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:775
+msgid "Choice the AVS Level of Security:"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:783 ../admin-files/admin-paypal-
+#: settings.php:792
+msgid "Medium: Allow partial match of Postal Code and Address Fields "
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:786 ../admin-files/admin-paypal-
+#: settings.php:795
+msgid "High: Only allow exact match of both Address and Postal Code Fields"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:812 ../admin-files/admin-paypal-
+#: settings.php:818
+msgid ""
+"Re-Captcha is used to prevent your form from being attacked by spam bots. "
+"Register here: "
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:853
+msgid "Paypal Pro Credit Card Tab"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:881
+msgid "Paypal Pro Radio"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:998
+msgid "Use Paypal Button"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:998
+msgid "Language"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1002
+msgid "English"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1006
+msgid "Chinese (Simplified)"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1010
+msgid "Chinese (Traditional)"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1014
+msgid "Dutch"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1018
+msgid "French"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1022
+msgid "Hebrew"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1026
+msgid "Norwegian"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1030
+msgid "Polish"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1034
+msgid "Russian"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1038
+msgid "Spanish"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1042
+msgid "Swedish"
+msgstr ""
+
+#: ../admin-files/admin-paypal-settings.php:1046
+msgid "Turkish"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:12 ../admin-
+#: files/admin_campaign_creator.php:13 ../admin-files/admin_campaign_creator.php:
+#: 654
+msgid "Campaign Creator"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:77
+msgid "Add a Campaign Creator"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:78
+msgid "Add New Campaigns Creator"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:83 ../admin-
+#: files/admin_campaign_creator.php:179
+msgid "Title"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:89
+msgid "This title will not be displayed on the frontend"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:92 ../admin-
+#: files/admin_campaign_creator.php:183
+msgid "Description"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:98
+msgid "This description will not be displayed on the frontend"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:127
+msgid "List of Available Campaigns Creator"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:162
+msgid "You do not have any campaigns creator yet"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:208
+msgid " update list"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:230
+msgid "Are you sure you want to delete this campaign creator?"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:286
+msgid "Progress Bar HTML  (HTML must be on):"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:591 ../admin-
+#: files/admin_campaign_creator.php:595 ../admin-files/admin_campaign_creator.php:
+#: 599
+msgid "Animation Progress"
+msgstr ""
+
+#: ../admin-files/admin_campaign_creator.php:636
+msgid " Go back to Main Campaign Creator Page"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:12 ../admin-files/admin-form-options.php:
+#: 13
+msgid "Form Options"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:147
+msgid " Form options"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:162
+msgid "Multi Campaign Suggested Levels"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:163
+msgid "Country & Currency"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:164
+msgid "Multi Campaign Form Settings"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:165
+msgid "Recurring Settings"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:166
+msgid "Mailing List Integration"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:180
+msgid "Suggested Giving Misc Options"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:381
+msgid "Default Currency Selection"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:383
+msgid "Set currency"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:422
+msgid "Sign Location"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:425 ../admin-files/admin-form-options.
+#: php:427
+msgid "Before"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:425 ../admin-files/admin-form-options.
+#: php:427
+msgid "After"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:431
+msgid "Separators"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:437
+msgid "Show Decimal Place"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:437
+msgid "check this if you want donors to be able to add decimal places"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:450
+msgid "Default Country Section"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:452
+msgid "Set country"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:502
+msgid "Multi-Campaign Form Options"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:505
+msgid "Undesignated Category Label:"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:509
+msgid "Hide Undesignated Category on Form:"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:512 ../admin-files/admin-form-options.
+#: php:514
+msgid ""
+"Check this if you want your donors to only be able to donate towards a "
+"campaign "
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:522
+msgid "Hide Progress Bar on Form:"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:530 ../admin-files/admin-form-options.
+#: php:533 ../admin-files/admin-form-options.php:536
+msgid ""
+"If checked, no progress bar or its accompanying text will be displayed on "
+"the form. "
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:824
+msgid "Add A New Recurring Donation Plan"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:836
+msgid "Interval Count"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:861 ../admin-files/admin-form-options.
+#: php:967
+msgid "Day(s)"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:862 ../admin-files/admin-form-options.
+#: php:968
+msgid "Week(s)"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:863 ../admin-files/admin-form-options.
+#: php:969
+msgid "Month(s)"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:864 ../admin-files/admin-form-options.
+#: php:970
+msgid "Year(s)"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:870
+msgid "Payment Gateway"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:873 ../admin-files/admin-form-options.
+#: php:994 ../admin-files/admin-form-options.php:1005 ../admin-files/admin-form-
+#: options.php:1016 ../admin-files/admin-form-options.php:1027 ../admin-
+#: files/admin-form-options.php:1038 ../admin-files/admin-form-options.php:1049 ..
+#: /admin-files/admin-form-options.php:1060
+msgid "PayPal Only"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:874 ../admin-files/admin-form-options.
+#: php:995 ../admin-files/admin-form-options.php:1006 ../admin-files/admin-form-
+#: options.php:1017 ../admin-files/admin-form-options.php:1028 ../admin-
+#: files/admin-form-options.php:1039 ../admin-files/admin-form-options.php:1050 ..
+#: /admin-files/admin-form-options.php:1061
+msgid "Stripe Only"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:875 ../admin-files/admin-form-options.
+#: php:996 ../admin-files/admin-form-options.php:1007 ../admin-files/admin-form-
+#: options.php:1018 ../admin-files/admin-form-options.php:1029 ../admin-
+#: files/admin-form-options.php:1040 ../admin-files/admin-form-options.php:1051 ..
+#: /admin-files/admin-form-options.php:1062
+msgid "Authorize Only"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:876 ../admin-files/admin-form-options.
+#: php:997 ../admin-files/admin-form-options.php:1008 ../admin-files/admin-form-
+#: options.php:1019 ../admin-files/admin-form-options.php:1030 ../admin-
+#: files/admin-form-options.php:1041 ../admin-files/admin-form-options.php:1052 ..
+#: /admin-files/admin-form-options.php:1063
+msgid "PayPal or Stripe"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:877 ../admin-files/admin-form-options.
+#: php:998 ../admin-files/admin-form-options.php:1009 ../admin-files/admin-form-
+#: options.php:1020 ../admin-files/admin-form-options.php:1031 ../admin-
+#: files/admin-form-options.php:1042 ../admin-files/admin-form-options.php:1053 ..
+#: /admin-files/admin-form-options.php:1064
+msgid "PayPal or Authorize"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:878 ../admin-files/admin-form-options.
+#: php:999 ../admin-files/admin-form-options.php:1010 ../admin-files/admin-form-
+#: options.php:1021 ../admin-files/admin-form-options.php:1032 ../admin-
+#: files/admin-form-options.php:1043 ../admin-files/admin-form-options.php:1054 ..
+#: /admin-files/admin-form-options.php:1065
+msgid "Stripe or Authorize"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:879 ../admin-files/admin-form-options.
+#: php:1000 ../admin-files/admin-form-options.php:1011 ../admin-files/admin-form-
+#: options.php:1022 ../admin-files/admin-form-options.php:1033 ../admin-
+#: files/admin-form-options.php:1044 ../admin-files/admin-form-options.php:1055 ..
+#: /admin-files/admin-form-options.php:1066
+msgid "PayPal/Stripe/Authorize"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:882
+msgid " Warning: "
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:882
+msgid ""
+" Gateways must match your form's gateway(s) in order to be displayed on the "
+"form"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:898
+msgid "Current Recurring Donation Plans"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:988
+msgid "Gateways"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1093
+msgid ""
+"You don't have any recurring plans. Recurring donations won't be displayed "
+"until you add some above."
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1099
+msgid "This will add a new plan on stripe"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1100
+msgid ""
+"This will remove the old plan on stripe. Removing a plan will not cancel "
+"your existing donor's recurring donations"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1101
+msgid ""
+"This will delete the old plan and recreate a new one with new info again. "
+"This process will not stop current donor's recurring donations"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1102
+msgid "You are updating a plan on stripe"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1110
+msgid "Localization Option"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1113
+msgid "The None Option label:"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1116
+msgid ""
+"When using radio buttons, an option for none will appear. Change the "
+"language here"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1136
+msgid "Mailing List Chooser"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1139
+msgid "Choice Mailing List Vendor:"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1144 ../admin-files/admin-form-options.
+#: php:1148 ../admin-files/admin-form-options.php:1152
+msgid "Constant Contact"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1144 ../admin-files/admin-form-options.
+#: php:1148 ../admin-files/admin-form-options.php:1152
+msgid "Mail Chimp"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1163
+msgid "Constant Contact Integration"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1167
+msgid ""
+"Constant Contact Classes implements the technical interoperability standards "
+"for PHP 5.3 namespaces and class names."
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1173
+msgid "Token:"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1182
+msgid "Constant Contact Lists:"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1215 ../admin-files/admin-form-options.
+#: php:1278
+msgid " Retrieve available lists"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1217
+msgid "  Update the lists"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1222
+msgid "Email for Test:"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1225 ../admin-files/admin-form-options.
+#: php:1289
+msgid " Run Test"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1235
+msgid "Mailchimp Settings"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1239
+msgid "Save"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1245
+msgid "Mail Chimp Lists:"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1265
+msgid ""
+"You don't have any automatic sign ups set up yet. Add some by clicking the "
+"button below"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1281
+msgid " Update the lists"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1286
+msgid "Email for test:"
+msgstr ""
+
+#: ../admin-files/admin-form-options.php:1373
+msgid "You can drag the list item to reorganize. Here are the available list values:"
+msgstr ""

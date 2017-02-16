@@ -1,0 +1,95 @@
+
+/* Right to Left Support for Total Donations
+--------------------------------------------------*/
+
+.mg_giving-levels .mg_control-label, .form-horizontal .mg_control-label, .bootstrap-wrapper .form-horizontal .form-group {
+    text-align: right !important;
+}
+
+#migla_donation_form .miglaCustomAmount div.input-group.input-group-icon.icon-after > span, ul.mg_nav-tabs > li, #migla_donation_form .col-sm-3:nth-child(1), .bootstrap-wrapper .col-xs-1, .bootstrap-wrapper .col-xs-2, .bootstrap-wrapper .col-xs-3, .bootstrap-wrapper .col-xs-4, .bootstrap-wrapper .col-xs-5, .bootstrap-wrapper .col-xs-6, .bootstrap-wrapper .col-xs-7, .bootstrap-wrapper .col-xs-8, .bootstrap-wrapper .col-xs-9, .bootstrap-wrapper .col-xs-10, .bootstrap-wrapper .col-xs-11, .bootstrap-wrapper .col-xs-12 {
+    float: right !important;
+}
+
+.mg_nav-tabs > li > a {
+    margin-left: 2px;
+    margin-right:0;
+}
+
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    margin-right: -20px; 
+}
+
+.radio label, .checkbox label {
+    padding-right: 20px;
+}
+
+.migla-panel-body .mg_giving-levels .radio-inline {
+    margin: 0 !important;
+    padding: 0px 0 0 10px !important;
+}
+
+.migla-panel-body .mg_giving-levels .radio-inline {
+    margin: 0 !important;
+    padding: 0px 0 0 10px !important;
+}
+
+.bootstrap-wrapper .form-horizontal .form-group.mg_giving-levels .radio-inline label {
+    padding: 20px 40px 20px 20px;
+}
+
+span.mg_giving-level-perk, span.mg_giving-text-perk {
+    padding-right: 15px;
+    padding-left: 0;
+}
+
+input#mg_paypalpro_split_firstname, input#mg_authorize_split_firstname {
+    border-radius: 0 4px 0 0 !important;
+    border-left: none !important;
+    border-right: 1px solid #ddd !important;
+}
+
+input#mg_paypalpro_split_lastname, input#mg_authorize_split_lastname {
+    border-radius: 4px 0 0 0 !important;
+    border-right: none !important;
+    border-left: 1px solid #ddd !important;
+}
+
+#sectionpaypal .icon-after input[type="text"] {
+    padding-left: 50px !important;
+    padding-right: 10px !important;
+}
+
+#sectionpaypal .icon-after input[type="text"]#mg_paypalpro_cvc {
+    padding-left: 15px !important;
+}
+
+span.mg_giving-level-perk, span.mg_giving-text-perk {
+   padding-left: 0px;
+    padding-right: 15px;
+}
+
+.radio-inline.miglaCustomAmount .icon-after input[type="text"] {
+    padding-right: 22px !important;
+    padding-left: 5px !important;
+}
+
+#migla_donation_form .miglaCustomAmount .input-group.input-group-icon.icon-before > span {
+    float: left !important;
+}
+
+#migla_donation_form .miglaCustomAmount div.input-group.input-group-icon.icon-after > span {
+    float: right !important;
+}
+
+span.mg_giving-text-perk {
+    float: left;
+}
+
+button.miglacheckout {
+    margin-right: 0px !important;
+}
+
+.progress-bar {
+    float: right;
+}
+

@@ -1,17 +1,19 @@
 === Constant Contact Forms ===
 Contributors:      constantcontact
-Tags:
+Tags: capture, contacts, constant contact, constant contact form, constant contact newsletter, constant contact official, contact forms, email, form, forms, marketing, mobile, newsletter, opt-in, plugin, signup, subscribe, subscription, widget
 Requires at least: 4.0.0
-Tested up to:      4.6.1
-Stable tag:        1.1.0
+Tested up to:      4.7.2
+Stable tag:        1.2.1
 License:           GPLv2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-Add a contact form to your WordPress site and quickly capture information from visitors.
+The official Constant Contact plugin adds a contact form to your WordPress site to quickly capture information from visitors.
 
 == Description ==
 
 **Constant Contact Forms** makes it fast and easy to capture visitor information right from your WordPress site. Whether you’re looking to collect email addresses, contact info, event sign-ups, or visitor feedback, you can customize your forms with data fields that work best for you. Best of all, this plugin is available to all WordPress users, even if you don’t have a Constant Contact account.
+
+https://www.youtube.com/watch?v=MhxtAlpZzJw
 
 **Constant Contact Forms** allows you to:
 
@@ -30,6 +32,30 @@ BONUS: If you have a Constant Contact account, all new email addresses that you 
 4. Basic Form
 
 == Changelog ==
+
+= 1.2.1 =
+* Fixed: Re-show sections of "Publish" metabox incorrectly hidden for post types outside Constant Contact Forms.
+* Fixed: Issues with transparent background on frontend forms when input is valid.
+* Fixed: Fatal errors on deactivation if user is on PHP 5.3 or lower.
+* Fixed: PHP Warnings regarding missing parameters for maybe_log_mail_status().
+* Updated: Bumped Guzzle to 5.3.1 for PHP7.1 compatibility.
+
+= 1.2.0 =
+* Added: Reveal shortcode for newly published form in admin notice and popup for non-connected accounts.
+* Added: Classes for individual form inputs and textareas on rendered form.
+* Added: Request to opt into some anonymous data tracking for Constant Contact's information usage.
+* Added: Note about no forms being available in modal popup, if none available.
+* Added: Ability to disable emails if Constant Contact account is connected and "disable email" option checked.
+* Added: Necessary disclosure text to output on comment form and login/registration form when able to do advanced opt-in for list enrollment.
+* Fixed: Possible issues with PHP 5.2 compatibility from the widget.
+* Fixed: Prevent status message from displaying multiple times if multiple forms present on the page.
+* Fixed: Ability to remove description values from various available form inputs.
+* Updated: Changed field order in admin UI for creating Constant Contact form.
+* Updated: Better compatibility with TwentyFourteen.
+
+= 1.1.1 =
+* Fixed: Made frontend form default to an empty action attribute to take care of occasional 404 errors after submission.
+* Added: New filter on the default empty string from above, so others can provide their own redirect location if desired.
 
 = 1.1.0 =
 * Added: Widget that allows you to select a form to display.

@@ -1,0 +1,316 @@
+# Change Log
+TotalDonations 
+All notable changes to this project will be documented in this file.
+http://totaldonations.com/
+http://calmar-webmedia.com
+
+
+## [2.0.5] - 2016-06-07
+################################
+
+### Fixes
+- Empty Giving Level bug fix
+- Export Checkbox bug fix - export now works when you edit a checkbox.
+- Recurring donations with PayFlow bug fix
+- Fixed redudancy from orphan Authorize.Net
+- Fixed missing div of form between recurring and amount
+- Fixed JS header
+- Fixed PayPal Pro bug
+- Fixed bug on Date Filter.
+
+### Added
+- Right to Left support on backend and front. 
+- Mandatory works with check boxes now. ( you must check the box to proceed. )
+- Date language option for "Thank You" page.
+- Backer shortcodes.
+- Add class button to all button shortcodes.
+- Indonesian language translation.
+- Added a button to the circle progress bar shortcode.
+
+### Changed
+- Removed extra database entry box in online and offline edit mode.
+- Clicking "is this a memorial gift" now hides email option.
+
+
+## [2.0.3] - 2016-04-06
+################################
+
+### Fixes
+Stripe.JS error
+
+## [2.0.2] - 2016-3-30
+################################
+
+### Fixes
+
+- Fixed issue with missing fields with export to excel 
+- Fixed Stripe Issue
+- Added better descriptions
+- Fixed issue with Authorize.net
+- Fixed bugs on amount
+
+### Changed
+
+- Make campaign as default info on PayPal standard.
+
+
+## [2.0.1] - 2016-3-25
+################################
+
+### Fixes
+- Shortcode missing formatting
+- Missing DIV tag
+- Fix PHP error with reCaptcha
+
+
+## [2.0] - 2016-3-23 – Major Update. 
+################################
+
+### Added
+
+- PayPal Flow Support.
+- Now allows you to edit individual fields and giving levels for each campaign.
+- Multisite support.
+- Giving levels support text. (user can add perks or donation levels, e.g. gold, silver etc)
+- Giving levels can use button or radio button styles.
+- Giving levels can now span form.
+- Drag and drop sorting of campaigns and fields.
+- Can now turn off FEC support for PayPal.
+- Can now turn off ChatBack for PayPal.
+- Can now choice to use stripe.js on Stripe panel.
+- Added new security to PayPal, Stripe and Authorize.net.
+- Added circle progress bar widget and its shortcodes (with options to customize shortcode style from within “customize theme” page).
+- Added options on widget to style each progress bar individually.
+- Added ability to add users permissions for users other than Admin.
+- Added option to add google’s reCAPTCHA on Authorize, Stripe and PayPal Gateways.
+- Added Address Verification System support for PayPal and Stripe (includes choice of security level for PayPal).
+- Added option to remove offline button.
+- Added option to load JavaScript on header or footer.
+
+### Changed
+
+- Improved handling of reoccurring donations (more reliable).
+- Improved Offline (offline form matches online form).
+- Improved Offline (now includes pledged donations).
+- Improved Offline Export.
+- Improved Datatable handling for online donations and reoccurring (click a button to load them).
+- Improved automatic email message handling (more reliable).
+- Offline button no longer comes back after a pledge is made.
+- Improved CSS compatibility.
+- Can now check the credit card pattern and length before sending it to PayPal.
+- Improved frontend form.
+
+## [1.6.2] - 2015-10-06
+################################
+
+### Fixes
+
+- Offline Gateway bug fix.
+- Reoccurring bug fix
+
+### Changed
+
+- Improve argument against commit logs.
+- Start following [SemVer](http://semver.org) properly.
+
+
+## [1.6.0] - 2015-10-03
+#################################
+
+### Added
+
+- Authorize.net gateway added.
+- Website Payments Pro Gateway Added and integrated with PayPal Tab
+- Offline Gateway Added and Settings page – includes custom email to offline donors before they donate
+- Mailchimp integration – Automatically add new donors to your lists
+- Constant Contact integration – Automatically add new donors to your lists
+- Two options for Thank You page. Dedicated or same page
+- Additional WebHook and IPN Listener
+- Remainder shortcode on progress bar
+- Show anonymous donor as anonymous in recent and top donor widget and shortcodes
+- New tabs and a drag and drop method of ordering them
+- Option to turn off auto-generated emails for Honoree and Donor
+- Option to load stylesheet on footer or header
+- Can now change processing/waiting/redirecting text inside UI instead editing PO files for each gateway
+- Can now change alert text inside UI instead editing PO files
+
+### Changed
+
+- Modified PDT codes
+- Modified the Email Handler
+- Modified The Report and Offline Export
+- Modified the Email Handler
+- Rearranged layout to be easier to use
+
+### Fixes
+
+- Fixed issue on export and add export all via JavaScript
+
+
+## [1.5.3] - 2015-09-12
+#################################
+
+### Fixes
+
+- WP 4.3 jquery fix
+- UK currency bug fix
+- Cleaned up CSS
+
+## [1.5.2] - 2015-05-19
+#################################
+
+### Fixes
+
+- Fixed empty Stripe warning
+- Added PDT as an option for PayPal (more reliable than IPN)
+- Cleaned up CSS
+- fixed small bug on Country Picker on mobile viewing
+- Added panel to Stripe page so you can change the name, placeholder etc on the Stripe Tab
+
+
+## [1.5.1] - 2015-05-13
+#################################
+
+### Fixes
+
+- Fixed multiple data entries from PayPal’s IPN
+- Added Default Payment Gateway Chooser
+
+## [1.5.0] - 2015-05-07 – Major Update
+#################################
+
+### Added
+
+- Stripe added as an optional payment gateway (both can work at the same time)
+- Added new options to the form creator (multi-checkboxes, selects and radio buttons )
+- Added drag and drop options for reoccurring donations. (works with Stripe and PayPal)
+- Added One Form per Campaign support. (You can now add individual forms based on your campaigns )
+- More advanced settings and options
+- Form Options page has been split into tabs and new options added
+- Added Stripe page to backend with options for buttons, plans etc
+
+### Fixes
+
+- More conflict fixes
+- CSS fixes
+- Various small bug fixes
+- Improved form HTML structure and CSS
+
+
+## [1.4.5] - 2015-03-15
+#################################
+
+### Added
+
+-A top donor shortcode
+-A recent donor shortcode
+-The campaign name is now included in PayPal data.
+-Choice of cmd for PayPal (payment or donation) for the countries that have issues with accepting donations.
+-User can change the item name. ( e.g. donations, backers, supports… etc )
+-Button to erase old cache data on the Help menu. (Total Donation’s transient cache)
+### Changed
+-Moved PayPal settings to page “Paypal Settings”
+-Cache data: extra safe to avoid losing data on a heavily loaded server.
+### Fixes
+-Shortcodes now work for undeclared campaigns
+-More conflict fixes
+-Small CSS fixes
+-Small animation fix on panel
+
+
+## [1.4.0] - 2015-03-05
+#################################
+
+### Added
+
+- Added a lighbox style panel for editing online donations
+- Added extra shortcodes
+- Added top donors and recent donors widgets with options for languages, button styles, offline data, online data or both.
+- Added a reoccurring panel to track reoccurring donations.
+- PO files with one new language translation
+- a technical settings panel in help
+
+### Fixes
+
+- More conflict fixes
+
+
+## [1.3.2] - 2015-02-18
+#################################
+
+### Added
+
+- Added feature to hide campaign selection.
+
+### Fixes
+
+- jQuery Campaign bug fix
+- Bug fix on Widget Progress Bar related to post data
+
+
+## [1.3.1] - 2015-02-12
+#################################
+
+### Fixes
+
+- Recurring data bug fix
+- Duplicate function name conflict fix
+
+
+## [1.3.0] - 2015-01-30
+################################
+
+### Added
+
+- Added more flexibility to the undesignated category.
+- New Button choices. Choose from PayPal buttons based on language, your own uploaded image or a CSS button with editable text.
+- Added extra options to donation widget
+- Better handling of data for recurring donations
+- Added currency symbol to frontend form to reduce human error on input.
+- Better handling of emails so less chance of going to spam.
+- Menu position conflict fix (menu has been moved down)
+- Added more options to Customize Theme page (giving level panels)
+- MCE editor override conflicted fix
+- Better handing of custom amounts on frontend (decimals)
+- Prevented human error on undeclared target amounts.
+- Dashboard now shows amounts for undeclared campaigns
+
+### Fixes
+
+- Minor bug fixes
+- Better CSS conflict avoidance and additional classes
+
+
+## [1.2.1] - 2015-01-20
+################################
+
+### Fixes
+
+Bug Fix – Reoccurring donation bug fix
+
+## [1.2.0] - 2015-01-20
+################################
+
+### Added
+
+- Added a button picker to widget area
+- Donation form progress bar now spans entire form
+- Added textarea to form builder choices
+- Added new options panel for undesignated category
+
+### Fixes
+
+- Fixed small misalignment issue on radio button in form
+- Improved mobile support for settings page
+- Fixed widget bug
+- Fixed form export bug
+- Fixed progress bar animation bug
+- Minor graphical updates
+
+## [1.1.0] - 2015-01-12
+################################
+
+### Added
+
+- Form can now pass employer and occupation data to PayPal. (for better FEC support)
+- Added Timezone picker

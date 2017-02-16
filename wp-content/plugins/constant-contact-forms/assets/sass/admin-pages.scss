@@ -12,6 +12,10 @@
 		padding: 0;
 	}
 
+  	.ctct-section {
+		margin-bottom: 50px;
+	}
+
 	h1.about-header {
 		color: $color-cc-blue;
 		font-size: 26px;
@@ -188,11 +192,10 @@
 	} // left side
 
 	.plugin-badge {
-		position: absolute;
-		top: 10px;
-		right: 0;
+		float: right;
 		max-height: 180px;
 		max-width: 160px;
+	  	margin-left: 40px;
 
 		@media screen and (max-width: 482px) {
 			display: none;
@@ -288,4 +291,24 @@
 	li {
 
 	}
+}
+.section-try-us {
+  .ctct-bonus-points {
+	margin-bottom: 50px;
+  }
+  a {
+	&.button {
+	  margin-right: 40px;
+	}
+	&.ctct-connect {
+	  font-weight: bold;
+	}
+  }
+}
+
+.section-marketing-tips {
+  #subbox {
+	height: 40px;
+	width: 50%;
+  }
 }

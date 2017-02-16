@@ -43,8 +43,10 @@ class ConstantContact_Mail {
 	/**
 	 * Process our form values
 	 *
-	 * @since  1.0.0
-	 * @param  array $values submitted form values
+	 * @since 1.0.0
+	 * @param array $values submitted form values
+	 *
+	 * @return bool
 	 */
 	public function submit_form_values( $values = array(), $add_to_opt_in = false ) {
 
@@ -75,6 +77,11 @@ class ConstantContact_Mail {
 
 		// Format them.
 		$email_values = $this->format_values_for_email( $values );
+
+		// Skip sending e-mail if we're connected and the user has opted out of notification emails.
+		if ( constant_contact()->api->is_connected() && ( 'on' === ctct_get_settings_option( '_ctct_disable_email_notifications' ) ) ) {
+			return true;
+		}
 
 		// Send the mail.
 		return $this->mail( $this->get_email(), $email_values );
@@ -188,10 +195,17 @@ class ConstantContact_Mail {
 
 		// If we already have sent this e-mail, don't send it again.
 		if ( $last_sent === $mail_key ) {
-			$this->maybe_log_mail_status( vsprintf( __( 'Duplicate send mail for: %s and: %s' ), array(
+			$this->maybe_log_mail_status(
+				vsprintf(
+					__( 'Duplicate send mail for: %s and: %s' ),
+					array(
+						$destination_email,
+						$mail_key,
+					)
+				),
 				$destination_email,
-				$mail_key,
-			) ) );
+				$mail_key
+			);
 			return true;
 		}
 
@@ -206,7 +220,7 @@ class ConstantContact_Mail {
 
 		$content_before = __( 'Congratulations! Your Constant Contact Forms plugin has successfully captured new information:', 'constant-contact-forms' );
 
-		$content_after = __( "Don't forget: Email marketing is a great way to stay connected and engage with visitors after they’ve left your site. When you connect to a Constant Contact account, all new subscribers are automatically synced so you can keep the interaction going through emails and more. Sign up for a Free Trial on the Connect page in the Plugin console view.", 'constant-contact-forms' );
+		$content_after = __( "Don't forget: Email marketing is a great way to stay connected and engage with visitors after they've left your site. When you connect to a Constant Contact account, all new subscribers are automatically synced so you can keep the interaction going through emails and more. Sign up for a Free Trial on the Connect page in the Plugin console view.", 'constant-contact-forms' );
 
 		$content = $content_before . $content . $content_after;
 

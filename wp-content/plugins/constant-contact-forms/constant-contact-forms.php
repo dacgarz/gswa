@@ -12,7 +12,7 @@
  * Plugin Name: Constant Contact Forms for WordPress
  * Plugin URI:  https://www.constantcontact.com
  * Description: Be a better marketer. All it takes is Constant Contact email marketing.
- * Version:     1.1.0
+ * Version:     1.2.1
  * Author:      Constant Contact
  * Author URI:  https://www.constantcontact.com
  * License:     GPLv3
@@ -77,7 +77,7 @@ class Constant_Contact {
 	 * @var  string
 	 * @since  1.0.0
 	 */
-	const VERSION = '1.1.0';
+	const VERSION = '1.2.1';
 
 	/**
 	 * URL of plugin directory
@@ -202,10 +202,10 @@ class Constant_Contact {
 
 		// Set up some helper properties.
 		$this->basename = plugin_basename( __FILE__ );
-		$this->url	    = plugin_dir_url( __FILE__ );
-		$this->path	    = plugin_dir_path( __FILE__ );
+		$this->url      = plugin_dir_url( __FILE__ );
+		$this->path     = plugin_dir_path( __FILE__ );
 
-		if ( version_compare( PHP_VERSION, '5.4.0', '<' ) ) {
+		if ( ! $this->meets_php_requirements() ) {
 			add_action( 'admin_notices', array( $this, 'minimum_version' ) );
 			return;
 		}
@@ -229,7 +229,7 @@ class Constant_Contact {
 	 * @since 1.0.1
 	 */
 	public function minimum_version() {
-		echo '<div id="message" class="notice is-dismissible error"><p>' . esc_html__( 'This plugin requires PHP 5.4 or higher. Your hosting provider or website administrator should be able to assist in updating your PHP version.', 'constant-contact-forms' ) . '</p></div>';
+		echo '<div id="message" class="notice is-dismissible error"><p>' . esc_html__( 'Constant Contact Forms requires PHP 5.4 or higher. Your hosting provider or website administrator should be able to assist in updating your PHP version.', 'constant-contact-forms' ) . '</p></div>';
 	}
 
 	/**
@@ -256,6 +256,7 @@ class Constant_Contact {
 		$this->notification_content = new ConstantContact_Notification_Content( $this );
 		$this->authserver           = new ConstantContact_Middleware( $this );
 		$this->updates              = new ConstantContact_Updates( $this );
+		$this->optin                = new ConstantContact_Optin( $this );
 	}
 
 	/**
@@ -277,10 +278,15 @@ class Constant_Contact {
 	 */
 	public function hooks() {
 
+		if ( ! $this->meets_php_requirements() ) {
+			add_action( 'admin_notices', array( $this, 'minimum_version' ) );
+			return;
+		}
 		// Hook in our older includes and our init method.
 		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'init', array( $this, 'includes' ), 5 );
 		add_action( 'widgets_init', array( $this, 'widgets' ) );
+		add_filter( 'body_class', array( $this, 'body_classes' ) );
 
 		// Our vendor files will do a check for ISSSL, so we want to set it to be that.
 		// See Guzzle for more info and usage of this.
@@ -313,13 +319,26 @@ class Constant_Contact {
 	 */
 	function _deactivate() {
 
-		// If we deactivate the plugin, remove our saved dismiss state for the activation
-		// admin notice that pops up, so we can re-prompt the user to connect.
-		$this->notifications->delete_dismissed_notification( 'activation' );
+		// Should be nothing to delete for non-met users, since it never ran in the first place.
+		if ( $this->meets_php_requirements() ) {
+			// If we deactivate the plugin, remove our saved dismiss state for the activation
+			// admin notice that pops up, so we can re-prompt the user to connect.
+			$this->notifications->delete_dismissed_notification( 'activation' );
 
-		// Remove our saved transients for our lists, so we force a refresh on re-connection.
-		delete_transient( 'ctct_lists' );
+			// Remove our saved transients for our lists, so we force a refresh on re-connection.
+			delete_transient( 'ctct_lists' );
+		}
+	}
 
+	/**
+	 * Whether or not we meet our minimal PHP requirements.
+	 *
+	 * @since 1.2.0
+	 *
+	 * @return mixed
+	 */
+	public function meets_php_requirements() {
+		return ( version_compare( PHP_VERSION, '5.4.0', '>=' ) );
 	}
 
 	/**
@@ -561,6 +580,34 @@ class Constant_Contact {
 		}
 
 		if ( 'ctct_forms' === get_post_type( $post_id ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public function body_classes( $classes = array() ) {
+		$theme = wp_get_theme()->template;
+		$classes[] = "ctct-{$theme}"; //Prefixing for user knowledge of source
+
+		return $classes;
+	}
+
+	public function is_constant_contact() {
+		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+			return false;
+		}
+		if ( ! is_admin() || empty( $_GET ) ) {
+			return false;
+		}
+
+		if (
+			isset( $_GET['post_type'] ) &&
+			in_array(
+				$_GET['post_type'],
+				array( 'ctct_forms', 'ctct_lists' )
+			)
+		) {
 			return true;
 		}
 

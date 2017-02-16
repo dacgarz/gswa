@@ -1,3 +1,77 @@
+window.CTCTAJAX = {};
+( function( window, $, that ) {
+
+	// Constructor.
+	that.init = function() {
+		// Trigger any field modifications we need to do
+		that.handleOptinAJAX();
+	}
+
+	// We need to manipulate our form builder a bit. We do this here.
+	that.handleOptinAJAX = function() {
+		$('#ctct_admin_notice_tracking_optin').on('click',function(e){
+			var ctct_optin_ajax = {
+				'action': 'constant_contact_optin_ajax_handler',
+				'optin': ($(this).is(':checked')) ? 'on' : 'off'
+			}
+
+			$.ajax({
+				url     : ajaxurl,
+				data    : ctct_optin_ajax,
+				dataType: 'json',
+				success : function (response) {},
+				error: function(x, t, m){
+					if (window.console) {
+						console.log([t, m]);
+					}
+				}
+			});
+			$('#ctct-privacy-modal').toggleClass('ctct-modal-open');
+		});
+
+		$('#_ctct_data_tracking').on('click', function(e) {
+			$('#ctct-privacy-modal').toggleClass('ctct-modal-open');
+		});
+
+		$('.ctct-modal-close').on('click', function(e){
+			if( $('#_ctct_data_tracking').is(':checked')){
+				$('#_ctct_data_tracking').attr('checked', false);
+			}
+		});
+
+		$('#ctct-modal-footer-privacy a').on('click',function(e){
+			var ctct_privacy_ajax = {
+				'action': 'constant_contact_privacy_ajax_handler',
+				'privacy_agree' : $(this).attr('data-agree')
+			}
+
+			$.ajax({
+				url     : ajaxurl,
+				data    : ctct_privacy_ajax,
+				dataType: 'json',
+				success : function (response) {
+					$('#ctct-privacy-modal').toggleClass('ctct-modal-open');
+					if( 'false' === ctct_privacy_ajax.privacy_agree ) {
+						if ($('#_ctct_data_tracking').is(':checked')) {
+							$('#_ctct_data_tracking').attr('checked', false);
+						}
+					}
+				},
+				error   : function (x, t, m) {
+					if (window.console) {
+						console.log([t, m]);
+					}
+				}
+			});
+		});
+
+	};
+
+	// Engage!
+	$( that.init );
+
+})( window, jQuery, window.CTCTAJAX );
+
 window.CTCTBuilder = {};
 ( function( window, $, that ) {
 
@@ -97,7 +171,7 @@ window.CTCTBuilder = {};
 		$( document ).on( 'cmb2_add_row', function( newRow ) {
 
 			// Automatically set new rows to be 'custom' field type
-			$( '#custom_fields_group_repeat .postbox' ).last().find( '.map select' ).val( 'custom' );
+			$( '#custom_fields_group_repeat .postbox' ).last().find( '.map select' ).val( 'none' );
 
 			// Trigger bind events again for our selects, as well as our field changes
 			that.modifyFields();
@@ -143,7 +217,8 @@ window.CTCTBuilder = {};
 			var $map          = $( $field_parent ).find( '.map select option:selected' );
 			var $mapName      = $map.text();
 			var $fieldTitle   = $( this ).find( 'h3' );
-			var $labelField   = $( this ).find( "input[name*='_ctct_field_label']" )
+			var $labelField   = $( this ).find( "input[name*='_ctct_field_label']" );
+			var $descField    = $( this ).find( "input[name*='_ctct_field_desc']" );
 
 			// Set our field row to be the name of the selected option
 			$fieldTitle.text( $mapName );
@@ -182,8 +257,20 @@ window.CTCTBuilder = {};
 				// and the remove button
 				$button.show();
 			}
+
+			// Set the placeholder text if there's something to set.
+			if ( window.ctct_admin_placeholders ) {
+				var placeholder = window.ctct_admin_placeholders[ $( value ).find( 'select' ).val() ];
+
+				// If we have a valid placeholder, display it or try the fallback.
+				if ( placeholder && placeholder.length && $descField.length ) {
+					$descField.attr( 'placeholder', 'Example: ' + placeholder );
+				} else if( window.ctct_admin_placeholders.default ) {
+					$descField.attr( 'placeholder', window.ctct_admin_placeholders.default );
+				}
+			}
 		});
-	}
+	};
 
 	// Go through all dropdowns, and remove used options
 	that.removeDuplicateMappings = function() {
@@ -290,6 +377,69 @@ window.CTCTModal = {};
     $( app.init );
 
 })( window, jQuery, window.CTCTModal );
+
+window.CTCTNewsletter = {};
+(function (window, $, app) {
+
+	// Constructor
+	app.init = function () {
+		app.submitNewsletter();
+	};
+
+	// Engage
+	$(app.init);
+
+	app.submitNewsletter = function() {
+		// Connect page.
+		$('.ctct-body #subscribe').on('submit', function (event) {
+			event.preventDefault();
+console.log('connect');
+			var $ctctNewsWrapper = $("#subscribe .ctct-call-to-action"),
+				ctctNewsForm = $(".ctct-body #subscribe")[0];
+
+			var ctctEmailField = $(".ctct-call-to-action input[type='text']")[0],
+			aprimoEndpoint = event.target.action;
+
+			if (ctctEmailField.validity.valid === true) {
+				$("<iframe>", {
+					"src"   : aprimoEndpoint + "?" + $(ctctNewsForm).serialize(),
+					"height": 0,
+					"width" : 0,
+					"style" : "display: none;"
+				}).appendTo($ctctNewsWrapper);
+
+				$('#subbutton').val('Thanks for signing up').css({'background-color':'rgb(1, 128, 0)','color':'rgb(255,255,255)'});
+				$('#subscribe .ctct-call-to-action-text').css({'width':'70%'});
+			} else {
+				$('#subbutton').val('Error occurred');
+			}
+		});
+
+		// About page.
+		$('.ctct-section #subscribe').on('submit', function (event) {
+			event.preventDefault();
+
+			var $ctctNewsWrapper = $(".section-marketing-tips"),
+				ctctNewsForm = $(".ctct-section #subscribe")[0];
+
+			var ctctEmailField = $(".ctct-section #subscribe input[type='text']")[0],
+				aprimoEndpoint = event.target.action;
+
+			if (ctctEmailField.validity.valid === true) {
+				$("<iframe>", {
+					"src"   : aprimoEndpoint + "?" + $(ctctNewsForm).serialize(),
+					"height": 0,
+					"width" : 0,
+					"style" : "display: none;"
+				}).appendTo($ctctNewsWrapper);
+				$('#subbutton').val('Thanks for signing up').css({'background-color':'rgb(1, 128, 0)'});
+			} else {
+				$('#subbutton').val('Error occurred');
+			}
+		});
+	}
+
+})(window, jQuery, window.CTCTNewsletter);
 
 window.CTCT_OptIns = {};
 ( function( window, $, app ) {
