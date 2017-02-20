@@ -17,3 +17,23 @@
     }
   }
 }
+
+#tribe-events .tribe-events-tickets {
+  .input-group {
+    span.input-group-btn {
+      width: auto;
+    }
+
+    .input-text.qty.text {
+      padding:0 10px;
+      width: 40px;
+    }
+  }
+
+  .woocommerce.add-to-cart {
+    button {
+      font-family: "Gotham", sans-serif;
+      @include button-style();
+    }
+  }
+}

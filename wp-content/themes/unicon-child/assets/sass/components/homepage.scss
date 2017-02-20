@@ -1,17 +1,7 @@
 .rev_slider_wrapper.fullwidthbanner-container {
   .tp-caption {
     a.button {
-      padding: 20px 60px !important;
-      border-radius: 3px;
-      letter-spacing: 3px !important;
-      font-size: 16px !important;
-      font-weight: normal !important;
-      background:#018755 !important;
-      border-color:#4482AC !important;
-      &:hover{
-        background:#4482AC !important;
-        border-color: #4482AC !important;
-      }
+      @include button-style();
     }
   }
 

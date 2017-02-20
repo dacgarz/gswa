@@ -1,0 +1,14 @@
+body.woocommerce-cart {
+  .product-quantity {
+    .input-group {
+      span.input-group-btn {
+        width: auto;
+      }
+
+      .input-text.qty.text {
+        padding:0 10px;
+        width: 40px;
+      }
+    }
+  }
+}

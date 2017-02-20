@@ -2,6 +2,7 @@ $fa-font-path: "../assets/bower_components/components-font-awesome/fonts";
 $font-folder: "../assets/fonts";
 $image-folder: "../assets/images";
 
+@import "mixins";
 @import "components/fonts";
 
 @import "../bower_components/components-font-awesome/scss/font-awesome";
@@ -12,6 +13,7 @@ $image-folder: "../assets/images";
 @import "components/event_detail";
 @import "components/homepage";
 @import "components/publications";
+@import "components/woocommerce";
 @import "components/header";
 @import "components/footer";
 
