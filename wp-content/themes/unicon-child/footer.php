@@ -17,10 +17,16 @@
 
 		<footer id="footer">
 			<div class="container">
-				<div class="five columns"><?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets 1')); ?></div>
-				<div class="four columns"><?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets 2')); ?></div>
-				<div class="two columns"><?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets 3')); ?></div>
-				<div class="five columns"><?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets 4')); ?></div>
+				<?php if ($footercolumns == '4'): ?>
+					<div class="five columns"><?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets 1')); ?></div>
+					<div class="four columns"><?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets 2')); ?></div>
+					<div class="two columns"><?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets 3')); ?></div>
+					<div class="five columns"><?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets 4')); ?></div>
+				<?php elseif($footercolumns == '3'): ?>
+					<div class="five columns"><?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets 1')); ?></div>
+					<div class="fix columns"><?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets 2')); ?></div>
+					<div class="five columns"><?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets 3')); ?></div>
+				<?php endif; ?>
 			</div>
 			<div style="text-align: center;margin-top:20px;">
 				&copy; 1996-2016 Great Swamp Watershed Association. All rights reserved.<br/>
