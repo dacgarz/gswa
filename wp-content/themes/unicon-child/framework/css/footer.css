@@ -62,6 +62,7 @@
     margin: 10px 0 0;
     background: #EE9137;
     border-color: #EE9137;
+    max-width: 322px;
 }
 #wysiwyg_widgets_widget-2 #donate:hover {
     background: #ffffff;
