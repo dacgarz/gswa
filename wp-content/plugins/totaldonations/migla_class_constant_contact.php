@@ -1,7 +1,7 @@
 <?php
 
   // require the autoloader
-  require_once 'constant_contact/src/Ctct/autoload.php';
+//  require_once 'constant_contact/src/Ctct/autoload.php';
   use Ctct\ConstantContact;
   use Ctct\Components\Contacts\Contact;
   use Ctct\Components\Contacts\ContactList;
