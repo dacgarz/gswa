@@ -4,7 +4,7 @@ Donate link: https://potentplugins.com/donate/?utm_source=replace-image&utm_medi
 Tags: replace, overwrite, image, images, media, attachment, attachments
 Requires at least: 3.5
 Tested up to: 4.7
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ Your browser is likely still caching the old image. Try doing a hard refresh (Ct
 1. The Replace Image button in the Attachment Details screen (opened by clicking on an image in the Media Library).
 
 == Changelog ==
+
+= 1.1.5 =
+* Fixed non-critical PHP warning
 
 = 1.1.3 =
 * Fixed undefined offset error per https://wordpress.org/support/topic/undefined-index-0-on-line-100-mainfile?replies=1

@@ -2,8 +2,8 @@
 Contributors: solarissmoke
 Donate link: http://www.rayofsolaris.net/donate/
 Tags: error, log, 404
-Requires at least: 3.9
-Tested up to: 4.5
+Requires at least: 4.0
+Tested up to: 4.7
 Stable tag: trunk
 
 Logs 404 (Page Not Found) errors on your WordPress site.
@@ -29,6 +29,13 @@ The plugin has been tested with the following caching plugins, and should work e
 I have not tested it with other caching plugins, and there is a high chance that it **will not work** with many of them. Most of them will cache the response so that it cannot be logged.
 
 == Changelog ==
+
+= 1.0.4 =
+* Fix warning when DONOTCACHEPAGE has already been defined.
+
+= 1.0.3 =
+* Fix 'headers already sent' warning when deleting all messages.
+* Compatible with WP 4.6.
 
 = 1.0.2 =
 * Fix deletion of old log entries.

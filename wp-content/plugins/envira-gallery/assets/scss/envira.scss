@@ -352,6 +352,30 @@
     }*/
 }
 
+.envira-gallery-public.envira-gallery-1-columns,
+.envira-gallery-public.envira-gallery-2-columns,
+.envira-gallery-public.envira-gallery-3-columns,
+.envira-gallery-public.envira-gallery-4-columns,
+.envira-gallery-public.envira-gallery-5-columns,
+.envira-gallery-public.envira-gallery-6-columns {
+    .envira-title,
+    .envira-caption {
+        text-align: center;
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+        display: inline-block;
+    }
+    .envira-title {
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 600;
+    }
+    .envira-caption {
+        font-weight: 200;
+    }
+}
+
 /**
 * RTL Support
 */

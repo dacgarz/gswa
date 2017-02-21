@@ -595,11 +595,12 @@ function envira_gallery_ajax_save_bulk_meta() {
 
 	// Iterate through gallery images, updating the metadata.
 	foreach ( $image_ids as $image_id ) {
+		
 		// If the image isn't in the gallery, something went wrong - so skip this image.
 		if ( ! isset( $gallery_data['gallery'][ $image_id ] ) ) {
 			continue;
 		}
-
+				
 		// Save the different types of default meta fields for images, videos and HTML slides.
 		if ( isset( $meta['status'] ) ) {
 			   $gallery_data['gallery'][$image_id]['status'] = trim( esc_html( $meta['status'] ) );

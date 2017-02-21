@@ -46,6 +46,7 @@
   border-radius: 3px;
   background-color: #000;
   color: #fff;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
   content: attr(data-envira-tooltip);
   text-align: center;
   font-size: 12px;
@@ -88,9 +89,9 @@
 body.post-type-envira,
 body.post-type-envira_album {
   /**
-    * Add left and right margins to ensure the message notification horizontally lines up
-    * with the metaboxes
-    */ }
+  * Add left and right margins to ensure the message notification horizontally lines up
+  * with the metaboxes
+  */ }
   body.post-type-envira #message,
   body.post-type-envira_album #message {
     margin: 5px 20px 15px 20px; }
@@ -107,46 +108,46 @@ body.post-type-envira_album {
    ========================================================================== */
 form#post.envira-gallery {
   /**
-    * Re-establish the left and right margins, so there's spacing between the Admin Menu
-    * and the content
-    */
+  * Re-establish the left and right margins, so there's spacing between the Admin Menu
+  * and the content
+  */
   margin: 0 20px;
   /**
-     * Defined so we override WordPress' default styles
-     */ }
+   * Defined so we override WordPress' default styles
+   */ }
   form#post.envira-gallery #poststuff {
     /* ==========================================================================
-           Envira Gallery Shared Styles for Types and Settings
-           ========================================================================== */
+       Envira Gallery Shared Styles for Types and Settings
+       ========================================================================== */
     /**
-        * Intro Text
-        */
+    * Intro Text
+    */
     /**
-        * Override WordPress default checkboxes
-        */
+    * Override WordPress default checkboxes
+    */
     /**
-        * Help Video
-        * - Can be placed inside p.envira-intro by JS, or outside p.envira-intro when
-        * viewing the Images tab for a Dynamic or Default Gallery
-        */
+    * Help Video
+    * - Can be placed inside p.envira-intro by JS, or outside p.envira-intro when
+    * viewing the Images tab for a Dynamic or Default Gallery
+    */
     /**
-        * Image Grid
-        * - Used on the Images tab for Default Galleries, as well as the Preview Metabox
-        */
+    * Image Grid
+    * - Used on the Images tab for Default Galleries, as well as the Preview Metabox
+    */
     /* ==========================================================================
-           Envira Gallery Type
-           Envira Album Type
-           ========================================================================== */
+       Envira Gallery Type
+       Envira Album Type
+       ========================================================================== */
     /* ==========================================================================
-           Envira Albums Drag & Drop Area
-           ========================================================================== */
+       Envira Albums Drag & Drop Area
+       ========================================================================== */
     /* ==========================================================================
-           Envira Gallery Settings
-           Envira Albums Settings
-           ========================================================================== */
+       Envira Gallery Settings
+       Envira Albums Settings
+       ========================================================================== */
     /* ==========================================================================
-           Envira Gallery Preview Metabox
-           ========================================================================== */ }
+       Envira Gallery Preview Metabox
+       ========================================================================== */ }
     form#post.envira-gallery #poststuff p.envira-intro {
       margin: 0;
       padding: 0 0 30px 0;
@@ -170,6 +171,15 @@ form#post.envira-gallery {
       border-color: #7cc048; }
     form#post.envira-gallery #poststuff input[type=checkbox]:checked:before {
       color: #ffffff !important; }
+    form#post.envira-gallery #poststuff tr#envira-config-additional-copy-box input[type="checkbox"],
+    form#post.envira-gallery #poststuff tr#envira-config-additional-copy-box-automatic input[type="checkbox"] {
+      margin-right: 0; }
+    form#post.envira-gallery #poststuff tr#envira-config-additional-copy-box label,
+    form#post.envira-gallery #poststuff tr#envira-config-additional-copy-box-automatic label {
+      margin-right: 15px; }
+    form#post.envira-gallery #poststuff tr#envira-config-additional-copy-box label.label-for-checkbox,
+    form#post.envira-gallery #poststuff tr#envira-config-additional-copy-box-automatic label.label-for-checkbox {
+      display: inline-block; }
     form#post.envira-gallery #poststuff div.envira-video-help {
       position: relative;
       z-index: 1;
@@ -200,9 +210,9 @@ form#post.envira-gallery {
     form#post.envira-gallery #poststuff ul.envira-gallery-images-output {
       width: 100%;
       /**
-            * List View
-            */
-      /**
+      * List View
+      */
+            /**
 	        * Grid View
 	        */ }
       form#post.envira-gallery #poststuff ul.envira-gallery-images-output li {
@@ -218,24 +228,24 @@ form#post.envira-gallery {
         background-clip: padding-box;
         background: #f7f7f7;
         /**
-                * If, for some reason, the image doesn't exist or fails to load,
-                * the placeholder logo is displayed
-                */
+        * If, for some reason, the image doesn't exist or fails to load,
+        * the placeholder logo is displayed
+        */
         /**
-                * Metadata
-                */
+        * Metadata
+        */
         /**
-                * Tick Icon
-                */
+        * Tick Icon
+        */
         /**
-                * Edit / Delete Buttons
-                */
+        * Edit / Delete Buttons
+        */
         /**
-                * Selected state
-                */
+        * Selected state
+        */
         /**
-                * Multiple selection sorting - stacks images when the user has selected more than one image + dragged them
-                */ }
+        * Multiple selection sorting - stacks images when the user has selected more than one image + dragged them
+        */ }
         form#post.envira-gallery #poststuff ul.envira-gallery-images-output li img {
           display: block;
           width: 150px;
@@ -257,11 +267,11 @@ form#post.envira-gallery {
           border-bottom: 1px solid #dfdfdf;
           border-right: 1px solid #dfdfdf;
           /**
-                    * Title
-                    */
+          * Title
+          */
           /**
-                    * Additional metadata
-                    */ }
+          * Additional metadata
+          */ }
           form#post.envira-gallery #poststuff ul.envira-gallery-images-output li div.meta div.title {
             font-size: 12px;
             font-weight: 700;
@@ -271,9 +281,9 @@ form#post.envira-gallery {
             margin: 8px 5px;
             overflow: hidden;
             /**
-                        * Hint
-                        * - Displays the full title on hover
-                        */ }
+            * Hint
+            * - Displays the full title on hover
+            */ }
             form#post.envira-gallery #poststuff ul.envira-gallery-images-output li div.meta div.title a.hint {
               position: absolute;
               display: inline-block;
@@ -369,12 +379,12 @@ form#post.envira-gallery {
         -moz-border-radius: 2px;
         -webkit-border-radius: 2px;
         /**
-                    * Metadata
-                    */
+        * Metadata
+        */
         /**
-                    * Checkbox
-                    * - Always display
-                    */ }
+        * Checkbox
+        * - Always display
+        */ }
         form#post.envira-gallery #poststuff ul.envira-gallery-images-output.list li img {
           display: inline-block;
           width: 75px;
@@ -394,12 +404,12 @@ form#post.envira-gallery {
           -moz-box-sizing: border-box;
           box-sizing: border-box;
           /**
-                        * Title
-                        */
+          * Title
+          */
           /**
-                        * Additional metadata
-                        * - Displayed in list view
-                        */ }
+          * Additional metadata
+          * - Displayed in list view
+          */ }
           form#post.envira-gallery #poststuff ul.envira-gallery-images-output.list li div.meta div.title {
             display: block;
             width: 100%;
@@ -454,15 +464,15 @@ form#post.envira-gallery {
     form#post.envira-gallery #poststuff #envira-gallery,
     form#post.envira-gallery #poststuff #envira-albums {
       /**
-            * Hide the title bar of the metabox, so we have a seamless style
-            */
+      * Hide the title bar of the metabox, so we have a seamless style
+      */
       /**
-            * Tabs
-            * - Move up vertically so they sit above the metabox
-            */
+      * Tabs
+      * - Move up vertically so they sit above the metabox
+      */
       /**
-            * Tab Settings
-            */ }
+      * Tab Settings
+      */ }
       form#post.envira-gallery #poststuff #envira-gallery .handlediv,
       form#post.envira-gallery #poststuff #envira-albums .handlediv {
         display: none; }
@@ -476,8 +486,8 @@ form#post.envira-gallery {
         padding: 0;
         border-bottom: none;
         /**
-                * Increase tab sizes and style
-                */ }
+        * Increase tab sizes and style
+        */ }
         form#post.envira-gallery #poststuff #envira-gallery h2.nav-tab-wrapper .nav-tab,
         form#post.envira-gallery #poststuff #envira-albums h2.nav-tab-wrapper .nav-tab {
           display: inline-block;
@@ -490,22 +500,22 @@ form#post.envira-gallery {
           /* Matches the metabox border for a seamless UI */
           background: #f5f5f5;
           /**
-                    * Envira Gallery Icon
-                    */
+          * Envira Gallery Icon
+          */
           /**
-                    * External Gallery Tab
-                    */
+          * External Gallery Tab
+          */
           /**
-                    * Hover and Active States
-                    */
+          * Hover and Active States
+          */
           /**
-                    * Focus State
-                    * - Remove WordPress' blue focus box from tabs
-                    */
+          * Focus State
+          * - Remove WordPress' blue focus box from tabs
+          */
           /**
-                    * Hides the radio input on a label
-                    * The radio input will be selected when the label is clicked
-                    */ }
+          * Hides the radio input on a label
+          * The radio input will be selected when the label is clicked
+          */ }
           form#post.envira-gallery #poststuff #envira-gallery h2.nav-tab-wrapper .nav-tab.nav-tab-native-envira-gallery span,
           form#post.envira-gallery #poststuff #envira-albums h2.nav-tab-wrapper .nav-tab.nav-tab-native-envira-gallery span {
             display: inline-block;
@@ -536,34 +546,34 @@ form#post.envira-gallery {
         margin: 0;
         padding: 0;
         /**
-                * Native Envira Gallery Uploader / Select Files
-                * - Styles the pluploader instance to look the way we want it
-                * - Also see responsive styles at the end of this file
-                */ }
+        * Native Envira Gallery Uploader / Select Files
+        * - Styles the pluploader instance to look the way we want it
+        * - Also see responsive styles at the end of this file
+        */ }
         form#post.envira-gallery #poststuff #envira-gallery .inside #envira-gallery-native #plupload-upload-ui,
         form#post.envira-gallery #poststuff #envira-albums .inside #envira-gallery-native #plupload-upload-ui {
           /* Reserves the space needed for the drag-drop-area, which is loaded using JS */
           height: 210px;
           /**
-                        * A drag-drop-area div is always output, whether we're on a touch
-                        * device or not. WordPress will only style this div if its parent
-                        * has the .drag-drop class (i.e. touch devices won't get any CSS styling)
-                        *
-                        * The below CSS ensures that the drag drop area looks consistent
-                        * regardless of device used, and then adjusts the layout if drag-drop is supported.
-                        */
+          * A drag-drop-area div is always output, whether we're on a touch
+          * device or not. WordPress will only style this div if its parent
+          * has the .drag-drop class (i.e. touch devices won't get any CSS styling)
+          *
+          * The below CSS ensures that the drag drop area looks consistent
+          * regardless of device used, and then adjusts the layout if drag-drop is supported.
+          */
           /**
-                        * Select Files from Other Sources Button
-                        */
+          * Select Files from Other Sources Button
+          */
           /**
-                        * When the uploader supports drag and drop, a .drag-drop
-                        * class is appended to #drag-drop-area by WordPress
-                        *
-                        * We use this to show certain descriptions
-                        */
+          * When the uploader supports drag and drop, a .drag-drop
+          * class is appended to #drag-drop-area by WordPress
+          *
+          * We use this to show certain descriptions
+          */
           /**
-                        * Upload Progress Bar
-                        */ }
+          * Upload Progress Bar
+          */ }
           form#post.envira-gallery #poststuff #envira-gallery .inside #envira-gallery-native #plupload-upload-ui #drag-drop-area,
           form#post.envira-gallery #poststuff #envira-albums .inside #envira-gallery-native #plupload-upload-ui #drag-drop-area {
             display: none;
@@ -582,8 +592,8 @@ form#post.envira-gallery {
                 left: 50%;
                 margin: -10px 0 0 -10px;
                 /**
-                                    * "Drop Files here"
-                                    */ }
+                * "Drop Files here"
+                */ }
                 form#post.envira-gallery #poststuff #envira-gallery .inside #envira-gallery-native #plupload-upload-ui #drag-drop-area .drag-drop-inside p.drag-drop-info,
                 form#post.envira-gallery #poststuff #envira-albums .inside #envira-gallery-native #plupload-upload-ui #drag-drop-area .drag-drop-inside p.drag-drop-info {
                   display: none;
@@ -665,20 +675,20 @@ form#post.envira-gallery {
         form#post.envira-gallery #poststuff #envira-albums .inside div.envira-tab {
           padding: 20px;
           /**
-                    * External Gallery Tab Area
-                    */ }
+          * External Gallery Tab Area
+          */ }
           form#post.envira-gallery #poststuff #envira-gallery .inside div.envira-tab#envira-gallery-external,
           form#post.envira-gallery #poststuff #envira-albums .inside div.envira-tab#envira-gallery-external {
             text-align: center;
             /**
-                        * Header
-                        */
+            * Header
+            */
             /**
-                        * External Gallery Types
-                        */
+            * External Gallery Types
+            */
             /**
-                        * Upgrade Button
-                        */ }
+            * Upgrade Button
+            */ }
             form#post.envira-gallery #poststuff #envira-gallery .inside div.envira-tab#envira-gallery-external p.envira-intro,
             form#post.envira-gallery #poststuff #envira-albums .inside div.envira-tab#envira-gallery-external p.envira-intro {
               margin: 0 0 20px 0;
@@ -694,19 +704,19 @@ form#post.envira-gallery {
                 margin: 0 20px 0 0;
                 vertical-align: top;
                 /**
-                                * Pro uses a <label> element so the user can select the Gallery Type
-                                * Lite uses an <a> element so the user can go to the Upgrade URL
-                                */
+                * Pro uses a <label> element so the user can select the Gallery Type
+                * Lite uses an <a> element so the user can go to the Upgrade URL
+                */
                 /**
-                                * Hover State
-                                * Selected State
-                                */
+                * Hover State
+                * Selected State
+                */
                 /**
-                                * Featured Content
-                                */
+                * Featured Content
+                */
                 /**
-                                * Instagram
-                                */ }
+                * Instagram
+                */ }
                 form#post.envira-gallery #poststuff #envira-gallery .inside div.envira-tab#envira-gallery-external ul#envira-gallery-types-nav li:last-child,
                 form#post.envira-gallery #poststuff #envira-albums .inside div.envira-tab#envira-gallery-external ul#envira-gallery-types-nav li:last-child {
                   margin: 0; }
@@ -762,11 +772,11 @@ form#post.envira-gallery {
     form#post.envira-gallery #poststuff #envira-albums .inside #envira-types #envira-album-native {
       position: relative;
       /**
-                        * Galleries (Drop Target)
-                        */
+      * Galleries (Drop Target)
+      */
       /**
-                        * Drag & Drop Instructions
-                        */ }
+      * Drag & Drop Instructions
+      */ }
       form#post.envira-gallery #poststuff #envira-albums .inside #envira-types #envira-album-native ul#envira-album-drag-drop-area {
         z-index: 2;
         min-height: 200px;
@@ -804,17 +814,17 @@ form#post.envira-gallery {
       background: #f7f7f7;
       /* The background for tabs, full height */
       /**
-            * Clearfix
-            */
+      * Clearfix
+      */
       /**
-            * Hide the title bar of the metabox, so we have a seamless style
-            */
+      * Hide the title bar of the metabox, so we have a seamless style
+      */
       /**
-            * Tabs
-            */
+      * Tabs
+      */
       /**
-            * Settings
-            */ }
+      * Settings
+      */ }
       form#post.envira-gallery #poststuff #envira-gallery-settings input[type="text"],
       form#post.envira-gallery #poststuff #envira-gallery-settings input[type="number"],
       form#post.envira-gallery #poststuff #envira-gallery-settings input[type="password"],
@@ -894,11 +904,11 @@ form#post.envira-gallery {
           margin: 0;
           padding: 0;
           /**
-                    * Last Item
-                    */
+          * Last Item
+          */
           /**
-                    * Tab Icons
-                    */ }
+          * Tab Icons
+          */ }
           form#post.envira-gallery #poststuff #envira-gallery-settings ul#envira-tabs-nav li a,
           form#post.envira-gallery #poststuff #envira-albums-settings ul#envira-tabs-nav li a {
             float: left;
@@ -916,12 +926,12 @@ form#post.envira-gallery {
             transition: none;
             -webkit-transition: none;
             /**
-                        * Hover and Active States
-                        */
+            * Hover and Active States
+            */
             /**
-                        * Focus State
-                        * - Remove WordPress' blue focus box from tabs
-                        */ }
+            * Focus State
+            * - Remove WordPress' blue focus box from tabs
+            */ }
             form#post.envira-gallery #poststuff #envira-gallery-settings ul#envira-tabs-nav li a:hover, form#post.envira-gallery #poststuff #envira-gallery-settings ul#envira-tabs-nav li a.envira-active,
             form#post.envira-gallery #poststuff #envira-albums-settings ul#envira-tabs-nav li a:hover,
             form#post.envira-gallery #poststuff #envira-albums-settings ul#envira-tabs-nav li a.envira-active {
@@ -1042,21 +1052,21 @@ form#post.envira-gallery {
         background: #ffffff;
         border-left: 1px solid #ddd;
         /**
-                * Headings
-                */
+        * Headings
+        */
         /**
-                * All Tabs
-                */
+        * All Tabs
+        */
         /**
-                * Tab: Images
-                */
+        * Tab: Images
+        */
         /**
-                * Tab: Galleries
-                * - Used on Albums
-                */
+        * Tab: Galleries
+        * - Used on Albums
+        */
         /**
-                * Clearfix
-                */ }
+        * Clearfix
+        */ }
         form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs h2,
         form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs h2 {
           clear: none; }
@@ -1065,24 +1075,24 @@ form#post.envira-gallery {
           clear: none;
           margin: 0 0 40px 0;
           /**
-                    * Row padding
-                    */
+          * Row padding
+          */
           /**
-                    * Sub Headings
-                    * - Used to denote an Addon's settings within a settings tab e.g. the Mobile tab
-                    */
+          * Sub Headings
+          * - Used to denote an Addon's settings within a settings tab e.g. the Mobile tab
+          */
           /**
-                    * Full width labels (used for checkboxes that we don't want to be inline)
-                    */
+          * Full width labels (used for checkboxes that we don't want to be inline)
+          */
           /**
-                    * Full width textareas
-                    */
+          * Full width textareas
+          */
           /**
-                    * Checkbox alignment
-                    */
+          * Checkbox alignment
+          */
           /**
-                    * Descriptions
-                    */ }
+          * Descriptions
+          */ }
           form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs table.form-table.no-margin,
           form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs table.form-table.no-margin {
             margin: 0; }
@@ -1124,22 +1134,22 @@ form#post.envira-gallery {
         form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs #envira-tab-images,
         form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs #envira-tab-images {
           /**
-                    * Inline Navigation
-                    * - Select All
-                    * - List View / Grid View
-                    * - Edit / Delete Selected Items
-                    */
+          * Inline Navigation
+          * - Select All
+          * - List View / Grid View
+          * - Edit / Delete Selected Items
+          */
           /**
-                    * Images
-                    * - Show move cursor
-                    */ }
+          * Images
+          * - Show move cursor
+          */ }
           form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs #envira-tab-images nav,
           form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs #envira-tab-images nav {
             width: 100%;
             /**
-                        * Edit / Delete Selected
-                        * - Hidden by default, shown by JS when image(s) are selected
-                        */ }
+            * Edit / Delete Selected
+            * - Hidden by default, shown by JS when image(s) are selected
+            */ }
             form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs #envira-tab-images nav.envira-tab-options,
             form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs #envira-tab-images nav.envira-tab-options {
               margin: 20px 0; }
@@ -1203,32 +1213,32 @@ form#post.envira-gallery {
         form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs #envira-tab-galleries,
         form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs #envira-tab-galleries {
           /**
-                    * Inline Navigation
-                    * - Search
-                    */
+          * Inline Navigation
+          * - Search
+          */
           /**
-                    * Images
-                    * - Show move cursor
-                    * - Hide Edit & Delete icons, as these are only displayed when the gallery is assigned to the Album
-                    */ }
+          * Images
+          * - Show move cursor
+          * - Hide Edit & Delete icons, as these are only displayed when the gallery is assigned to the Album
+          */ }
           form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs #envira-tab-galleries nav,
           form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs #envira-tab-galleries nav {
             width: 100%;
             /**
-                        * Bulk Action Buttons
-                        * - Hidden by default, shown by JS when galleries(s) are selected
-                        */ }
+            * Bulk Action Buttons
+            * - Hidden by default, shown by JS when galleries(s) are selected
+            */ }
             form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs #envira-tab-galleries nav.envira-tab-options,
             form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs #envira-tab-galleries nav.envira-tab-options {
               height: 40px;
               margin: 20px 0;
               position: relative;
               /**
-                            * Add Galleries to Album Button
-                            */
+              * Add Galleries to Album Button
+              */
               /**
-                            * Search
-                            */ }
+              * Search
+              */ }
               form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs #envira-tab-galleries nav.envira-tab-options a.envira-galleries-add,
               form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs #envira-tab-galleries nav.envira-tab-options a.envira-galleries-add {
                 display: none;
@@ -1259,11 +1269,11 @@ form#post.envira-gallery {
           clear: both; }
     form#post.envira-gallery #poststuff #envira-gallery-preview {
       /**
-            * Clearfix
-            */
+      * Clearfix
+      */
       /**
-            * Hide the title bar of the metabox, so we have a seamless style
-            */ }
+      * Hide the title bar of the metabox, so we have a seamless style
+      */ }
       form#post.envira-gallery #poststuff #envira-gallery-preview:after {
         content: "";
         display: table;
@@ -1281,15 +1291,15 @@ form#post.envira-gallery {
    ========================================================================== */
 .media-modal {
   /**
-    * Header Buttons
-    */
+  * Header Buttons
+  */
   /**
-    * Upload
-    */
+  * Upload
+  */
   /**
-    * Insert
-    */
-  /**
+  * Insert
+  */
+    /**
     * Attachments
     * - Ensures that images fill each <li> attachment block, providing compatibility from WordPress 4.0 upwards
     * - Removed as breaks 4.4, 4.5
@@ -1305,24 +1315,24 @@ form#post.envira-gallery {
     }
     */
   /**
-    * Albums: Select Gallery Cover Image
-    * - Add some top spacing so that a selected cover image that's on the first line of the results
-    * doesn't have its checkmark cut off
-    */
+  * Albums: Select Gallery Cover Image
+  * - Add some top spacing so that a selected cover image that's on the first line of the results
+  * doesn't have its checkmark cut off
+  */
   /**
-    * Bulk Edit Attachments
-    * - Restore cursor to default, so the user doesn't think they can click an image
-    */
+  * Bulk Edit Attachments
+  * - Restore cursor to default, so the user doesn't think they can click an image
+  */
   /**
-    * Edit
-    */ }
+  * Edit
+  */ }
   .media-modal .edit-attachment-frame .edit-media-header button.right {
     border-right: 1px solid #ddd; }
   .media-modal .uploader-inline {
     /**
-        * Don't display the 'Select Files from Other Sources' button that we add to plupload
-        * when we're in a modal.
-        */ }
+    * Don't display the 'Select Files from Other Sources' button that we add to plupload
+    * when we're in a modal.
+    */ }
     .media-modal .uploader-inline a.envira-media-library.button {
       display: none; }
   .media-modal .attachment.details {
@@ -1341,28 +1351,28 @@ form#post.envira-gallery {
   .media-modal .attachment-details .attachment-info {
     padding: 16px;
     /**
-            * Settings
-            * - Contains one or more setting elements (Title, Alt etc)
-            */
+    * Settings
+    * - Contains one or more setting elements (Title, Alt etc)
+    */
     /**
-            * Actions
-            * - Save Button
-            * - Spinner
-            */ }
+    * Actions
+    * - Save Button
+    * - Spinner
+    */ }
     .media-modal .attachment-details .attachment-info .settings {
       margin: 0;
       padding: 0;
       border: none;
       /**
-                * Individual Setting (Title, Alt etc)
-                */ }
+      * Individual Setting (Title, Alt etc)
+      */ }
       .media-modal .attachment-details .attachment-info .settings .setting {
         margin: 0 0 20px 0;
         padding: 0 0 20px 0;
         border-bottom: 1px solid #ddd;
         /**
-                    * Input
-                    */ }
+        * Input
+        */ }
         .media-modal .attachment-details .attachment-info .settings .setting input[type="text"],
         .media-modal .attachment-details .attachment-info .settings .setting textarea {
           display: block;
@@ -1376,11 +1386,11 @@ form#post.envira-gallery {
           margin: 0; }
         .media-modal .attachment-details .attachment-info .settings .setting span {
           /**
-                        * Title
-                        */
+          * Title
+          */
           /**
-                        * Description
-                        */ }
+          * Description
+          */ }
           .media-modal .attachment-details .attachment-info .settings .setting span.name {
             display: block;
             width: 100%;
@@ -1406,8 +1416,8 @@ form#post.envira-gallery {
           color: #666; }
     .media-modal .attachment-details .attachment-info div.actions {
       /**
-                * Ensure button renders at correct height
-                */ }
+      * Ensure button renders at correct height
+      */ }
       .media-modal .attachment-details .attachment-info div.actions a.button {
         display: inline-block; }
 
@@ -1416,31 +1426,30 @@ form#post.envira-gallery {
    ========================================================================== */
 @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
   /**
-    * WP media-views.css doesn't use .wp-core-ui for the x2 icons, therefore they never get applied
-    */
+  * WP media-views.css doesn't use .wp-core-ui for the x2 icons, therefore they never get applied
+  */
   .wp-core-ui a.check .media-modal-icon {
     background-image: url(../../../../../wp-includes/images/uploader-icons-2x.png) !important;
     -webkit-background-size: 134px 15px;
     background-size: 134px 15px; } }
-
 /* ==========================================================================
    Responsive
    ========================================================================== */
 @media screen and (max-width: 1100px) {
   /* ==========================================================================
-       Form
-       - The envira-gallery class is assigned to the Gallery and Album Add/Edit screens form.
-       ========================================================================== */
+     Form
+     - The envira-gallery class is assigned to the Gallery and Album Add/Edit screens form.
+     ========================================================================== */
   form#post.envira-gallery #poststuff #envira-gallery,
   form#post.envira-gallery #poststuff #envira-albums {
     /**
-                * Tab Settings
-                */ }
+    * Tab Settings
+    */ }
     form#post.envira-gallery #poststuff #envira-gallery .inside,
     form#post.envira-gallery #poststuff #envira-albums .inside {
       /**
-                    * Native Envira Gallery
-                    */ }
+      * Native Envira Gallery
+      */ }
       form#post.envira-gallery #poststuff #envira-gallery .inside #envira-gallery-native #plupload-upload-ui.drag-drop #drag-drop-area,
       form#post.envira-gallery #poststuff #envira-albums .inside #envira-gallery-native #plupload-upload-ui.drag-drop #drag-drop-area {
         border-color: #d5d5d5; }
@@ -1457,25 +1466,24 @@ form#post.envira-gallery {
         right: 0;
         width: 235px;
         top: 145px; } }
-
 @media screen and (max-width: 768px) {
   /* ==========================================================================
-       Form
-       - The envira-gallery class is assigned to the Gallery and Album Add/Edit screens form.
-       ========================================================================== */
+     Form
+     - The envira-gallery class is assigned to the Gallery and Album Add/Edit screens form.
+     ========================================================================== */
   form#post.envira-gallery #poststuff {
     /* ==========================================================================
-               Envira Gallery Settings
-               Envira Albums Settings
-               ========================================================================== */ }
+       Envira Gallery Settings
+       Envira Albums Settings
+       ========================================================================== */ }
     form#post.envira-gallery #poststuff #envira-gallery-settings,
     form#post.envira-gallery #poststuff #envira-albums-settings {
       /**
-                * Tabs
-                */
+      * Tabs
+      */
       /**
-                * Settings
-                */ }
+      * Settings
+      */ }
       form#post.envira-gallery #poststuff #envira-gallery-settings ul#envira-tabs-nav,
       form#post.envira-gallery #poststuff #envira-albums-settings ul#envira-tabs-nav {
         width: 60px; }

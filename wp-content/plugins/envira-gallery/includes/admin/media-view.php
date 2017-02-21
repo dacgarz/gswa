@@ -420,7 +420,17 @@ class Envira_Gallery_Media_View {
 					 <div class="attachment-info">
 						 <!-- Settings -->
 						 <div class="settings">
-
+							 
+							<!-- Status -->
+							<label class="setting">
+								<span class="name"><?php esc_html_e( 'Status', 'envira-gallery' ); ?></span>
+								<select id="envira-status" class="envira-status" name="status" size="1" data-soliloquy-meta="status">
+									<option value="active" selected="selected"><?php esc_html_e( 'Published', 'envira-gallery' ); ?></option>
+									<option value="pending"><?php esc_html_e( 'Draft', 'envira-gallery' ); ?></option>
+								</select>
+								<span class="description"><?php esc_html_e( 'Controls whether this individual slide is Drafted or Published within the slider.', 'envira-gallery' ); ?></span>
+							</label>
+							
 						 	<!-- Image Title -->
 							 <label class="setting">
 								 <span class="name"><?php _e( 'Title', 'envira-gallery' ); ?></span>

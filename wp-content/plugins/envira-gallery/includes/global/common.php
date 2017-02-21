@@ -311,6 +311,11 @@ class Envira_Gallery_Common {
                 );
             }
         }
+        // Add Option for full image
+		$sizes[] = array(
+			'value'  => 'full',
+			'name'   => __( 'Original Image', 'envira-gallery' ),
+		);
 
         // Add Random option
         if ( ! $wordpress_only ) {
@@ -564,12 +569,32 @@ class Envira_Gallery_Common {
              array(
                 'value' => 'hide',
                 'name'  => __( 'Hide', 'envira-gallery' )
-            )      
+            )
         );
 
         return apply_filters( 'envira_gallery_justified_last_row', $layouts );
 
     }
+
+    /**
+     * Helper method for retrieving additional copy options for legacy gallery views
+     *
+     * @since 1.0.0
+     *
+     * @return array Array of last data.
+     */
+    public function get_additional_copy_options() {
+
+        $options = array(
+            'title'  => __( 'Title', 'envira-gallery' ),
+            'caption'   => __( 'Caption', 'envira-gallery' )
+        );
+
+        return apply_filters( 'envira_gallery_get_additional_copy_options', $options );
+
+    }
+
+
     /**
      * Helper method for setting default config values.
      *
@@ -636,8 +661,13 @@ class Envira_Gallery_Common {
             'isotope'			  			=> 1,
             'css_animations'	 			=> 1,
             'css_opacity'         			=> 100,
+            'lightbox_title_caption'        => 'title',
+            'additional_copy_title'         => 0,
+            'additional_copy_caption'       => 0,
+            'additional_copy_automatic_title'   => 1,
+            'additional_copy_automatic_caption' => 1,
 
-            // Lightbox	
+            // Lightbox
             'lightbox_enabled'   			=> 1,
             'lightbox_theme'      			=> 'base_dark',
             'lightbox_image_size' 			=> 'default',
@@ -675,7 +705,7 @@ class Envira_Gallery_Common {
             'mobile_thumbnails'   			=> 1,
             'mobile_thumbnails_width'   	=> 75,
             'mobile_thumbnails_height'  	=> 50,
-            'mobile_justified_row_height'   => 80,        
+            'mobile_justified_row_height'   => 80,
 
             // Misc
             'title'              			=> '',
@@ -819,7 +849,13 @@ class Envira_Gallery_Common {
         // Strip ?lang=fr from blog's URL - WPML adds this on
         // and means our next statement fails
         if ( is_multisite() ) {
-            $site_url = preg_replace( '/\?.*/', '', network_site_url() );
+            $blog_id = get_current_blog_id();
+            // doesn't use network_site_url because this will be incorrect for remapped domains
+            if ( is_main_site( $blog_id ) ) {
+                $site_url = preg_replace( '/\?.*/', '', network_site_url() );
+            } else {
+                $site_url = preg_replace( '/\?.*/', '', site_url() );
+            }
         } else {
             $site_url = preg_replace( '/\?.*/', '', get_bloginfo( 'url' ) );
         }
@@ -1069,17 +1105,17 @@ class Envira_Gallery_Common {
 	public function sort_gallery( $data, $sort_type, $sort_direction ){
 		//Return if we dont have a sort type
 		if(  empty( $sort_type ) || empty( $sort_direction ) ){
-			
+
 			return $data;
 		}
 		//Dont go any further if datas not set.
 		if ( empty( $data ) ){
 			return;
 		}
-		
+
 		//Update the sort type
 		$data['config']['sort_order'] = $sort_type;
-	 	
+
 	    switch( $sort_type ){
 		    case '1':
                 // Shuffle keys
@@ -1098,22 +1134,22 @@ class Envira_Gallery_Common {
             case 'src':
             case 'title':
             case 'status':
-            
+
                 // Get metadata
                 $keys = array();
                 foreach ( $data['gallery'] as $id => $item ) {
                     $keys[ $id ] = strip_tags( $item[ $sort_type ] );
                 }
-                
+
                 // Sort titles / captions
                 if ( $sorting_direction == 'ASC' ) {
-	                
+
                     natcasesort( $keys );
-                
+
                 } else {
-                
+
                     arsort( $keys );
-                
+
                 }
 
                 // Iterate through sorted items, rebuilding slider
@@ -1124,7 +1160,7 @@ class Envira_Gallery_Common {
 
                 // Assign back to gallery
                 $data['gallery'] = $new_sort;
-                
+
                 break;
 
 		    break;
@@ -1234,17 +1270,17 @@ class Envira_Gallery_Common {
 
         return $slug;
     }
-    
+
 	/**
 	 * Helper function to check if standalone setting is enabled.
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
 	public function is_standalone_enabled(){
-		
+
 		return get_option( 'envira_gallery_standalone_enabled' );
-		
+
 	}
     /**
      * Iterates through all Post Types, returning an array of reserved slugs

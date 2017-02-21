@@ -146,7 +146,7 @@ var EnviraGalleryBulkEditView = wp.Backbone.View.extend( {
             } );
             QTags._buttonsInit();
         }, 500 );
-
+		this.model.set( 'status', 'active' );
         // Init Link Searching
         wpLink.init;
 
@@ -267,12 +267,58 @@ var EnviraGalleryBulkEditView = wp.Backbone.View.extend( {
                             model.set( key, value );
                         }
                     }
-
+                    
+                    var item 			= JSON.stringify( model.attributes ),					
+						$this			= jQuery('ul#envira-gallery-output li#' + model.get( 'id' ) + ' .envira-item-status'),
+						$data 			= $this.data('status'),
+						$parent			= $this.hasClass('list-status') ? $this.parent() : $this.parent(),
+						$list_view 		= $parent.find('.envira-item-status.list-status'),
+						$grid_view 		= $parent.find('.envira-item-status.grid-status'),
+						id 				= $this.data('id'),
+						$icon 			= $grid_view.find('span.dashicons'),
+						$text 			= $list_view.find('span'),
+						$status 		= model.get( 'status' );
+						
                     // Assign the model to the underlying image item in the DOM
-                    var item = JSON.stringify( model.attributes );
                     jQuery( 'ul#envira-gallery-output li#' + model.get( 'id' ) ).attr( 'data-envira-gallery-image-model', item );
                     jQuery( 'ul#envira-gallery-output li#' + model.get( 'id' ) + ' div.title' ).text( model.get( 'title' ) );
+					
+					if( $status === 'active' ){
 
+						//Toggle Classes
+						$grid_view.removeClass('envira-draft-item').addClass('envira-active-item');
+						$list_view.removeClass('envira-draft-item').addClass('envira-active-item');
+
+						//Set the proper icons
+						$icon.removeClass('dashicons-hidden').addClass('dashicons-visibility');
+
+						//Set the Text
+						$text.text( envira_gallery_metabox.active );
+
+	 					$grid_view.attr('data-envira-tooltip',  envira_gallery_metabox.active );
+
+						//Set the Data
+						$list_view.data('status','active');
+						$grid_view.data('status','active');
+
+					}else{
+						
+						//Toggle Classes
+						$grid_view.removeClass('envira-active-item').addClass('envira-draft-item');
+						$list_view.removeClass('envira-active-item').addClass('envira-draft-item');
+
+						//Set the proper icons
+						$icon.removeClass('dashicons-visibility').addClass('dashicons-hidden');
+
+						//Set the text
+						$text.text( envira_gallery_metabox.draft );
+							
+						//Set the Data
+						$list_view.data('status','pending');
+						$grid_view.data('status','pending');
+						$grid_view.attr('data-envira-tooltip',	 envira_gallery_metabox.draft );
+
+					}
 
                 }, this );
 

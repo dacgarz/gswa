@@ -278,6 +278,24 @@ body.post-type-envira_album {
 }
 
 /* ==========================================================================
+   Language Specific
+   ========================================================================== */
+body.post-type-envira.locale-fr-fr,
+body.post-type-envira_album.locale-fr-fr {
+	/**
+	* Wrapper
+	*/
+	div.wrap {
+		/**
+		* Page Title Action (i.e. Add New)
+		*/
+		a.page-title-action {
+			left: 220px;
+		}
+	}
+}
+
+/* ==========================================================================
    Header
    ========================================================================== */
 #envira-header-temp {

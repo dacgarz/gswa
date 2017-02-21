@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Replace Image
  * Description: Upload a new version of an image without deleting the old image attachment, so that references to the image remain intact.
- * Version: 1.1.4
+ * Version: 1.1.5
  * Author: Potent Plugins
  * Author URI: http://potentplugins.com/?utm_source=replace-image&utm_medium=link&utm_campaign=wp-plugin-author-uri
  * License: GNU General Public License version 2 or later
@@ -108,8 +108,11 @@ function hm_replace_image_prepare_attachment_for_js($response) {
 	if (is_admin()) {
 		if (strpos($response['url'], '?') !== false)
 			$response['url'] .= (strpos($response['url'], '?') === false ? '?' : '&').'_t='.time();
-		foreach ($response['sizes'] as $sizeName => $size)
-			$response['sizes'][$sizeName]['url'] .= (strpos($size['url'], '?') === false ? '?' : '&').'_t='.time();
+		if (isset($response['sizes'])) {
+			foreach ($response['sizes'] as $sizeName => $size) {
+				$response['sizes'][$sizeName]['url'] .= (strpos($size['url'], '?') === false ? '?' : '&').'_t='.time();
+			}
+		}
 	}
 	return $response;
 }

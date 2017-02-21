@@ -189,9 +189,12 @@
     .overlay-base_dark .envirabox-wrap .envirabox-inner .envira-social-buttons-exterior {
       bottom: 15px;
       width: 100%;
-      position: absolute; }
+      position: absolute;
+      z-index: 99;
+      pointer-events: none; }
     .overlay-base_dark .envirabox-wrap .envirabox-inner .envirabox-position-overlay .envira-social-buttons,
     .overlay-base_dark .envirabox-wrap .envirabox-inner .envira-social-buttons {
+      pointer-events: initial;
       display: inline-block;
       float: none;
       padding: 5px;
@@ -258,6 +261,8 @@
       .overlay-base_dark .envirabox-wrap .envirabox-inner .envirabox-position-overlay .envira-social-buttons div.email a:after,
       .overlay-base_dark .envirabox-wrap .envirabox-inner .envira-social-buttons div.email a:after {
         content: "\e901"; }
+  .overlay-base_dark .envirabox-wrap .envirabox-inner {
+    bottom: inherit; }
 
 #envirabox-thumbs.envirabox-thumbs-base_dark.thumbs-supersize {
   background: rgba(0, 0, 0, 0.35); }

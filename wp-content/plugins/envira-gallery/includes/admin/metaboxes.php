@@ -342,7 +342,8 @@ class Envira_Gallery_Metaboxes {
         if ( 'envira' !== $screen->post_type ) {
             return;
         }
-
+        wp_dequeue_style( 'thrive-theme-options'  );
+		wp_dequeue_script( 'thrive-theme-options' );
 		wp_dequeue_script( 'ngg-igw' );
 
 	}
@@ -958,7 +959,7 @@ class Envira_Gallery_Metaboxes {
                                     <p class="description"><?php _e( 'Choose to display a description above or below this gallery\'s images.', 'envira-gallery' ); ?></p>
                                 </td>
                             </tr>
-						
+
 						<!-- Description -->
 						<tr id="envira-config-description-box">
                                 <th scope="row">
@@ -980,28 +981,71 @@ class Envira_Gallery_Metaboxes {
                                     <p class="description"><?php _e( 'The description to display for this gallery.', 'envira-gallery' ); ?></p>
                                 </td>
                             </tr>
-						
+
 						<tr id="envira-config-css-animations-box">
-                                    <th scope="row">
-                                        <label for="envira-config-css-animations"><?php _e( 'Enable CSS Animations?', 'envira-gallery' ); ?></label>
-                                    </th>
-                                    <td>
-                                        <input id="envira-config-css-animations" type="checkbox" name="_envira_gallery[css_animations]" value="<?php echo $this->get_config( 'css_animations', $this->get_config_default( 'css_animations' ) ); ?>" <?php checked( $this->get_config( 'css_animations', $this->get_config_default( 'css_animations' ) ), 1 ); ?> />
-                                        <span class="description"><?php _e( 'Enables CSS animations when loading the main gallery images.', 'envira-gallery' ); ?></span>
-                                    </td>
-                                </tr>
+                            <th scope="row">
+                                <label for="envira-config-css-animations"><?php _e( 'Enable CSS Animations?', 'envira-gallery' ); ?></label>
+                            </th>
+                            <td>
+                                <input id="envira-config-css-animations" type="checkbox" name="_envira_gallery[css_animations]" value="<?php echo $this->get_config( 'css_animations', $this->get_config_default( 'css_animations' ) ); ?>" <?php checked( $this->get_config( 'css_animations', $this->get_config_default( 'css_animations' ) ), 1 ); ?> />
+                                <span class="description"><?php _e( 'Enables CSS animations when loading the main gallery images.', 'envira-gallery' ); ?></span>
+                            </td>
+                        </tr>
+
+                        <tr id="envira-config-additional-copy-box-automatic">
+                            <th scope="row">
+                                <label for="envira-config-additional-copy-box"><?php _e( 'Enable Title/Caption?', 'envira-gallery' ); ?></label>
+                            </th>
+                            <td>
+                                <?php
+                                foreach ( $this->get_additional_copy_options() as $option_value => $option_name ) {
+                                    ?>
+                                    <label for="envira-config-social-<?php echo $option_value; ?>" class="label-for-checkbox">
+                                        <input id="envira-config-social-<?php echo $option_value; ?>" type="checkbox" name="_envira_gallery[additional_copy_automatic_<?php echo $option_value; ?>]" value="1" <?php checked( $this->get_config( 'additional_copy_automatic_' . $option_value, $this->get_config_default( 'additional_copy_automatic_' . $option_value ) ), 1 ); ?> />
+                                        <?php echo $option_name; ?>
+                                    </label>
+                                    <?php   
+                                }
+                                ?>
+                                <!--<p class="description">
+                                    <?php _e( 'Select the information that should be shared with each image.', 'envira-social' ); ?>
+                                </p>-->
+                            </td>
+                        </tr>
+
+                        <tr id="envira-config-additional-copy-box">
+                            <th scope="row">
+                                <label for="envira-config-additional-copy-box"><?php _e( 'Enable Title/Caption Below Image?', 'envira-gallery' ); ?></label>
+                            </th>
+                            <td>
+                                <?php
+                                foreach ( $this->get_additional_copy_options() as $option_value => $option_name ) {
+                                    ?>
+                                    <label for="envira-config-social-<?php echo $option_value; ?>" class="label-for-checkbox">
+                                        <input id="envira-config-social-<?php echo $option_value; ?>" type="checkbox" name="_envira_gallery[additional_copy_<?php echo $option_value; ?>]" value="1" <?php checked( $this->get_config( 'additional_copy_' . $option_value, $this->get_config_default( 'additional_copy_' . $option_value ) ), 1 ); ?> />
+                                        <?php echo $option_name; ?>
+                                    </label>
+                                    <?php   
+                                }
+                                ?>
+                                <!--<p class="description">
+                                    <?php _e( 'Select the information that should be shared with each image.', 'envira-social' ); ?>
+                                </p>-->
+                            </td>
+                        </tr>
+
 						<tr id="envira-config-css-opacity-box">
-                                    <th scope="row">
-                                        <label for="envira-config-css-opacity"><?php _e( 'Image Opacity', 'envira-gallery' ); ?></label>
-                                    </th>
-                                    <td>
-                                        <input id="envira-config-css-opacity" type="number" name="_envira_gallery[css_opacity]" min="0" max="100" step="1" value="<?php echo $this->get_config( 'css_opacity', $this->get_config_default( 'css_opacity' ) ); ?>" /><span class="envira-unit">%</span>
-                                        <p class="description"><?php _e( 'The opacity to display images at when loading the main gallery images using CSS animations (between 1 and 100%).', 'envira-gallery' ); ?></p>
-                                    </td>
-                                </tr>
+                            <th scope="row">
+                                <label for="envira-config-css-opacity"><?php _e( 'Image Opacity', 'envira-gallery' ); ?></label>
+                            </th>
+                            <td>
+                                <input id="envira-config-css-opacity" type="number" name="_envira_gallery[css_opacity]" min="0" max="100" step="1" value="<?php echo $this->get_config( 'css_opacity', $this->get_config_default( 'css_opacity' ) ); ?>" /><span class="envira-unit">%</span>
+                                <p class="description"><?php _e( 'The opacity to display images at when loading the main gallery images using CSS animations (between 1 and 100%).', 'envira-gallery' ); ?></p>
+                            </td>
+                        </tr>
 
 						<?php do_action( 'envira_gallery_include_justified_config_box', $post ); ?>
-						
+
 						<!-- Sorting -->
 						<tr id="envira-config-sorting-box">
 						                                    <th scope="row">
@@ -1036,7 +1080,7 @@ class Envira_Gallery_Metaboxes {
 						                                        </select>
 						                                    </td>
 						                                </tr>
-						
+
 						<!-- Dimensions -->
 						<tr id="envira-config-image-size-box">
                         <th scope="row">
@@ -1105,16 +1149,16 @@ class Envira_Gallery_Metaboxes {
                                     <span class="description"><?php _e( 'Enables or disables the width and height attributes on the img element. Only needs to be enabled if you need to meet Google Pagespeeds requirements.', 'envira-gallery' ); ?></span>
                                 </td>
                             </tr>
-						
+
                     </tbody>
-                
+
                 </table>
             </div>
 
             <div id="envira-config-standard-settings-box">
-	            
+
                 <table class="form-table">
-                
+
                     <tbody>
 
                         <tr id="envira-config-gallery-theme-box">
@@ -1163,9 +1207,9 @@ class Envira_Gallery_Metaboxes {
 						<?php do_action( 'envira_gallery_config_box', $post ); ?>
 
 					</tbody>
-					
+
                 </table>
-                
+
             </div>
         </div>
 
@@ -1228,6 +1272,20 @@ class Envira_Gallery_Metaboxes {
                                     <?php endforeach; ?>
                                 </select>
                                 <p class="description"><?php _e( 'Sets the theme for the gallery lightbox display.', 'envira-gallery' ); ?></p>
+                            </td>
+                        </tr>
+
+                        <tr id="envira-config-lightbox-additional-title-caption">
+                            <th scope="row">
+                                <label for="envira-config-title-caption"><?php _e( 'Show Title Or Caption?', 'envira-gallery' ); ?></label>
+                            </th>
+                            <td>
+                                <select id="envira-config-lightbox-title-caption" name="_envira_gallery[lightbox_title_caption]">
+                                    <?php foreach ( (array) $this->get_additional_copy_options() as $option_value => $option_name ) : ?>
+                                        <option value="<?php echo $option_value; ?>" <?php selected( $option_value, $this->get_config( 'lightbox_title_caption', $this->get_config_default( 'lightbox_title_caption' ) ) ); ?>><?php echo $option_name; ?></option>
+                                    <?php endforeach; ?>
+                                </select><br>
+                                <p class="description"><?php _e( 'Caption is the default text, but you can override with title if you wish.', 'envira-gallery' ); ?></p>
                             </td>
                         </tr>
 
@@ -1675,13 +1733,7 @@ class Envira_Gallery_Metaboxes {
                                 <label for="envira-config-standalone-template"><?php _e( 'Template', 'envira-standalone' ); ?></label>
                             </th>
                             <td>
-                                <?php
-
-                                    if ( !empty($templates) ) :
-
-
-
-                                ?>
+                                <?php if ( !empty($templates) ) : ?>
                                 <select id="envira-config-standalone-template" name="<?php echo $key; ?>[standalone_template]">
                                     <option value="">(Default)</option>
                                     <?php foreach ( (array) $templates as $name => $filename ) : ?>
@@ -1929,7 +1981,17 @@ class Envira_Gallery_Metaboxes {
         $settings['config']['crop_width']          		= absint( $_POST['_envira_gallery']['crop_width'] );
         $settings['config']['crop_height']         		= absint( $_POST['_envira_gallery']['crop_height'] );
         $settings['config']['crop']                		= isset( $_POST['_envira_gallery']['crop'] ) ? 1 : 0;
-	
+
+        // this is for isotope
+        foreach ( $this->get_additional_copy_options() as $value => $option ) {
+            $settings['config'][ 'additional_copy_' . $value ] = ( isset( $_POST['_envira_gallery'][ 'additional_copy_' . $value ] ) ? 1 : 0 );
+        }
+
+        // this is for automatic
+        foreach ( $this->get_additional_copy_options() as $value => $option ) {
+            $settings['config'][ 'additional_copy_automatic_' . $value ] = ( isset( $_POST['_envira_gallery'][ 'additional_copy_automatic_' . $value ] ) ? 1 : 0 );
+        }        
+
         // Automatic/Justified
         $settings['config']['justified_row_height'] 	= isset( $_POST['_envira_gallery']['justified_row_height'] ) ? absint($_POST['_envira_gallery']['justified_row_height'] ) : 150;
 
@@ -1948,6 +2010,7 @@ class Envira_Gallery_Metaboxes {
         $settings['config']['lightbox_theme']      		= preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['lightbox_theme'] );
         $settings['config']['lightbox_image_size'] 		= preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['lightbox_image_size'] );
         $settings['config']['title_display']       		= preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['title_display'] );
+        $settings['config']['lightbox_title_caption']   = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['lightbox_title_caption'] );
 
 		$settings['config']['arrows']              		= isset( $_POST['_envira_gallery']['arrows'] ) ? 1 : 0;
 		$settings['config']['arrows_position']     		= preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['arrows_position'] );
@@ -1962,13 +2025,13 @@ class Envira_Gallery_Metaboxes {
 		$settings['config']['effect']              		= preg_replace( '#[^A-Za-z0-9-_]#', '', $_POST['_envira_gallery']['effect'] );
 		$settings['config']['html5']               		= isset( $_POST['_envira_gallery']['html5'] ) ? 1 : 0;
 		$settings['config']['supersize']           		= isset( $_POST['_envira_gallery']['supersize'] ) ? 1 : 0;
-		
+
 		// Lightbox Thumbnails
 		$settings['config']['thumbnails']          		= isset( $_POST['_envira_gallery']['thumbnails'] ) ? 1 : 0;
 		$settings['config']['thumbnails_width']    		= absint( $_POST['_envira_gallery']['thumbnails_width'] );
 		$settings['config']['thumbnails_height']   		= absint( $_POST['_envira_gallery']['thumbnails_height'] );
 		$settings['config']['thumbnails_position'] 		= preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['thumbnails_position'] );
-		
+
 		// Mobile
 		$settings['config']['mobile']             			 = isset( $_POST['_envira_gallery']['mobile'] ) ? 1 : 0;
 		$settings['config']['mobile_width']       			 = absint( $_POST['_envira_gallery']['mobile_width'] );
@@ -1979,19 +2042,19 @@ class Envira_Gallery_Metaboxes {
 		$settings['config']['mobile_arrows']      			 = isset( $_POST['_envira_gallery']['mobile_arrows'] ) ? 1 : 0;
 		$settings['config']['mobile_toolbar']     			 = isset( $_POST['_envira_gallery']['mobile_toolbar'] ) ? 1 : 0;
 		$settings['config']['mobile_thumbnails']  			 = isset( $_POST['_envira_gallery']['mobile_thumbnails'] ) ? 1 : 0;
-		$settings['config']['mobile_thumbnails_width']   	 = absint( $_POST['_envira_gallery']['mobile_thumbnails_width'] );
-		$settings['config']['mobile_thumbnails_height']  	 = absint( $_POST['_envira_gallery']['mobile_thumbnails_height'] );
+		$settings['config']['mobile_thumbnails_width']   	 = isset( $_POST['_envira_gallery']['mobile_thumbnails_width'] ) && $_POST['_envira_gallery']['mobile_thumbnails_width'] != 0  ? absint( $_POST['_envira_gallery']['mobile_thumbnails_width'] ): 75;
+		$settings['config']['mobile_thumbnails_height']  	 = isset( $_POST['_envira_gallery']['mobile_thumbnails_height'] ) && $_POST['_envira_gallery']['mobile_thumbnails_height'] != 0 ? absint( $_POST['_envira_gallery']['mobile_thumbnails_height'] ) : 50;
 		$settings['config']['mobile_justified_row_height']   = absint( $_POST['_envira_gallery']['mobile_justified_row_height'] );
 
         // Standalone
         if ( Envira_Gallery_Settings::get_instance()->get_setting( 'standalone_enabled' ) ) {
             $settings['config']['standalone_template'] = ( isset( $_POST['_envira_gallery']['standalone_template'] ) ? str_replace( '-php', '.php', sanitize_text_field( $_POST['_envira_gallery']['standalone_template'] ) ) : '' );
         }
-
+		$title = sanitize_text_field( strip_tags( esc_attr( $_POST['post_title'] ) ) ) != trim( strip_tags( esc_attr( $_POST['_envira_gallery']['title'] ) ) ) ? sanitize_text_field( $_POST['post_title'] ) : trim( strip_tags( esc_attr( $_POST['_envira_gallery']['title'] ) ) );
         // Misc
         $settings['config']['classes']             = explode( "\n", $_POST['_envira_gallery']['classes'] );
         $settings['config']['rtl']                 = isset( $_POST['_envira_gallery']['rtl'] ) ? 1 : 0;
-        $settings['config']['title']               = trim( strip_tags( esc_attr( $_POST['_envira_gallery']['title'] ) ) );
+        $settings['config']['title']               = $title;
         $settings['config']['slug']                = sanitize_text_field( $_POST['_envira_gallery']['slug'] );
 
         // If on an envira post type, map the title and slug of the post object to the custom fields if no value exists yet.
@@ -2025,6 +2088,15 @@ class Envira_Gallery_Metaboxes {
                 $thumbnail_height   = apply_filters( 'envira_gallery_lightbox_thumbnail_height', $settings['config']['thumbnails_height'], $settings['config']['lightbox_theme'] );
 
                 $src = $common->resize_image( $attachment_url, $thumbnail_width, $thumbnail_height, false );
+
+                // add the custom size to image meta_data
+                $attach_data = wp_get_attachment_metadata( $image_id );
+                $resized_images = $attach_data['image_meta']['resized_images'];
+                if ( empty( $resized_images ) || !in_array( $thumbnail_width . 'x' . $thumbnail_height, $resized_images ) ) {
+                    $attach_data['image_meta']['resized_images'][] = $thumbnail_width . 'x' . $thumbnail_height;
+                    wp_update_attachment_metadata( $image_id,  $attach_data );
+                }
+
             }
         }
 
@@ -2599,6 +2671,21 @@ class Envira_Gallery_Metaboxes {
         return $this->common->get_justified_last_row();
 
     }
+
+    /**
+     * Get options for displaying additional text in legacy gallery layout.
+     *
+     * @since 1.0.0
+     *
+     * @return array Array of thumbnail position data.
+     */
+    public function get_additional_copy_options() {
+
+        return $this->common->get_additional_copy_options();
+
+    }
+
+
 
     /**
      * Returns the post types to skip for loading Envira metaboxes.

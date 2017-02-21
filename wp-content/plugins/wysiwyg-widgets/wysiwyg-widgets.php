@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: WYSIWYG Widgets / Widget Blocks
-Plugin URI: https://DannyvanKooten.com/wordpress-plugins/wysiwyg-widgets/
+Plugin Name: Widget Content Blocks
+Plugin URI: https://dannyvankooten.com/wordpress-plugins/wysiwyg-widgets/
 Description: Adds a WYSIWYG Widget with a rich text editor and media upload functions.
-Version: 2.3.5
+Version: 2.3.6
 Author: Danny van Kooten
 Author URI: http://dvk.co/
 Text Domain: wysiwyg-widgets
@@ -12,7 +12,7 @@ License: GPL v3 or later
 
 WYSIWYG Widgets plugin
 
-Copyright (C) 2013-2015, Danny van Kooten, hi@dannyvankooten.com
+Copyright (C) 2013-2016, Danny van Kooten, hi@dannyvankooten.com
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,8 +30,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'WYWI_VERSION_NUMBER', "2.3.5" );
-define( 'WYWI_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'WYWI_VERSION_NUMBER', "2.3.6" );
+define( 'WYWI_PLUGIN_DIR', dirname( __FILE__ ) .'/' );
 
 require_once WYWI_PLUGIN_DIR . 'includes/plugin.php';
 

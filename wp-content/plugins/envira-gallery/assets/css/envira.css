@@ -84,14 +84,14 @@
   width: 100%;
   margin: 0 auto 20px auto;
   /**
-    * Pagination Addon
-    */
+  * Pagination Addon
+  */
   /**
-    * Description
-    */
+  * Description
+  */
   /**
-    * Inner Wrapper
-    */ }
+  * Inner Wrapper
+  */ }
   .envira-gallery-wrap .envira-pagination {
     margin: 0 0 20px 0; }
   .envira-gallery-wrap .envira-gallery-description {
@@ -103,26 +103,26 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     /**
-        * Clearing
-        */
+    * Clearing
+    */
     /**
-        * Inner
-        */
+    * Inner
+    */
     /**
-        * Gallery Item
-        */
+    * Gallery Item
+    */
     /**
-        * Column Widths and Clearing
-        */
+    * Column Widths and Clearing
+    */
     /**
-        * Optional: Isotope
-        * - if enabled, .enviratope is added to .envira-gallery-public
-        * - no clearing on gallery items
-        */
+    * Optional: Isotope
+    * - if enabled, .enviratope is added to .envira-gallery-public
+    * - no clearing on gallery items
+    */
     /**
-        * Optional: CSS Animations
-        * - if enabled, .envira-gallery-css-animations is added to .envira-gallery-public
-        */ }
+    * Optional: CSS Animations
+    * - if enabled, .envira-gallery-css-animations is added to .envira-gallery-public
+    */ }
     .envira-gallery-wrap .envira-gallery-public.envira-clear {
       clear: both; }
       .envira-gallery-wrap .envira-gallery-public.envira-clear:after {
@@ -137,25 +137,25 @@
     .envira-gallery-wrap .envira-gallery-public .envira-gallery-item-inner {
       position: relative;
       /**
-            * Dynamic Positioning
-            */ }
+      * Dynamic Positioning
+      */ }
       .envira-gallery-wrap .envira-gallery-public .envira-gallery-item-inner .envira-gallery-position-overlay {
         box-sizing: border-box;
         position: absolute;
         overflow: visible;
         z-index: 999;
         /**
-                * Top Left
-                */
+        * Top Left
+        */
         /**
-                * Top Right
-                */
+        * Top Right
+        */
         /**
-                * Bottom Left
-                */
+        * Bottom Left
+        */
         /**
-                * Bottom Right
-                */ }
+        * Bottom Right
+        */ }
         .envira-gallery-wrap .envira-gallery-public .envira-gallery-item-inner .envira-gallery-position-overlay.envira-gallery-top-left {
           top: 0;
           left: 0;
@@ -177,14 +177,14 @@
     .envira-gallery-wrap .envira-gallery-public .envira-gallery-item {
       float: left;
       /**
-            * Link
-            */
+      * Link
+      */
       /**
-            * Image
-            */
+      * Image
+      */
       /**
-            * Videos
-            */ }
+      * Videos
+      */ }
       .envira-gallery-wrap .envira-gallery-public .envira-gallery-item > .envira-gallery-link {
         display: block;
         outline: none;
@@ -230,16 +230,16 @@
       clear: none !important; }
     .envira-gallery-wrap .envira-gallery-public.envira-gallery-css-animations {
       /**
-            * Gallery Item
-            */ }
+      * Gallery Item
+      */ }
       .envira-gallery-wrap .envira-gallery-public.envira-gallery-css-animations .envira-gallery-item {
         /**
-                * Image
-                */
+        * Image
+        */
         /**
-                * Image Hover
-                * - Always force opacity: 1, as the CSS Opacity setting for images may be less e.g. 0.5
-                */ }
+        * Image Hover
+        * - Always force opacity: 1, as the CSS Opacity setting for images may be less e.g. 0.5
+        */ }
         .envira-gallery-wrap .envira-gallery-public.envira-gallery-css-animations .envira-gallery-item img {
           opacity: 0;
           transition: all .2s ease-in-out; }
@@ -251,27 +251,61 @@
 */
 .envira-gallery-public.envira-justified-gallery {
   /**
-    * Inner
-    */
+  * Inner
+  */
   /*    .envira-gallery-description {
-        &.envira-gallery-description-above {
-            display: table;
-        }
-    }*/ }
+          &.envira-gallery-description-above {
+              display: table;
+          }
+      }*/ }
   .envira-gallery-public.envira-justified-gallery .envira-gallery-item-inner {
     position: absolute; }
+
+.envira-gallery-public.envira-gallery-1-columns .envira-title,
+.envira-gallery-public.envira-gallery-1-columns .envira-caption,
+.envira-gallery-public.envira-gallery-2-columns .envira-title,
+.envira-gallery-public.envira-gallery-2-columns .envira-caption,
+.envira-gallery-public.envira-gallery-3-columns .envira-title,
+.envira-gallery-public.envira-gallery-3-columns .envira-caption,
+.envira-gallery-public.envira-gallery-4-columns .envira-title,
+.envira-gallery-public.envira-gallery-4-columns .envira-caption,
+.envira-gallery-public.envira-gallery-5-columns .envira-title,
+.envira-gallery-public.envira-gallery-5-columns .envira-caption,
+.envira-gallery-public.envira-gallery-6-columns .envira-title,
+.envira-gallery-public.envira-gallery-6-columns .envira-caption {
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  line-height: 24px;
+  display: inline-block; }
+.envira-gallery-public.envira-gallery-1-columns .envira-title,
+.envira-gallery-public.envira-gallery-2-columns .envira-title,
+.envira-gallery-public.envira-gallery-3-columns .envira-title,
+.envira-gallery-public.envira-gallery-4-columns .envira-title,
+.envira-gallery-public.envira-gallery-5-columns .envira-title,
+.envira-gallery-public.envira-gallery-6-columns .envira-title {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600; }
+.envira-gallery-public.envira-gallery-1-columns .envira-caption,
+.envira-gallery-public.envira-gallery-2-columns .envira-caption,
+.envira-gallery-public.envira-gallery-3-columns .envira-caption,
+.envira-gallery-public.envira-gallery-4-columns .envira-caption,
+.envira-gallery-public.envira-gallery-5-columns .envira-caption,
+.envira-gallery-public.envira-gallery-6-columns .envira-caption {
+  font-weight: 200; }
 
 /**
 * RTL Support
 */
 .envira-gallery-wrap.envira-gallery-rtl {
   /**
-    * Inner Wrapper
-    */ }
+  * Inner Wrapper
+  */ }
   .envira-gallery-wrap.envira-gallery-rtl .envira-gallery-public {
     /**
-        * Gallery Item
-        */ }
+    * Gallery Item
+    */ }
     .envira-gallery-wrap.envira-gallery-rtl .envira-gallery-public .envira-gallery-item {
       float: right; }
 
@@ -281,21 +315,21 @@
 */
 @media only screen and (max-width: 767px) {
   /**
-    * Main Wrapper
-    */
+  * Main Wrapper
+  */
   .envira-gallery-wrap {
     /**
-        * Inner Wrapper
-        */ }
+    * Inner Wrapper
+    */ }
     .envira-gallery-wrap .envira-gallery-public {
       /**
-            * Column Widths and Clearing
-            */
+      * Column Widths and Clearing
+      */
       /**
-            * Optional: Isotope
-            * - if enabled, .enviratope is added to .envira-gallery-public
-            * - no clearing on gallery items
-            */ }
+      * Optional: Isotope
+      * - if enabled, .enviratope is added to .envira-gallery-public
+      * - no clearing on gallery items
+      */ }
       .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item {
         width: 33%; }
         .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item:nth-child(4n+1) {
@@ -316,28 +350,27 @@
           clear: both; }
       .envira-gallery-wrap .envira-gallery-public.enviratope .envira-gallery-item {
         clear: none !important; } }
-
 /**
 * Mobile Landscape (devices and browsers)
 * - Envira Gallery Columns: Reduce to 2 column. Isotope will detect change + resize automatically.
 */
 @media only screen and (max-width: 459px) {
   /**
-    * Main Wrapper
-    */
+  * Main Wrapper
+  */
   .envira-gallery-wrap {
     /**
-        * Inner Wrapper
-        */ }
+    * Inner Wrapper
+    */ }
     .envira-gallery-wrap .envira-gallery-public {
       /**
-            * Column Widths and Clearing
-            */
+      * Column Widths and Clearing
+      */
       /**
-            * Optional: Isotope
-            * - if enabled, .enviratope is added to .envira-gallery-public
-            * - no clearing on gallery items
-            */ }
+      * Optional: Isotope
+      * - if enabled, .enviratope is added to .envira-gallery-public
+      * - no clearing on gallery items
+      */ }
       .envira-gallery-wrap .envira-gallery-public.envira-gallery-2-columns .envira-gallery-item, .envira-gallery-wrap .envira-gallery-public.envira-gallery-3-columns .envira-gallery-item, .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item, .envira-gallery-wrap .envira-gallery-public.envira-gallery-5-columns .envira-gallery-item, .envira-gallery-wrap .envira-gallery-public.envira-gallery-6-columns .envira-gallery-item {
         width: 50%; }
         .envira-gallery-wrap .envira-gallery-public.envira-gallery-2-columns .envira-gallery-item:nth-child(3n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-2-columns .envira-gallery-item:nth-child(4n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-2-columns .envira-gallery-item:nth-child(5n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-2-columns .envira-gallery-item:nth-child(6n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-3-columns .envira-gallery-item:nth-child(3n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-3-columns .envira-gallery-item:nth-child(4n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-3-columns .envira-gallery-item:nth-child(5n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-3-columns .envira-gallery-item:nth-child(6n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item:nth-child(3n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item:nth-child(4n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item:nth-child(5n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item:nth-child(6n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-5-columns .envira-gallery-item:nth-child(3n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-5-columns .envira-gallery-item:nth-child(4n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-5-columns .envira-gallery-item:nth-child(5n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-5-columns .envira-gallery-item:nth-child(6n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-6-columns .envira-gallery-item:nth-child(3n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-6-columns .envira-gallery-item:nth-child(4n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-6-columns .envira-gallery-item:nth-child(5n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-6-columns .envira-gallery-item:nth-child(6n+1) {
@@ -346,35 +379,33 @@
           clear: both; }
       .envira-gallery-wrap .envira-gallery-public.enviratope .envira-gallery-item {
         clear: none !important; } }
-
 /**
 * Mobile Portrait (devices and browsers)
 * - Envira Gallery Columns: Reduce to 1 column. Isotope will detect change + resize automatically.
 */
 @media only screen and (max-width: 320px) {
   /**
-    * Main Wrapper
-    */
+  * Main Wrapper
+  */
   .envira-gallery-wrap {
     /**
-        * Inner Wrapper
-        */ }
+    * Inner Wrapper
+    */ }
     .envira-gallery-wrap .envira-gallery-public {
       /**
-            * Column Widths and Clearing
-            */
+      * Column Widths and Clearing
+      */
       /**
-            * Optional: Isotope
-            * - if enabled, .enviratope is added to .envira-gallery-public
-            * - no clearing on gallery items
-            */ }
+      * Optional: Isotope
+      * - if enabled, .enviratope is added to .envira-gallery-public
+      * - no clearing on gallery items
+      */ }
       .envira-gallery-wrap .envira-gallery-public.envira-gallery-1-columns .envira-gallery-item, .envira-gallery-wrap .envira-gallery-public.envira-gallery-2-columns .envira-gallery-item, .envira-gallery-wrap .envira-gallery-public.envira-gallery-3-columns .envira-gallery-item, .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item, .envira-gallery-wrap .envira-gallery-public.envira-gallery-5-columns .envira-gallery-item, .envira-gallery-wrap .envira-gallery-public.envira-gallery-6-columns .envira-gallery-item {
         width: 100%; }
         .envira-gallery-wrap .envira-gallery-public.envira-gallery-1-columns .envira-gallery-item:nth-child(2n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-1-columns .envira-gallery-item:nth-child(3n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-1-columns .envira-gallery-item:nth-child(4n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-1-columns .envira-gallery-item:nth-child(5n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-1-columns .envira-gallery-item:nth-child(6n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-2-columns .envira-gallery-item:nth-child(2n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-2-columns .envira-gallery-item:nth-child(3n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-2-columns .envira-gallery-item:nth-child(4n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-2-columns .envira-gallery-item:nth-child(5n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-2-columns .envira-gallery-item:nth-child(6n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-3-columns .envira-gallery-item:nth-child(2n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-3-columns .envira-gallery-item:nth-child(3n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-3-columns .envira-gallery-item:nth-child(4n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-3-columns .envira-gallery-item:nth-child(5n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-3-columns .envira-gallery-item:nth-child(6n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item:nth-child(2n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item:nth-child(3n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item:nth-child(4n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item:nth-child(5n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-4-columns .envira-gallery-item:nth-child(6n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-5-columns .envira-gallery-item:nth-child(2n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-5-columns .envira-gallery-item:nth-child(3n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-5-columns .envira-gallery-item:nth-child(4n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-5-columns .envira-gallery-item:nth-child(5n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-5-columns .envira-gallery-item:nth-child(6n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-6-columns .envira-gallery-item:nth-child(2n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-6-columns .envira-gallery-item:nth-child(3n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-6-columns .envira-gallery-item:nth-child(4n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-6-columns .envira-gallery-item:nth-child(5n+1), .envira-gallery-wrap .envira-gallery-public.envira-gallery-6-columns .envira-gallery-item:nth-child(6n+1) {
           clear: both; }
       .envira-gallery-wrap .envira-gallery-public.enviratope .envira-gallery-item {
         clear: none !important; } }
-
 /* ==========================================================================
    Envira Lightbox Gallery Styles
    ========================================================================== */
@@ -460,11 +491,11 @@
 .envirabox-inner {
   overflow: hidden;
   /**
-     * Actions
-     */
+   * Actions
+   */
   /**
-    * Dynamic Positioning
-    */ }
+  * Dynamic Positioning
+  */ }
   .envirabox-inner .envirabox-actions {
     position: absolute;
     z-index: 988050; }
@@ -476,17 +507,17 @@
     /* Beat the prev/next controls */
     padding: 0;
     /**
-        * Top Left
-        */
+    * Top Left
+    */
     /**
-        * Top Right
-        */
+    * Top Right
+    */
     /**
-        * Bottom Left
-        */
+    * Bottom Left
+    */
     /**
-        * Bottom Right
-        */ }
+    * Bottom Right
+    */ }
     .envirabox-inner .envirabox-position-overlay.envira-gallery-top-left {
       top: 0;
       left: 0;
@@ -644,8 +675,7 @@ a.envirabox-nav:hover {
   position: fixed;
   bottom: 0;
   right: 0; }
-.envirabox-lock .envirabox-overlay {
-  overflow: auto; }
+
 /* Title helper */
 .envirabox-title {
   visibility: hidden;
@@ -866,18 +896,18 @@ a.envirabox-nav:hover {
   #envirabox-loading, .envirabox-close, .envirabox-prev span, .envirabox-next span {
     background-image: url("images/envirabox_sprite@2x.png");
     background-size: 44px 152px; }
+
   #envirabox-loading div {
     background-image: url("images/envirabox_loading@2x.gif");
     background-size: 24px 24px; } }
-
 @media only screen and (max-width: 600px) {
   .envirabox-prev.envirabox-arrows-outside {
     left: -75px;
     width: 12%; }
+
   .envirabox-next.envirabox-arrows-outside {
     right: -75px;
     width: 12%; } }
-
 /*
 #content img{
     height: 0;

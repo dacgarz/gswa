@@ -154,7 +154,7 @@
 
   /** @returns {jQuery} the caption in the given entry */
   JustifiedGallery.prototype.captionFromEntry = function ($entry) {
-    var $caption = $entry.find('> .caption');
+    var $caption = $entry.find('.caption');
     return $caption.length === 0 ? null : $caption;
   };
 

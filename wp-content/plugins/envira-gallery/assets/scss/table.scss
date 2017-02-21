@@ -3,7 +3,7 @@
    - Galleries
    - Albums
 
-   Any styles that will be used by these list tables should be added to this 
+   Any styles that will be used by these list tables should be added to this
    file:
    - Quick Edit
    ========================================================================== */
@@ -16,6 +16,7 @@
 
 body.post-type-envira,
 body.post-type-envira_album {
+
 	/* ==========================================================================
 	   Post Filters
 	   ========================================================================== */
@@ -29,15 +30,15 @@ body.post-type-envira_album {
 	}
 	//make our image col smaller
 	.column-image{
-		width: 85px !important;	
+		width: 85px !important;
 	}
 	input[type=checkbox]{
 	 background-color: $white;
 	 border: 1px solid $light-grey;
 	 box-shadow: none;
 	 margin-right: 10px;
-	
-	
+
+
 	}
 	input[type=checkbox]:checked{
 	 background-color: $green;
@@ -45,7 +46,7 @@ body.post-type-envira_album {
 	}
 	input[type=checkbox]:checked:before{
 	    color: $white !important;
-	}	
+	}
 	/* ==========================================================================
 	   Post Table Form
 	   ========================================================================== */
@@ -76,7 +77,10 @@ body.post-type-envira_album {
    	Quick Edit
    	========================================================================== */
 	#wpbody-content {
-
+		span.subtitle{
+			margin-left: -55px;
+			padding-left: 0px;
+		}
 		td.colspanchange {
 			/**
 			* Left Col (Title, Slug, Date, Password)
@@ -94,7 +98,7 @@ body.post-type-envira_album {
 
 			/**
 			* Category Column
-			*/ 
+			*/
 			fieldset.inline-edit-col-center.inline-edit-categories {
 				display: none;
 			}
@@ -109,7 +113,7 @@ body.post-type-envira_album {
 					width: 100%;
 				}
 			}
-			
+
 			/**
 			* Envira Gallery Col
 			*/
@@ -147,7 +151,7 @@ body.post-type-envira_album {
 				margin-bottom: 20px;
 			}
 		}
-		
+
 	}
 }
 
@@ -183,7 +187,7 @@ body.post-type-envira_album {
 					}
 				}
 			}
-			
+
 		}
 
 		/* ==========================================================================

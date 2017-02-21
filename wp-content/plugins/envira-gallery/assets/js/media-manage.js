@@ -655,6 +655,7 @@ var envira_manage = window.envira_manage || {};
 			  } );
 
 		},
+		
 		start_screen: function(){
 
 			//Get Slide Count

@@ -191,21 +191,21 @@ jQuery( document ).ready( function( $ ) {
 				actions: {
 					if: [
 						{
-							element: '#envira-config-standard-settings-box',
+							element: '#envira-config-standard-settings-box, #envira-config-additional-copy-box',
 							action: 'hide'
 						},
 						{
-							element: '#envira-config-justified-settings-box, #envira-config-mobile-justified-row-height',
+							element: '#envira-config-justified-settings-box, #envira-config-mobile-justified-row-height, #envira-config-additional-copy-box-automatic',
 							action: 'show'
 						}
 					],
 					else: [
 						{
-							element: '#envira-config-standard-settings-box',
+							element: '#envira-config-standard-settings-box, #envira-config-additional-copy-box',
 							action: 'show'
 						},
 						{
-							element: '#envira-config-justified-settings-box, #envira-config-mobile-justified-row-height',
+							element: '#envira-config-justified-settings-box, #envira-config-mobile-justified-row-height, #envira-config-additional-copy-box-automatic',
 							action: 'hide'
 						}
 					]

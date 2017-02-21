@@ -85,6 +85,7 @@ class WYSIWYG_Widgets_Widget extends WP_Widget {
 	 * @see WP_Widget::form()
 	 *
 	 * @param array $instance Previously saved values from database.
+	 * @return string|void
 	 */
 	public function form( $instance ) {
 		

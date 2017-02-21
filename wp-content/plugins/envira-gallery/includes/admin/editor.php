@@ -149,7 +149,7 @@ class Envira_Gallery_Editor {
      * @param bool $remove Remove Post ID from Gallery Meta (false)
      * @return bool
      */
-    private function update_gallery_post_ids( $post_id, $remove = false ) {
+    private function update_gallery_post_ids( $post_id, $remove = true ) {
 
         // Get post
         $post = get_post( $post_id );
@@ -202,7 +202,6 @@ class Envira_Gallery_Editor {
                 $post_ids = array();
             }
 
-            
             if ( $remove ) {
                 // Remove the Post ID
                 if ( isset( $post_ids[ $post_id ] ) ) {

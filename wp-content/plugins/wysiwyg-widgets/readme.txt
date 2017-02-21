@@ -1,10 +1,10 @@
-=== Plugin Name ===
+=== Widget Content Blocks ===
 Contributors: DvanKooten
 Donate link: https://dannyvankooten.com/donate/
 Tags: widget,visual editor,image widget,visual,tinymce,fckeditor,widgets,rich text,wysiwyg,html
-Requires at least: 3.7
-Tested up to: 4.2
-Stable tag: 2.3.5
+Requires at least: 4.1
+Tested up to: 4.6.1
+Stable tag: 2.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,12 +40,11 @@ If you have created your own language pack, or have an update of an existing one
 
 - [WYSIWYG Widgets](https://dannyvankooten.com/wordpress-plugins/wysiwyg-widgets/)
 - Check out more [WordPress plugins](https://dannyvankooten.com/wordpress-plugins/) by the same author
-- You should follow [@DannyvanKooten](https://twitter.com/dannyvankooten) on Twitter.
-- [Thank Danny for this plugin by donating $10, $20 or $50.](https://dannyvankooten.com/donate/)
+- Follow [@DannyvanKooten](https://twitter.com/dannyvankooten) on Twitter.
 
 == Installation ==
 
-1. Upload the contents of wysiwyg-widgets.zip to your plugins directory.
+1. Upload the contents of `wysiwyg-widgets.zip` to your plugins directory.
 1. Activate the plugin
 1. Create a Widget Block by going to *Widget Blocks > Add New*
 1. Go to *Appearance > Widgets*, drag the WYSIWYG Widget to one of your widget areas and select which Widget Block to display.
@@ -78,6 +77,11 @@ Yes, totally. Donations are appreciated though!
 3. Drag the WYSIWYG Widget to one of your widget areas and select the Widget Block to show.
 
 == Changelog ==
+
+= 2.3.6 - September 29, 2016 =
+
+Maintenance release. Mainly just removed some dead links from meta & getting rid of "not updated" notice. Happy widget blocking!
+
 
 = 2.3.5 - March 18, 2015 =
 

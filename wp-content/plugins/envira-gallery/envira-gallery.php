@@ -5,7 +5,7 @@
  * Description: Envira Gallery is best responsive WordPress gallery plugin.
  * Author:      Envira Gallery Team
  * Author URI:  http://enviragallery.com
- * Version:     1.5.9.2
+ * Version:     1.5.9.8
  * Text Domain: envira-gallery
  * Domain Path: languages
  *
@@ -23,6 +23,7 @@
  * along with Envira Gallery. If not, see <http://www.gnu.org/licenses/>.
  *
  * @package Envira
+ 
  */
 
 // Exit if accessed directly.
@@ -56,7 +57,7 @@ class Envira_Gallery {
 	 *
 	 * @var string
 	 */
-	public $version = '1.5.9.2';
+	public $version = '1.5.9.8';
 
 	/**
 	 * The name of the plugin.
@@ -189,7 +190,23 @@ class Envira_Gallery {
 
 		// Add hook for when Envira has loaded.
 		do_action( 'envira_gallery_loaded' );
+		
+		if ( is_admin() ) {
+            // Retrieve the license key. If it is not set, return early.
+            $key = $this->get_license_key();
+            if ( ! $key ) {
+                return;
+            }
 
+            // If there are any errors with the key itself, return early.
+            if ( $this->get_license_key_errors() ) {
+                return;
+            }
+
+            // Fire a hook for Addons to register their updater since we know the key is present.
+            do_action( 'envira_gallery_updater', $key );
+        }
+        
 	}
 
 	/**
@@ -385,10 +402,7 @@ class Envira_Gallery {
 		);
 
 		$updater = new Envira_Gallery_Updater( $args );
-
-		// Fire a hook for Addons to register their updater since we know the key is present.
-		do_action( 'envira_gallery_updater', $key );
-
+		
 	}
 
 	/**

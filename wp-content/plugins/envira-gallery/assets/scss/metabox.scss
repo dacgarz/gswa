@@ -93,6 +93,23 @@ form#post.envira-gallery {
 		input[type=checkbox]:checked:before{
 		    color: $white !important;
 		}	
+
+
+        tr#envira-config-additional-copy-box,
+        tr#envira-config-additional-copy-box-automatic {
+          input[type="checkbox"] {
+            margin-right: 0;
+          }
+          label {
+            margin-right: 15px;
+          }
+          label.label-for-checkbox {
+            display: inline-block;
+          }
+        }
+
+
+
         /**
         * Help Video
         * - Can be placed inside p.envira-intro by JS, or outside p.envira-intro when
