@@ -5,7 +5,7 @@
  * Description: Enables Social Media Sharing Buttons for Envira Galleries
  * Author:      Envira Gallery Team
  * Author URI:  http://enviragallery.com
- * Version:     1.3.1
+ * Version:     1.3.2.1
  * Text Domain: envira-social
  * Domain Path: languages
  *
@@ -54,7 +54,7 @@ class Envira_Social {
      *
      * @var string
      */
-    public $version = '1.3.1';
+    public $version = '1.3.2.1';
 
     /**
      * The name of the plugin.

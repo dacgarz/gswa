@@ -130,6 +130,7 @@ class Envira_Albums_Shortcode {
         $this->gallery_common = Envira_Gallery_Common::get_instance();
 
 		$this->gallery_shortcode = Envira_Gallery_Shortcode::get_instance();
+		
         // Register main gallery style from Envira Gallery
         wp_register_style( $this->galleryBase->plugin_slug . '-style', plugins_url( 'assets/css/envira.css', $this->galleryBase->file ), array(), $this->galleryBase->version );
 
@@ -211,9 +212,17 @@ class Envira_Albums_Shortcode {
 
         // If this is a dynamic gallery and there are no gallery IDs and the user is requesting "all", then let's grab all eligable ones
         if ( ( !isset($this->album_data['galleryIDs']) || empty( $this->album_data['galleryIDs'] ) && $this->album_data['galleries'] != 'all' && $this->album_data['type'] == 'dynamic' ) ) {
-            $galleries = Envira_Dynamic_Album_Shortcode::get_instance()->get_galleries( $this->album_data, $data['id'], $data, null );
+	        
+	        if ( class_exists( 'Envira_Dynamic_Album_Shortcode' ) ) {
+            	$galleries = Envira_Dynamic_Album_Shortcode::get_instance()->get_galleries( $this->album_data, $this->album_data['id'], $this->album_data, null );
+            } else {
+	            //bail if dynamic isnt installed
+	            return;
+            }
+            
             $this->album_data['galleryIDs'] = $galleries['galleryIDs'];
             $this->album_data['galleries']  = $galleries['galleries'];
+        
         }
 
         if ( !empty( $this->album_data['galleryIDs'] ) ) {
@@ -365,83 +374,146 @@ class Envira_Albums_Shortcode {
     public function maybe_add_back_link( $gallery, $data ) {
 
         // Check if the user was referred from an Album
-        if ( ! isset( $_SERVER['HTTP_REFERER'] ) ) {
+        if ( ! isset( $_SERVER['HTTP_REFERER'] ) && ! isset( $_REQUEST['album_id'] ) ) {
             return $gallery;
         }
 
-        // If first part of referrer URL matches the Envira Album slug, the visitor clicked on a gallery from an album
-        $referer_url = str_replace( get_bloginfo( 'url' ), '', $_SERVER['HTTP_REFERER'] );
-        $referer_url_parts = array_values ( array_filter( explode( '/', $referer_url ) ) );
+        $referer_url = false;
+        $referer_url_parts = array();
 
-        if ( ! is_array( $referer_url_parts ) || count ( $referer_url_parts ) < 1 ) { // why was it 2 before?
-            return $gallery;
-        }
+        if ( isset( $_SERVER['HTTP_REFERER'] ) && ! isset( $_REQUEST['album_id'] ) ) {
 
-        $slug = $this->gallery_common->standalone_get_slug( 'albums' );
-        if ( $referer_url_parts[0] != $slug ) {
-            // This might be a regular WordPress page the user has embedded an album into, so let's check
+            // If first part of referrer URL matches the Envira Album slug, the visitor clicked on a gallery from an album
+            $referer_url = str_replace( get_bloginfo( 'url' ), '', $_SERVER['HTTP_REFERER'] );
+            $referer_url_parts = array_values ( array_filter( explode( '/', $referer_url ) ) );
+
+            if ( ! is_array( $referer_url_parts ) || count ( $referer_url_parts ) < 1 ) { // why was it 2 before?
+                return $gallery;
+            }
+
             $args = array(
               'name'        => end($referer_url_parts),
-              'post_type'   => array ('page','post'),
+              'post_type'   => array ('page','post', 'envira_album'),
               'post_status' => 'publish',
               'numberposts' => 1
             );
-            $maybe_album_page = get_posts( $args );
+            $maybe_album_page = get_posts( $args );    
+
+
+
             if ( !$maybe_album_page ) {
                 // Giving up, if there is a page it's not published
                 return $gallery;
             }
 
-            // Determine if the page has the shortcode
-            if ( !has_shortcode( $maybe_album_page[0]->post_content, 'envira-album' ) ) {
+        }
+
+        $slug = $this->gallery_common->standalone_get_slug( 'albums' ); 
+        if ( ( !empty( $referer_url_parts ) && $referer_url_parts[0] != $slug ) || ( isset( $_REQUEST['album_id'] ) ) ) {
+
+            // This might be a regular WordPress page the user has embedded an album into, so let's check
+            if ( isset( $_REQUEST['album_id'] ) ) {
+                $album_id = intval( $_REQUEST['album_id'] );
+                
+                $args = array(
+                  'ID'          => $album_id,
+                  'post_type'   => array ('page','post', 'envira_album'),
+                  'post_status' => 'publish',
+                  'numberposts' => 1
+                );
+                $maybe_album_page = get_posts( $args );
+            } else {           
+                $args = array(
+                  'name'        => end($referer_url_parts),
+                  'post_type'   => array ('page','post'),
+                  'post_status' => 'publish',
+                  'numberposts' => 1
+                );
+                $maybe_album_page = get_posts( $args );                
+            }
+
+            
+
+            if ( !$maybe_album_page ) {
+                // Giving up, if there is a page it's not published
+                return $gallery;
+            }
+
+            
+            
+
+            // If it's an album standalone, we move on
+            if ( ( $maybe_album_page[0]->post_type == 'page' || $maybe_album_page[0]->post_type == 'post') && !has_shortcode( $maybe_album_page[0]->post_content, 'envira-album' ) ) {
                 // no shortcode, so this won't get a back link
                 return $gallery;
             }
 
-            // If there is a shortcode, parse it for the album ID and get the album data from that
+            if ( $maybe_album_page[0]->post_type == 'page' || $maybe_album_page[0]->post_type == 'post' ) {
 
-            $regex_pattern = get_shortcode_regex();
-            preg_match ('/'.$regex_pattern.'/s', $maybe_album_page[0]->post_content, $regex_matches);
+                // If there is a shortcode, parse it for the album ID and get the album data from that
 
-            if ($regex_matches[2] == 'envira-album') :
-                //  Found the album, now need to find out the ID
-                //  Turn the attributes into a URL parm string
-                $attribureStr = str_replace (" ", "&", trim ($regex_matches[3]));
-                $attribureStr = str_replace ('"', '', $attribureStr);
+                $regex_pattern = get_shortcode_regex();
+                preg_match ('/'.$regex_pattern.'/s', $maybe_album_page[0]->post_content, $regex_matches);
 
-                //  Parse the attributes
-                $defaults = array (
-                    'preview' => '1',
-                );
-                $attributes = wp_parse_args ($attribureStr, $defaults);
-                if ( isset( $attributes["id"] ) ) {
-                    $album_data = $this->base->_get_album( $attributes["id"] );
-                } else if ( isset( $attributes["slug"] ) ) {
-                    $album_data = $this->base->get_album_by_slug( $attributes["slug"] );
-                } else {
+                if ($regex_matches[2] == 'envira-album') :
+                    //  Found the album, now need to find out the ID
+                    //  Turn the attributes into a URL parm string
+                    $attribureStr = str_replace (" ", "&", trim ($regex_matches[3]));
+                    $attribureStr = str_replace ('"', '', $attribureStr);
+
+                    //  Parse the attributes
+                    $defaults = array (
+                        'preview' => '1',
+                    );
+                    $attributes = wp_parse_args ($attribureStr, $defaults);
+                    if ( isset( $attributes["id"] ) ) {
+                        $album_data = $this->base->_get_album( $attributes["id"] );
+                    } else if ( isset( $attributes["slug"] ) ) {
+                        $album_data = $this->base->get_album_by_slug( $attributes["slug"] );
+                    } else {
+                        return $gallery;
+                    }
+
+                endif;
+
+                // Prepend Back to Album Button
+                $gallery = '<a href="' . esc_url( $_SERVER['HTTP_REFERER'] ) . '" title="' . $this->get_config( 'back_label', $album_data ) . '" class="envira-back-link">' . $this->get_config( 'back_label', $album_data ) . '</a>' . $gallery;
+
+            } else if ( $maybe_album_page[0]->post_type == 'envira_album' ) {
+
+                $album_data = $this->base->_get_album( $album_id );
+
+                if ( ! $album_data ) {
                     return $gallery;
                 }
 
-            endif;
+                // Prepend Back to Album Button
+                $gallery = '<a href="' . get_permalink( $album_id ) . '" title="' . $this->get_config( 'back_label', $album_data ) . '" class="envira-back-link">' . $this->get_config( 'back_label', $album_data ) . '</a>' . $gallery;
+
+            }
 
         } else {
             // Referred from an Envira Album
             // Check that Album exists
+
             $album_data = $this->base->get_album_by_slug( $referer_url_parts[1] );
+            if ( ! $album_data ) {
+                return $gallery;
+            }
+
+            $album_id = $album_data['id'];
+
+            // Prepend Back to Album Button
+            $gallery = '<a href="' . get_permalink( $album_id ) . '" title="' . $this->get_config( 'back_label', $album_data ) . '" class="envira-back-link">' . $this->get_config( 'back_label', $album_data ) . '</a>' . $gallery;
         }
 
 
-        if ( ! $album_data ) {
-            return $gallery;
-        }
 
         // Check that Album has "Back to Album" functionality enabled
         if ( ! $this->get_config( 'back', $album_data ) ) {
             return $gallery;
         }
 
-        // Prepend Back to Album Button
-        $gallery = '<a href="' . esc_url( $_SERVER['HTTP_REFERER'] ) . '" title="' . $this->get_config( 'back_label', $album_data ) . '" class="envira-back-link">' . $this->get_config( 'back_label', $album_data ) . '</a>' . $gallery;
         return $gallery;
 
     }
@@ -1292,9 +1364,6 @@ class Envira_Albums_Shortcode {
                                 this.inner.find('img').attr('data-pagination-page', envirabox_page );
                                 // console.log (envirabox_page);
 
-
-
-
                                 },
                                 beforeClose: function(){
                                     <?php do_action( 'envira_albums_api_before_close', $data ); ?>
@@ -1722,7 +1791,12 @@ class Envira_Albums_Shortcode {
      * @return string     Key value on success, default if not set.
      */
     public function get_config( $key, $data ) {
-
+	    
+	    //bail if no data 
+		if ( !is_array( $data ) ){
+			return;
+		}
+        
         $instance = Envira_Albums_Common::get_instance();
 
         // If we are on a mobile device, some config keys have mobile equivalents, which we need to check instead
@@ -1745,12 +1819,12 @@ class Envira_Albums_Shortcode {
         }
 
         // We need supersize for the base dark theme, so we are forcing it here
-        if ( $key == 'supersize' && $data['config']['lightbox_theme'] == 'base_dark' ) {
+        if ( $key == 'supersize' && isset( $data['config']['lightbox_theme'] ) && $data['config']['lightbox_theme'] == 'base_dark' ) {
             $data['config'][ $key ] = 1;
         }
 
         // The toolbar is not needed for base dark so lets disable it
-        if ( $key == 'toolbar' && $data['config']['lightbox_theme'] == 'base_dark' ) {
+        if ( $key == 'toolbar' && isset( $data['config']['lightbox_theme'] ) && $data['config']['lightbox_theme'] == 'base_dark' ) {
             $data['config'][ $key ] = 0;
         }
 

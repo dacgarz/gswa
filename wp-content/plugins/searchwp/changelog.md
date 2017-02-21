@@ -1,3 +1,11 @@
+### 2.8.7
+- **[Fix]** Fixed missing tooltip content
+- **[Improvement]** Using `searchwp_admin_bar` now applies to search modification notices
+- **[Improvement]** License key now included in System Information
+- **[New]** Taxonomy term slugs are now indexed (use `searchwp_indexer_taxonomy_term_index_slug` to disable)
+- **[New]** New filter `searchwp_indexer_taxonomy_term` allowing for filtration on taxonomy terms prior to indexing
+- **[Update]** Updated updater
+
 ### 2.8.6
 - **[Fix]** Fixed an issue with imposed engine config implementation for empty searches
 

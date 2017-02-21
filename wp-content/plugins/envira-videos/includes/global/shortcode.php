@@ -241,8 +241,11 @@ class Envira_Videos_Shortcode {
 
             $gallery = Envira_Gallery::get_instance()->get_gallery( $gallery_id );
 
-            foreach ( $gallery['gallery'] as $gallery_item ) {
+            if ( empty( $gallery['gallery'] ) ) { 
+                continue;
+            }
 
+            foreach ( $gallery['gallery'] as $gallery_item ) {
                 // If the item does not have 'Display Video in Gallery' enabled, and the gallery has
                 // 'Display Play Icon over Gallery Image' enabled, append the icon to the markup
                 // if ( isset( $item['video'] ) && ( ! isset( $item['video_in_gallery'] ) || ! $item['video_in_gallery'] ) ) {

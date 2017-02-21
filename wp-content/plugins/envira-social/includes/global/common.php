@@ -95,6 +95,9 @@ class Envira_Social_Common {
         $defaults['social_pinterest_type']   = 'pin-one';
         $defaults['social_pinterest_rich']   = 0;
 
+        // Email
+        $defaults['social_email_image_size']   = 'full';
+
         // Lightbox defaults
         /* $defaults['social_lightbox']                    = 0;
         $defaults['social_lightbox_facebook']           = 0;
@@ -289,6 +292,33 @@ class Envira_Social_Common {
         );
 
         return apply_filters( 'get_pinterest_share_options', $methods );
+
+    }  
+
+    /**
+     * Helper method for email image sharing methods.
+     *
+     * @since 1.0.0
+     *
+     * @return array Array of positions.
+     */
+    public function get_email_image_sizes() {
+
+        $instance_common = Envira_Gallery_Common::get_instance();
+
+        $image_sizes = $instance_common->get_image_sizes( true );
+
+        $sizes = array(
+            'full'      => __( 'Fullsize', 'envira-social' )
+        );
+
+        if ( ! empty( $image_sizes ) ) {
+            foreach ( $image_sizes as $image_size ) {
+                $sizes[ $image_size['value'] ] = $image_size['name'];
+            }
+        }
+
+        return apply_filters( 'get_email_image_sizes', $sizes );
 
     }  
 

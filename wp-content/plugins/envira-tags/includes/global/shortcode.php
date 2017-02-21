@@ -126,6 +126,9 @@ class Envira_Tags_Shortcode {
             $id   = str_replace( '-', '_', $atts['tags_id'] );
         } elseif ( isset( $atts['dynamic'] ) ) {
             $id   = str_replace( '-', '_', $atts['dynamic'] );
+        } else {
+            // there is no $id, prevent PHP Notices
+            return $bool;
         }
 
         $data = $this->get_gallery_by_tags( $tags, $config, $id );
@@ -579,13 +582,13 @@ class Envira_Tags_Shortcode {
 
             if ( count( $filtered_tags) > 0 ) {
 
-                $image_tags = $tags;
+                $tags = array();
 
                 // Iterate through filtered tags and check if each tag exists in $image_tags array
                 // If so, add to our final $tags array
                 foreach ( $filtered_tags as $tag ) {
 	                $tag = get_term_by('name', $tag, $taxonomy );
-					if ( !in_array( $tag->slug, $image_tags ) ) {
+					if ( !empty( $tag->name ) && !empty( $tag->slug ) && !in_array( $tag->slug, $tags ) ) {
 
 						$tags[ $tag->slug ] = $tag->name;
 
@@ -657,7 +660,7 @@ class Envira_Tags_Shortcode {
                 $css_active = false;
             }
 
-            $markup .= '<li id="envira-tag-filter-all" class="envira-tag-filter">';
+            $markup .= '<li id="envira-tag-filter-all" class="envira-tags-filter">';
                 $markup .= '<a href="' . get_permalink( $post->ID ) . '" class="envira-tags-filter-link ' . $css_active . ' " title="' . __( 'Filter by All', 'envira-tags' ) . '" data-envira-filter=".envira-tag-all">' . $this->gallery_shortcode->get_config( 'tags_all', $data ) . '</a>';
             $markup .= '</li>';
         }
@@ -1202,7 +1205,9 @@ class Envira_Tags_Shortcode {
 
             // Store the tags and set our flag to true.
             foreach ( $terms as $term ) {
-                $tags[ $term->slug ] = str_replace( '&amp;', '&', $term->name );
+                if ( !empty( $term->name ) ) {
+                    $tags[ $term->slug ] = str_replace( '&amp;', '&', $term->name );
+                }
             }
 
             $has_tags = true;
@@ -1219,20 +1224,19 @@ class Envira_Tags_Shortcode {
             $filtered_tags = explode( ',', $album_data['config']['tags_filter'] );
 
             if ( count( $filtered_tags ) > 0 ) {
-                $image_tags = $tags;
                 $tags = array();
 
                 // Iterate through filtered tags and check if each tag exists in $image_tags array
                 // If so, add to our final $tags array
                 foreach ( $filtered_tags as $tag ) {
-                    if ( in_array( $tag, $image_tags ) ) {
-                        // Add image tag slug and name to array of tags for filtering
-                        foreach ( $image_tags as $tag_slug => $tag_name ) {
-                            if ( $tag_name == $tag ) {
-                                $tags[ $tag_slug ] = $tag_name;
-                            }
-                        }
-                    }
+
+	                $tag = get_term_by('name', $tag, $taxonomy );
+					if ( !in_array( $tag->slug, $tags ) ) {
+
+						$tags[ $tag->slug ] = $tag->name;
+
+					}
+
                 }
             }
         }

@@ -33,7 +33,7 @@ $searchwp = SWP(); ?>
 			<a class="swp-tooltip" href="#swp-tooltip-overview">?</a></p>
 
 		<div class="swp-tooltip-content" id="swp-tooltip-overview">
-			<?php wp_kses( __( "Only checked post types will be included in search results. If a post type isn't displayed, ensure <code>exclude_from_search</code> is set to false when registering it.", 'searchwp' ), array( 'code' => array() ) ); ?>
+			<?php echo wp_kses( __( "Only checked post types will be included in search results. If a post type isn't displayed, ensure <code>exclude_from_search</code> is set to false when registering it.", 'searchwp' ), array( 'code' => array() ) ); ?>
 		</div>
 		<?php searchwp_engine_settings_template( 'default' ); ?>
 

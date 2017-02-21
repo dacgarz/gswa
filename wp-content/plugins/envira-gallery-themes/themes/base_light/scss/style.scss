@@ -319,9 +319,12 @@
 				bottom: 15px;
 				width: 100%;
 				position: absolute;
+				z-index: 99;
+				pointer-events: none;
 			}
 
 			.envira-social-buttons {
+				pointer-events: initial;
 				display: inline-block;
 				float: none;
 				padding: 5px;
@@ -419,6 +422,10 @@
 
 			}
 
+		}
+		
+		.envirabox-inner {
+			bottom: inherit;
 		}
 		
 	}

@@ -586,6 +586,43 @@ Field accepts text only, no HTML.' , 'envira-social' ); ?>
                 </tbody>
             </table>
 
+            <table class="form-table">
+                <thead>
+                    <td colspan="2" scope="row" style="padding:0;">
+                        <h3 class="social-heading" style="font-size: 1.1em; padding: 0; text-indent: 0px; background-color: #fff; color: #fff; width: 100%; line-height: 50px; margin-bottom: 0;">
+                            <!-- <img style="display:inline-block; margin: 10px 10px 10px 0; float: left;" width="30" height="30" src="<?php echo $this->base->path; ?>assets/images/admin_google.svg" alt="Email" /> -->
+                            <div class="envira-social-settings-email-icon"></div>
+                            <span style="display:inline-block; line-height: 32px; height: 100%; vertical-align: top; color: #000"><?php _e( 'Email Options', 'envira-social' ); ?></span>
+                        </h3>
+                    </th>
+                </thead>
+                <tbody>
+
+                    <tr id="envira-config-social-networks-google-default-desc">
+                        <th scope="row">
+                            <label for="envira-config-social-networks-google-default-desc"><?php _e( 'Image Size To Share', 'envira-social' ); ?></label>
+                        </th>
+
+                        <td>
+                            <select id="envira-config-image-size" name="_envira_gallery[social_email_image_size]">
+                                <?php
+                                foreach ( (array) $this->get_email_image_sizes() as $option_value => $option_name ) {
+                                    ?>
+                                    <option value="<?php echo $option_value; ?>"<?php selected( $option_value, $instance->get_config( 'social_email_image_size', $instance->get_config_default( 'social_email_image_size' ) ) ); ?>><?php echo $option_name; ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                            <p class="description">
+                                <?php _e( 'Select if you want to share the url of the full sized image or a smaller image via email.' , 'envira-social' ); ?>
+                            </p>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
         <?php
 	
 	}
@@ -798,6 +835,20 @@ Field accepts text only, no HTML.' , 'envira-social' ); ?>
 
     }
 
+    /**
+     * Helper method for retrieving Pinterest sharing methods.
+     *
+     * @since 1.0.0
+     *
+     * @return array Array of position data.
+     */
+    public function get_email_image_sizes() {
+
+        $instance = Envira_Social_Common::get_instance();
+        return $instance->get_email_image_sizes();
+
+    }
+
 
     /**
      * Helper method for retrieving orientations.
@@ -870,6 +921,9 @@ Field accepts text only, no HTML.' , 'envira-social' ); ?>
         } else {
             $settings['config']['social_pinterest_rich']        = false;
         }
+
+        // Email
+        $settings['config']['social_email_image_size']        = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['social_email_image_size'] );
 
 	    // Lightbox
 	    $settings['config']['social_lightbox'] 			= ( isset( $_POST['_envira_gallery']['social_lightbox'] ) ? 1 : 0 );
@@ -954,6 +1008,9 @@ Field accepts text only, no HTML.' , 'envira-social' ); ?>
         } else {
             $settings['config']['social_pinterest_rich']        = false;
         }
+
+        // Email
+        $settings['config']['social_email_image_size']        = sanitize_text_field( $_POST['_general']['social_email_image_size'] );
 
         // Mobile
         $settings['config']['mobile_social']              = ( isset( $_POST['_eg_album_data']['config']['mobile_social'] ) ? 1 : 0 );
