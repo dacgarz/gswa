@@ -51,13 +51,13 @@ class Envira_Social_Shortcode {
      * @since 1.0.0
      */
     public function __construct() {
-	    
-	    // Load the base class object.
+      
+      // Load the base class object.
         $this->base = Envira_Social::get_instance();
-	    
-	    // Register CSS
+      
+      // Register CSS
         wp_register_style( $this->base->plugin_slug . '-style', plugins_url( 'assets/css/envira-social.css', $this->base->file ), array(), $this->base->version );
-	    
+      
         // Register JS
         wp_register_script( $this->base->plugin_slug . '-script', plugins_url( 'assets/js/min/envira-social-min.js', $this->base->file ), array( 'jquery' ), $this->base->version, true );
         wp_register_script( $this->base->plugin_slug . '-pinterest-pinit', '//assets.pinterest.com/js/pinit.js', array( 'jquery' ), $this->base->version, true );
@@ -82,6 +82,9 @@ class Envira_Social_Shortcode {
         // Schema Microdata
         add_filter( 'envira_gallery_output_schema_microdata', array( $this, 'envira_output_schema_microdata' ), 10, 6 );
         add_filter( 'envira_gallery_output_shortcode_schema_microdata', array( $this, 'envira_gallery_output_shortcode_schema_microdata' ), 10, 2 );
+        add_filter( 'envira_gallery_output_schema_microdata_itemprop_thumbnailurl', array( $this, 'envira_gallery_output_schema_microdata_itemprop_thumbnailurl' ), 10, 2 );
+        add_filter( 'envira_gallery_output_schema_microdata_itemprop_contenturl', array( $this, 'envira_gallery_output_schema_microdata_itemprop_contenturl' ), 10, 2 );
+        add_filter( 'envira_gallery_output_schema_microdata_imageobject', array( $this, 'envira_gallery_output_schema_microdata_imageobject' ), 10, 2 );
 
         // Album
         add_action( 'envira_albums_before_output', array( $this, 'albums_output_css_js' ) );
@@ -185,7 +188,7 @@ class Envira_Social_Shortcode {
      */
     public function envira_output_schema_microdata( $html, $gallery, $id, $item, $data, $i ) {
 
-        if ( ! $data['config']['social_google'] && ! $data['config']['social_lightbox_google'] ) {
+        if ( empty( $gallery['config']['social_google'] ) && empty ( $gallery['config']['social_lightbox_google'] ) ) {
             return $html;
         } else {
             return false;
@@ -200,7 +203,7 @@ class Envira_Social_Shortcode {
      */
     public function envira_gallery_output_shortcode_schema_microdata( $html, $gallery ) {
 
-        if ( ! $gallery['config']['social_google'] && ! $gallery['config']['social_lightbox_google'] ) {
+        if ( empty( $gallery['config']['social_google'] ) && empty ( $gallery['config']['social_lightbox_google'] ) ) {
             return $html;
         } else {
             return false;
@@ -208,6 +211,50 @@ class Envira_Social_Shortcode {
 
     }
 
+    /**
+     * Remove schema data because Google+ will use this over the Open Graph data the social addon uses
+     *
+     * @since 1.1.7
+     */
+    public function envira_gallery_output_schema_microdata_itemprop_thumbnailurl( $html, $gallery ) {
+
+        if ( empty( $gallery['config']['social_google'] ) && empty ( $gallery['config']['social_lightbox_google'] ) ) {
+            return $html;
+        } else {
+            return false;
+        }
+
+    }
+
+    /**
+     * Remove schema data because Google+ will use this over the Open Graph data the social addon uses
+     *
+     * @since 1.1.7
+     */
+    public function envira_gallery_output_schema_microdata_itemprop_contenturl( $html, $gallery ) {
+
+        if ( empty( $gallery['config']['social_google'] ) && empty ( $gallery['config']['social_lightbox_google'] ) ) {
+            return $html;
+        } else {
+            return false;
+        }
+
+    }   
+    
+    /**
+     * Remove schema data because Google+ will use this over the Open Graph data the social addon uses
+     *
+     * @since 1.1.7
+     */
+    public function envira_gallery_output_schema_microdata_imageobject( $html, $gallery ) {
+
+        if ( empty( $gallery['config']['social_google'] ) && empty ( $gallery['config']['social_lightbox_google'] ) ) {
+            return $html;
+        } else {
+            return false;
+        }
+
+    }   
 
     /**
      * If an envira_social_gallery_id and envira_social_gallery_item_id are present in the URL,
@@ -316,9 +363,11 @@ class Envira_Social_Shortcode {
             // TO-DO: CHECK POST TYPE?
             if ( ( empty( $gallery_id ) || empty( $gallery_item_id ) ) && ! empty( $post->ID ) ) {
                 $images_in_gallery = get_post_meta( $post->ID, '_eg_in_gallery', true );
-                if ( $images_in_gallery ) {
+                if ( ! empty( $images_in_gallery ) ) {
                     $gallery_id = $post->ID;
-                    $gallery_item_id = $images_in_gallery[0];
+                    if ( ! empty( $images_in_gallery[0] ) ) {
+                      $gallery_item_id = $images_in_gallery[0];
+                    }
                 }
             }
 
@@ -333,7 +382,7 @@ class Envira_Social_Shortcode {
         if ( $album_id ) {
             $data           = Envira_Albums::get_instance()->get_album( $album_id );
             $gallery_data   = Envira_Gallery::get_instance()->get_gallery( $gallery_id );   
-        } else {
+        } else if ( $gallery_id ) {
             $data           = Envira_Gallery::get_instance()->get_gallery( $gallery_id );            
         }
         if ( ! $data ) {
@@ -480,6 +529,14 @@ class Envira_Social_Shortcode {
             <meta property="og:title" content="<?php echo $social_title; ?>" />
             <meta property="og:description" content="<?php echo $social_description; ?>" />
             <meta property="og:image" content="<?php echo $social_image; ?>" />
+
+            <?php if ( ! empty( $data['config']['crop_width'] ) && ! empty( $data['config']['crop_height'] ) ) { ?>
+
+            <meta property="og:image:width" content="<?php echo $data['config']['crop_width']; ?>" />
+            <meta property="og:image:height" content="<?php echo $data['config']['crop_height']; ?>" />
+
+            <?php } ?>
+
             <meta property="og:url" content="<?php echo $social_url; ?>" />
             <?php /* Below tags are more for Pinterest than any of the other social networks */ ?>
 <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>" />
@@ -560,12 +617,12 @@ class Envira_Social_Shortcode {
     }
 
     /**
-	* Enqueue CSS and JS if Social Sharing is enabled
-	*
-	* @since 1.0.0
-	*
-	* @param array $data Gallery Data
-	*/
+  * Enqueue CSS and JS if Social Sharing is enabled
+  *
+  * @since 1.0.0
+  *
+  * @param array $data Gallery Data
+  */
     public function gallery_output_css_js( $data ) {
 
         // Check if Social Sharing Buttons output is enabled
@@ -649,17 +706,17 @@ class Envira_Social_Shortcode {
 
     
     /**
-	* Outputs Social Media Sharing HTML for the Gallery thumbnail with a high priority
-	*
-	* @since 1.0.0
-	* 
-	* @param string $output HTML Output
-	* @param int $id Attachment ID
-	* @param array $item Image Item
-	* @param array $data Gallery Config
-	* @param int $i Image number in gallery
-	* @return string HTML Output
-	*/
+  * Outputs Social Media Sharing HTML for the Gallery thumbnail with a high priority
+  *
+  * @since 1.0.0
+  * 
+  * @param string $output HTML Output
+  * @param int $id Attachment ID
+  * @param array $item Image Item
+  * @param array $data Gallery Config
+  * @param int $i Image number in gallery
+  * @return string HTML Output
+  */
     public function gallery_output_html_high_priority( $output, $id, $item, $data, $i, $position ) {
 
         // Check if Social Sharing Buttons output is enabled
@@ -675,10 +732,10 @@ class Envira_Social_Shortcode {
         }
 
         // Prepend Button(s)
-	    $buttons = $this->get_social_sharing_buttons( $id, $item, $data, $i, $position );
+      $buttons = $this->get_social_sharing_buttons( $id, $item, $data, $i, $position );
 
-		return $output . $buttons;
-	    
+    return $output . $buttons;
+      
     }
 
     /**
@@ -740,12 +797,54 @@ class Envira_Social_Shortcode {
             $facebook_text = "    ";
 
         } else {
-	        
+          
             $facebook_text = $this->get_config( 'social_facebook_text', $data );
         
         }
 
         $current_url = home_url( add_query_arg( array() , $wp->request ) );
+
+        ?>
+
+        var envira_fb_tags = {};
+
+        <?php 
+
+          if ( !empty( $data['config']['social_facebook_show_option_tags'] ) && !empty( $data['gallery'] ) ) { 
+
+            $tag_counter = 0;
+
+        ?>
+          <?php foreach ( $data['gallery'] as $image_id => $image_data ) { ?>
+          <?php
+          if ( $data['config']['social_facebook_show_option_tags'] ) {
+            if ( $data['config']['social_facebook_tag_options'] == "manual" ) {
+              $tag_to_output = sanitize_text_field( $data['config']['social_facebook_tags_manual'] );
+            } else if ( $data['config']['social_facebook_tag_options'] == "envira-tags" && ! empty( $image_id ) ) {
+            // If no more tags, return the classes.
+            $terms = wp_get_object_terms( $image_id, 'envira-tag' );
+              if ( count( $terms ) > 0 ) {
+                  // we are only grabbing the first tag
+                  $tags = "#" . $terms[0]->slug;
+              }
+            }
+          }
+
+          ?>
+          <?php 
+
+          echo 'envira_fb_tags['.$image_id.'] = "'.$tags.'";'; 
+
+          if ( $tag_counter == 0 ) {
+            $tag_to_output = $tags;
+          }
+
+          $tag_counter++;
+
+          ?>
+          <?php } ?>
+        <?php }  
+
 
         ?>           
 
@@ -753,10 +852,11 @@ class Envira_Social_Shortcode {
 
         this.inner.find('img').attr('data-envira-social-facebook-text', '<?php echo esc_html($facebook_text); ?>' );     
         this.inner.find('img').attr('data-envira-facebook-quote',       '<?php echo esc_html($this->get_config( 'social_facebook_quote', $data )); ?>');
-        this.inner.find('img').attr('data-envira-facebook-tags-manual', '<?php echo esc_html($this->get_config( 'social_facebook_tags_manual', $data )); ?>');
+        <?php if ( $data['config']['social_facebook_show_option_tags'] ) { ?>
+          this.inner.find('img').attr('data-envira-facebook-tags-manual', '<?php echo $tag_to_output; ?>');
+        <?php } ?>
 
         this.inner.find('img').attr('data-envira-social-twitter-text',  '<?php echo esc_html($this->get_config( 'social_twitter_text', $data )); ?>');
-
 
         <?php
 
@@ -789,11 +889,11 @@ class Envira_Social_Shortcode {
     }
 
     /**
-	* Gallery: Outputs EXIF Lightbox data when a lightbox image is displayed from a Gallery with a high priority
-	*
-	* @param array $data Gallery Data
-	* @return JS
-	*/
+  * Gallery: Outputs EXIF Lightbox data when a lightbox image is displayed from a Gallery with a high priority
+  *
+  * @param array $data Gallery Data
+  * @return JS
+  */
     public function gallery_output_legacy_lightbox_html_high_priority( $template, $data, $position = false ) {
 
         // Check if Social Sharing Buttons output is enabled
@@ -819,7 +919,7 @@ class Envira_Social_Shortcode {
         $buttons = $this->get_lightbox_social_sharing_buttons( $data, $position );
        
         return $template . $buttons;
-			    
+          
     }
 
     /**
@@ -998,7 +1098,7 @@ class Envira_Social_Shortcode {
                     $url = 'https://www.facebook.com/dialog/feed?app_id=' . $app_id . '&display=popup&link=' . urlencode( $post_url ) . '?' . $envira_permalink . 'picture=' . urlencode( $item['src'] ) . '&name=' . urlencode( strip_tags( $title ) ) . '&caption=' . urlencode( strip_tags( $caption ) )  . '&description=' .  $facebook_text  . '&redirect_uri=' . urlencode( $post_url . '#envira_social_sharing_close' );
                     $width = 626;
                     $height = 436;
-                    if ( ! $data['config']['social_facebook_show_option_optional_text'] ) {
+                    if ( ! empty( $data['config']['social_facebook_show_option_optional_text'] ) ) {
                         $facebook_text = "  ";
                     }
                     if ( ! empty( $data['config']['social_facebook_show_option_quote'] ) ) {
@@ -1006,7 +1106,7 @@ class Envira_Social_Shortcode {
                     } else {
                         $facebook_quote = false;
                     }
-                    if ( $data['config']['social_facebook_show_option_tags'] ) {
+                    if ( ! empty( $data['config']['social_facebook_show_option_tags'] ) ) {
 
 
                         if ( $data['config']['social_facebook_tag_options'] == "manual" ) {
@@ -1020,7 +1120,7 @@ class Envira_Social_Shortcode {
                             }
                         }
                     }
-                    if ( $data['config']['social_facebook_show_option_caption'] ) {
+                    if ( ! empty( $data['config']['social_facebook_show_option_caption'] ) ) {
                         $fb_caption = 'data-envira-facebook-caption="' . urlencode( strip_tags( $caption ) ) . '"';
                     } else {
                         $fb_caption = 'data-envira-facebook-caption=""';
@@ -1120,9 +1220,14 @@ class Envira_Social_Shortcode {
                         }
                         $email_url .= '%0D%0A';
                     }
-                    $url = 'mailto:?subject=' . ( $title ) . '&body=' . $email_url . 'Photo: ' . urlencode( $item['src'] );
-                    $width = 500;
-                    $height = 400;
+                    // share the right sized image so check the 'social_email_image_size' option - default is a fulld image
+                    $email_share_image_size = $this->get_config( 'social_email_image_size', $data ) ? $this->get_config( 'social_email_image_size', $data ) : 'full';
+                    $photo_url = wp_get_attachment_image_src( $id, $email_share_image_size );
+
+                    $photo_url = apply_filters( 'envira_get_email_image_sizes_photo', $photo_url[0], $data );
+                    $email_url = apply_filters( 'envira_get_email_image_sizes_email', $email_url, $data );
+
+                    $url = apply_filters( 'get_email_image_sizes', ( 'mailto:?subject=' . ( $title ) . '&body=' . $email_url . 'Photo: ' . urlencode( $photo_url ) ), $data ); 
 
                     // Build Button HTML
                     
@@ -1215,7 +1320,7 @@ class Envira_Social_Shortcode {
                     $url = 'https://www.facebook.com/dialog/feed?app_id=' . $app_id . '&display=popup&link=' . urlencode( $post_url ) . '?picture=' . urlencode( $src ) . '&name=' . urlencode( strip_tags( $title ) ) . '&caption=' . urlencode( strip_tags( $caption ) )  . '&description=' .  $facebook_text  . '&redirect_uri=' . urlencode( $post_url . '#envira_social_sharing_close' );
                     $width = 626;
                     $height = 436;
-                    if ( ! $data['config']['social_facebook_show_option_optional_text'] ) {
+                    if ( ! empty( $data['config']['social_facebook_show_option_optional_text'] ) ) {
                         $facebook_text = "  ";
                     }
                     if ( ! empty( $data['config']['social_facebook_show_option_quote'] ) ) {
@@ -1223,12 +1328,13 @@ class Envira_Social_Shortcode {
                     } else {
                         $facebook_quote = false;
                     }
-                    if ( $data['config']['social_facebook_show_option_tags'] ) {
+                    $tags = false;
+                    if ( ! empty( $data['config']['social_facebook_show_option_tags'] ) ) {
 
 
                         if ( $data['config']['social_facebook_tag_options'] == "manual" ) {
                             $tags = sanitize_text_field( $data['config']['social_facebook_tags_manual'] );
-                        } else if ( $data['config']['social_facebook_tag_options'] == "envira-tags" ) {
+                        } else if ( $data['config']['social_facebook_tag_options'] == "envira-tags" && ! empty( $id ) ) {
                             // If no more tags, return the classes.
                             $terms = wp_get_object_terms( $id, 'envira-tag' );
                             if ( count( $terms ) > 0 ) {
@@ -1236,10 +1342,8 @@ class Envira_Social_Shortcode {
                                 $tags = "#" . $terms[0]->slug;
                             }
                         }
-                    } else {
-                        $tags = false;
                     }
-                    if ( $data['config']['social_facebook_show_option_caption'] ) {
+                    if ( ! empty( $data['config']['social_facebook_show_option_caption'] ) ) {
                         $fb_caption = 'data-envira-facebook-caption="' . urlencode( strip_tags( $caption ) ) . '"';
                     } else {
                         $fb_caption = 'data-envira-facebook-caption=""';

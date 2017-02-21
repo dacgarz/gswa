@@ -1886,7 +1886,22 @@ class SearchWPIndexer {
 			while ( ( $term = current( $terms ) ) !== false ) {
 				/** @noinspection PhpUnusedLocalVariableInspection */
 				$termsKey = key( $terms );
-				$cleanTerms[] = $this->clean_content( $term->name );
+				$term_string_to_index = $term->name;
+
+				$context = array(
+					'SWP'       => $this,
+					'taxonomy'  => $taxonomy,
+					'term'      => $term,
+				);
+
+				if ( apply_filters( 'searchwp_indexer_taxonomy_term_index_slug', false, $context ) ) {
+					$term_string_to_index .= ' ' . $term->slug;
+				}
+
+				$term_string_to_index = apply_filters( 'searchwp_indexer_taxonomy_term', $term_string_to_index, $context );
+				$term_string_to_index = $this->clean_content( $term_string_to_index );
+
+				$cleanTerms[] = $term_string_to_index;
 				next( $terms );
 			}
 			reset( $terms );

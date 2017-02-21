@@ -44,6 +44,7 @@ function envira_albums_sort_galleries() {
 
     // Get post meta
     $data = get_post_meta( $post_id, '_eg_album_data', true );
+    if ( !$data || !is_array( $data ) ) { $data = array(); }
 
     // Update galleryIDs
     $data['galleryIDs'] = $gallery_ids;
@@ -304,8 +305,8 @@ function envira_albums_editor_get_albums() {
     foreach ( ( array ) $albums as $album ) {
         // Add gallery to results
         $results[] = array(
-            'id'        => $album['id'],
-            'title'     => $album['config']['title'],
+            'id'        => ( ! empty( $album['id'] ) ? $album['id'] : '' ),
+            'title'     => ( ! empty( $album['config']['title'] ) ? $album['config']['title'] : '' ),
             'thumbnail' => '',
             'action'    => 'album', // Tells the editor modal whether this is a Gallery or Album for the shortcode output
         );

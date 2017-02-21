@@ -28,8 +28,8 @@ if ( ! defined( 'ABSPATH' ) || ! function_exists( 'SWP' ) ) {
 				<?php $engine_id = 0; foreach ( SWP()->settings['engines'] as $searchwp_engine_id => $searchwp_export_source ) : ?>
 					<?php $engine_label = isset( $searchwp_export_source['searchwp_engine_label'] ) ? $searchwp_export_source['searchwp_engine_label'] : __( 'Default', 'searchwp' ); ?>
 					<div class="swp-export-source">
-						<input type="checkbox" id="<?php echo esc_attr( strtolower( $engine_label ) ); ?>" checked="checked" data-swp-engine-id="<?php echo esc_attr( $searchwp_engine_id ); ?>" />
-						<label for="<?php echo esc_attr( strtolower( $engine_label ) ); ?>"><?php echo esc_html( $engine_label ); ?></label>
+						<input type="checkbox" id="swp-export-source-<?php echo esc_attr( strtolower( $engine_label ) ); ?>" checked="checked" data-swp-engine-id="<?php echo esc_attr( $searchwp_engine_id ); ?>" />
+						<label for="swp-export-source-<?php echo esc_attr( strtolower( $engine_label ) ); ?>"><?php echo esc_html( $engine_label ); ?></label>
 					</div>
 				<?php $engine_id++; endforeach; ?>
 			</div>

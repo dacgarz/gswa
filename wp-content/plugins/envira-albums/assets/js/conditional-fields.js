@@ -81,6 +81,27 @@ jQuery( document ).ready( function( $ ) {
 					}
 				}
 			},
+			{	// Gallery CSS animations
+				conditions: {
+					element: '[name="_eg_album_data[config][css_animations]"]',
+					type: 'checked',
+					operator: 'is'
+				},
+				actions: {
+					if: [
+						{
+							element: '#envira-config-css-opacity-box',
+							action: 'show'
+						}
+					],
+					else: [
+						{
+							element: '#envira-config-css-opacity-box',
+							action: 'hide'
+						}
+					]
+				}
+			},
 			{	// Mobile Elements Independant of Theme
 				conditions: [
 					{

@@ -5,7 +5,7 @@
  * Description: Enables tagging capabilities for Envira galleries.
  * Author:      Envira Gallery Team
  * Author URI:  http://enviragallery.com
- * Version:     1.4.4
+ * Version:     1.4.6
  * Text Domain: envira-tags
  * Domain Path: languages
  *
@@ -55,7 +55,7 @@ class Envira_Tags {
      *
      * @var string
      */
-    public $version = '1.4.4';
+    public $version = '1.4.6';
 
     /**
      * The name of the plugin.

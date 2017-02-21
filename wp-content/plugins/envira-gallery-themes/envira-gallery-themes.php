@@ -5,7 +5,7 @@
  * Description: Enables custom themes for the grid display of Envira galleries.
  * Author:      Envira Gallery Team
  * Author URI:  http://enviragallery.com
- * Version:     1.2.4
+ * Version:     1.2.5
  * Text Domain: envira-gallery-themes
  * Domain Path: languages
  *
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Define necessary addon constants.
 define( 'ENVIRA_GALLERY_THEMES_PLUGIN_NAME', 'Envira Gallery - Gallery Themes Addon' );
-define( 'ENVIRA_GALLERY_THEMES_PLUGIN_VERSION', '1.2.4' );
+define( 'ENVIRA_GALLERY_THEMES_PLUGIN_VERSION', '1.2.5' );
 define( 'ENVIRA_GALLERY_THEMES_PLUGIN_SLUG', 'envira-gallery-themes' );
 
 add_action( 'plugins_loaded', 'envira_gallery_themes_plugins_loaded' );
@@ -709,6 +709,8 @@ function envira_gallery_themes_output( $output, $id, $item, $data, $i ) {
     if ( ! $post_type && isset( $data['config']['id'] ) ) {
         $post_type = get_post_type( $data['config']['id'] );
     }
+
+    $instance = false;
 
     switch ( $post_type ) {
         case 'envira':

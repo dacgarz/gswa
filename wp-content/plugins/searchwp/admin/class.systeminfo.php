@@ -65,6 +65,7 @@ SITE_URL:                 <?php echo esc_url( site_url() ) . "\n"; ?>
 HOME_URL:                 <?php echo esc_url( home_url() ) . "\n"; ?>
 
 SearchWP Version:         <?php echo esc_textarea( $this->searchwp->version ) . "\n"; ?>
+SearchWP License:         <?php echo esc_textarea( searchwp_get_license_key() ) . "\n"; ?>
 WordPress Version:        <?php echo esc_textarea( get_bloginfo( 'version' ) ) . "\n"; ?>
 Permalink Structure:      <?php echo esc_textarea( get_option( 'permalink_structure' ) ) . "\n"; ?>
 Active Theme:             <?php echo esc_textarea( $theme ) . "\n"; ?>

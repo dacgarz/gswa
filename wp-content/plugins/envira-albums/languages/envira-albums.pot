@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Envira Gallery - Albums Addon package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Envira Gallery - Albums Addon 1.3.4\n"
+"Project-Id-Version: Envira Gallery - Albums Addon 1.3.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/envira-albums\n"
-"POT-Creation-Date: 2017-01-19 21:11:15+00:00\n"
+"POT-Creation-Date: 2017-02-15 20:16:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,23 +32,23 @@ msgstr ""
 msgid "No galleries specified!"
 msgstr ""
 
-#: includes/admin/ajax.php:74
+#: includes/admin/ajax.php:75
 msgid "Missing post_id parameter"
 msgstr ""
 
-#: includes/admin/ajax.php:77
+#: includes/admin/ajax.php:78
 msgid "Missing search_terms parameter"
 msgstr ""
 
-#: includes/admin/ajax.php:113
+#: includes/admin/ajax.php:114
 msgid "No Galleries found matching the given search terms."
 msgstr ""
 
-#: includes/admin/ajax.php:250
+#: includes/admin/ajax.php:251
 msgid "Gallery not found."
 msgstr ""
 
-#: includes/admin/ajax.php:259
+#: includes/admin/ajax.php:260
 msgid "No images found in this Gallery."
 msgstr ""
 
@@ -226,17 +226,17 @@ msgid "Displaying the most recent Envira Galleries. Please use the search box to
 msgstr ""
 
 #: includes/admin/metaboxes.php:576 includes/admin/metaboxes.php:858
-#: includes/admin/metaboxes.php:1255 includes/admin/metaboxes.php:1792
+#: includes/admin/metaboxes.php:1265 includes/admin/metaboxes.php:1802
 msgid "Need some help?"
 msgstr ""
 
 #: includes/admin/metaboxes.php:578 includes/admin/metaboxes.php:860
-#: includes/admin/metaboxes.php:1257 includes/admin/metaboxes.php:1794
+#: includes/admin/metaboxes.php:1267 includes/admin/metaboxes.php:1804
 msgid "Read the Documentation"
 msgstr ""
 
 #: includes/admin/metaboxes.php:582 includes/admin/metaboxes.php:864
-#: includes/admin/metaboxes.php:1261 includes/admin/metaboxes.php:1798
+#: includes/admin/metaboxes.php:1271 includes/admin/metaboxes.php:1808
 msgid "Watch a Video"
 msgstr ""
 
@@ -282,9 +282,9 @@ msgstr ""
 
 #: includes/admin/metaboxes.php:909 includes/admin/metaboxes.php:918
 #: includes/admin/metaboxes.php:1131 includes/admin/metaboxes.php:1140
-#: includes/admin/metaboxes.php:1186 includes/admin/metaboxes.php:1514
-#: includes/admin/metaboxes.php:1523 includes/admin/metaboxes.php:1581
-#: includes/admin/metaboxes.php:1658 includes/admin/metaboxes.php:1667
+#: includes/admin/metaboxes.php:1186 includes/admin/metaboxes.php:1524
+#: includes/admin/metaboxes.php:1533 includes/admin/metaboxes.php:1591
+#: includes/admin/metaboxes.php:1668 includes/admin/metaboxes.php:1677
 msgid "px"
 msgstr ""
 
@@ -468,347 +468,355 @@ msgstr ""
 msgid "Enables CSS animations when loading the main gallery images."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1251
+#: includes/admin/metaboxes.php:1230
+msgid "Image Opacity"
+msgstr ""
+
+#: includes/admin/metaboxes.php:1234
+msgid "The opacity to display images at when loading the main gallery images using CSS animations (between 1 and 100%)."
+msgstr ""
+
+#: includes/admin/metaboxes.php:1261
 msgid "Lightbox Settings"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1253
+#: includes/admin/metaboxes.php:1263
 msgid "The settings below adjust the lightbox output."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1269 includes/admin/metaboxes.php:1601
+#: includes/admin/metaboxes.php:1279 includes/admin/metaboxes.php:1611
 msgid "Enable Lightbox?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1273
+#: includes/admin/metaboxes.php:1283
 msgid "If checked, displays the Gallery in a lightbox when the album cover image is clicked."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1284
+#: includes/admin/metaboxes.php:1294
 msgid "Album Lightbox Theme"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1292
+#: includes/admin/metaboxes.php:1302
 msgid "Sets the theme for the album lightbox display."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1297
+#: includes/admin/metaboxes.php:1307
 msgid "Caption Position"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1305
+#: includes/admin/metaboxes.php:1315
 msgid "Sets the display of the lightbox image's caption."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1310 includes/admin/metaboxes.php:1628
+#: includes/admin/metaboxes.php:1320 includes/admin/metaboxes.php:1638
 msgid "Enable Gallery Arrows?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1314
+#: includes/admin/metaboxes.php:1324
 msgid "Enables or disables the gallery lightbox navigation arrows."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1319
+#: includes/admin/metaboxes.php:1329
 msgid "Gallery Arrow Position"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1327
+#: includes/admin/metaboxes.php:1337
 msgid "Sets the position of the gallery lightbox navigation arrows."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1332
+#: includes/admin/metaboxes.php:1342
 msgid "Enable Keyboard Navigation?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1336
+#: includes/admin/metaboxes.php:1346
 msgid "Enables or disables keyboard navigation in the gallery lightbox."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1341
+#: includes/admin/metaboxes.php:1351
 msgid "Enable Mousewheel Navigation?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1345
+#: includes/admin/metaboxes.php:1355
 msgid "Enables or disables mousewheel navigation in the gallery."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1350 includes/admin/metaboxes.php:1637
+#: includes/admin/metaboxes.php:1360 includes/admin/metaboxes.php:1647
 msgid "Enable Gallery Toolbar?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1354
+#: includes/admin/metaboxes.php:1364
 msgid "Enables or disables the gallery lightbox toolbar."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1359
+#: includes/admin/metaboxes.php:1369
 msgid "Display Title in Gallery Toolbar?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1363
+#: includes/admin/metaboxes.php:1373
 msgid "Display the gallery title in the lightbox toolbar."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1368
+#: includes/admin/metaboxes.php:1378
 msgid "Gallery Toolbar Position"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1376
+#: includes/admin/metaboxes.php:1386
 msgid "Sets the position of the lightbox toolbar."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1381
+#: includes/admin/metaboxes.php:1391
 msgid "Keep Aspect Ratio?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1385
+#: includes/admin/metaboxes.php:1395
 msgid "If enabled, images will always resize based on the original aspect ratio."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1390
+#: includes/admin/metaboxes.php:1400
 msgid "Loop Gallery Navigation?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1394
+#: includes/admin/metaboxes.php:1404
 msgid "Enables or disables infinite navigation cycling of the lightbox gallery."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1400
+#: includes/admin/metaboxes.php:1410
 msgid "Lightbox Open/Close Effect"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1420
+#: includes/admin/metaboxes.php:1430
 msgid "Type of transition when opening and closing the lightbox."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1425
+#: includes/admin/metaboxes.php:1435
 msgid "Lightbox Transition Effect"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1445
+#: includes/admin/metaboxes.php:1455
 msgid "Type of transition between images in the lightbox view."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1450
+#: includes/admin/metaboxes.php:1460
 msgid "Lightbox Sort"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1463
+#: includes/admin/metaboxes.php:1473
 msgid "Determine the sort order of the lightbox gallery images in this album."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1468
+#: includes/admin/metaboxes.php:1478
 msgid "HTML5 Output?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1472
+#: includes/admin/metaboxes.php:1482
 msgid "If enabled, uses data-envirabox-gallery instead of rel attributes for W3C HTML5 validation."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1477
+#: includes/admin/metaboxes.php:1487
 msgid "Enable Lightbox Supersize?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1481
+#: includes/admin/metaboxes.php:1491
 msgid "Enables or disables supersize mode for gallery lightbox images."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1493
+#: includes/admin/metaboxes.php:1503
 msgid "Lightbox Thumbnail Settings"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1495
+#: includes/admin/metaboxes.php:1505
 msgid "The settings below adjust the thumbnail views for the lightbox display."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1502 includes/admin/metaboxes.php:1646
+#: includes/admin/metaboxes.php:1512 includes/admin/metaboxes.php:1656
 msgid "Enable Gallery Thumbnails?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1506
+#: includes/admin/metaboxes.php:1516
 msgid "Enables or disables the gallery lightbox thumbnails."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1511 includes/admin/metaboxes.php:1655
+#: includes/admin/metaboxes.php:1521 includes/admin/metaboxes.php:1665
 msgid "Gallery Thumbnails Width"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1515
+#: includes/admin/metaboxes.php:1525
 msgid "Sets the width of each lightbox thumbnail."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1520 includes/admin/metaboxes.php:1664
+#: includes/admin/metaboxes.php:1530 includes/admin/metaboxes.php:1674
 msgid "Gallery Thumbnails Height"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1524
+#: includes/admin/metaboxes.php:1534
 msgid "Sets the height of each lightbox thumbnail."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1529
+#: includes/admin/metaboxes.php:1539
 msgid "Gallery Thumbnails Position"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1537
+#: includes/admin/metaboxes.php:1547
 msgid "Sets the position of the lightbox thumbnails."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1560
+#: includes/admin/metaboxes.php:1570
 msgid "Mobile Gallery Settings"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1562
+#: includes/admin/metaboxes.php:1572
 msgid "The settings below adjust configuration options for the Gallery when viewed on a mobile device.."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1569
+#: includes/admin/metaboxes.php:1579
 msgid "Create Mobile Album Images?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1573
+#: includes/admin/metaboxes.php:1583
 msgid "Enables or disables creating specific images for mobile devices."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1578
+#: includes/admin/metaboxes.php:1588
 msgid "Mobile Dimensions"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1582
+#: includes/admin/metaboxes.php:1592
 msgid "These will be the sizes used for images displayed on mobile devices."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1592
+#: includes/admin/metaboxes.php:1602
 msgid "Mobile Lightbox Settings"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1594
+#: includes/admin/metaboxes.php:1604
 msgid "The settings below adjust configuration options for the Lightbox when viewed on a mobile device."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1605
+#: includes/admin/metaboxes.php:1615
 msgid "Enables or disables the gallery lightbox on mobile devices."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1610
+#: includes/admin/metaboxes.php:1620
 msgid "Enable Gallery Touchwipe?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1614
+#: includes/admin/metaboxes.php:1624
 msgid "Enables or disables touchwipe support for the gallery lightbox on mobile devices."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1619
+#: includes/admin/metaboxes.php:1629
 msgid "Close Lightbox on Swipe Up?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1623
+#: includes/admin/metaboxes.php:1633
 msgid "Enables or disables closing the Lightbox when the user swipes up on mobile devices."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1632
+#: includes/admin/metaboxes.php:1642
 msgid "Enables or disables the gallery lightbox navigation arrows on mobile devices."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1641
+#: includes/admin/metaboxes.php:1651
 msgid "Enables or disables the gallery lightbox toolbar on mobile devices."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1650
+#: includes/admin/metaboxes.php:1660
 msgid "Enables or disables the gallery lightbox thumbnails on mobile devices."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1659
+#: includes/admin/metaboxes.php:1669
 msgid "Sets the width of each lightbox thumbnail when on mobile devices."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1668
+#: includes/admin/metaboxes.php:1678
 msgid "Sets the height of each lightbox thumbnail when on mobile devices."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1691
+#: includes/admin/metaboxes.php:1701
 msgid "Miscellaneous Settings"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1693
+#: includes/admin/metaboxes.php:1703
 msgid "The settings below adjust the miscellaneous options for the album."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1700
+#: includes/admin/metaboxes.php:1710
 msgid "Album Title"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1704
+#: includes/admin/metaboxes.php:1714
 msgid "Internal album title for identification in the admin."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1709
+#: includes/admin/metaboxes.php:1719
 msgid "Album Slug"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1713
+#: includes/admin/metaboxes.php:1723
 msgid "<strong>Unique</strong> internal album slug for identification and advanced album queries."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1718
+#: includes/admin/metaboxes.php:1728
 msgid "Import/Export Album"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1728
+#: includes/admin/metaboxes.php:1738
 msgid "Import Album"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1738
+#: includes/admin/metaboxes.php:1748
 msgid "Export Album"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1744
+#: includes/admin/metaboxes.php:1754
 msgid "Enable RTL Support?"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1748
+#: includes/admin/metaboxes.php:1758
 msgid "Enables or disables RTL support in Envira for right-to-left languages."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1790
+#: includes/admin/metaboxes.php:1800
 msgid "The settings below adjust the Standalone settings."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1806
+#: includes/admin/metaboxes.php:1816
 msgid "Template"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1823
+#: includes/admin/metaboxes.php:1833
 msgid "By default we use single.php, which is the default template of the single blog post in your theme."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1827
+#: includes/admin/metaboxes.php:1837
 msgid "Your current theme does not have any custom templates. If you want to use a template besides the default, you need to add a custom template to your theme."
 msgstr ""
 
-#: includes/admin/metaboxes.php:1924
+#: includes/admin/metaboxes.php:1934
 msgid "Do not display"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1928
+#: includes/admin/metaboxes.php:1938
 msgid "Display above gallery"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1932
+#: includes/admin/metaboxes.php:1942
 msgid "Display below gallery"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1950
+#: includes/admin/metaboxes.php:1960
 msgid "None"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1954
+#: includes/admin/metaboxes.php:1964
 msgid "Left"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1958
+#: includes/admin/metaboxes.php:1968
 msgid "Right"
 msgstr ""
 
-#: includes/admin/metaboxes.php:1962
+#: includes/admin/metaboxes.php:1972
 msgid "Center"
 msgstr ""
 
@@ -991,25 +999,25 @@ msgstr ""
 msgid "No Envira albums found in trash."
 msgstr ""
 
-#: includes/global/shortcode.php:614
+#: includes/global/shortcode.php:686
 msgid "Photo"
 msgid_plural "Photos"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/global/shortcode.php:1144
+#: includes/global/shortcode.php:1216
 msgid "The requested content cannot be loaded.<br/>Please try again later.</p>"
 msgstr ""
 
-#: includes/global/shortcode.php:1145 includes/global/shortcode.php:1653
+#: includes/global/shortcode.php:1217 includes/global/shortcode.php:1722
 msgid "Close"
 msgstr ""
 
-#: includes/global/shortcode.php:1146 includes/global/shortcode.php:1640
+#: includes/global/shortcode.php:1218 includes/global/shortcode.php:1709
 msgid "Next"
 msgstr ""
 
-#: includes/global/shortcode.php:1147 includes/global/shortcode.php:1636
+#: includes/global/shortcode.php:1219 includes/global/shortcode.php:1705
 msgid "Previous"
 msgstr ""
 

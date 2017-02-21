@@ -3,7 +3,7 @@
 Plugin Name: SearchWP
 Plugin URI: https://searchwp.com/
 Description: The best WordPress search you can find
-Version: 2.8.6
+Version: 2.8.7
 Author: SearchWP, LLC
 Author URI: https://searchwp.com/
 Text Domain: searchwp
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SEARCHWP_VERSION', '2.8.6' );
+define( 'SEARCHWP_VERSION', '2.8.7' );
 define( 'SEARCHWP_PREFIX', 'searchwp_' );
 define( 'SEARCHWP_DBPREFIX', 'swp_' );
 define( 'SEARCHWP_EDD_STORE_URL', 'https://searchwp.com' );
@@ -2037,6 +2037,10 @@ if ( is_array( $diagnostics['posts'] ) && isset( $diagnostics['posts'][0] ) ) {
 	function admin_bar_search_results() {
 		global $wp_admin_bar;
 
+		if ( ! apply_filters( 'searchwp_admin_bar', true ) ) {
+			return;
+		}
+
 		// as of now we're only going to show an Admin Bar entry if there
 		// were search query modifications, to help call out things like
 		// minimum word length and common words in a more effective way
@@ -2146,18 +2150,38 @@ if ( is_array( $diagnostics['posts'] ) && isset( $diagnostics['posts'][0] ) ) {
 			return $args;
 		}
 
-		$search_results = new SWP_Query( array(
+		$query_args = array(
 			's'             => sanitize_text_field( $args['s'] ),
 			'post_type'     => 'attachment',
 			'fields'        => 'ids',
-		) );
+		);
+
+		if ( ! empty( $args['posts_per_page'] ) ) {
+			$query_args['posts_per_page'] = absint( $args['posts_per_page'] );
+		}
+
+		if ( ! empty( $args['paged'] ) ) {
+			$query_args['page'] = absint( $args['paged'] );
+		}
+
+		$search_results = new SWP_Query( $query_args );
 
 		$args = array(
 			'post__in'      => $search_results->posts,
 			'orderby'       => 'post__in',
 			'post_type'     => 'attachment',
-			'post_status'   => 'inherit'
+			'post_status'   => 'inherit',
+			's'             => '',
 		);
+
+		// Re-implement pagination
+		if ( ! empty( $query_args['posts_per_page'] ) ) {
+			$args['posts_per_page'] = absint( $query_args['posts_per_page'] );
+		}
+
+		if ( ! empty( $query_args['page'] ) ) {
+			$args['paged'] = absint( $query_args['paged'] );
+		}
 
 		return $args;
 	}

@@ -48,16 +48,27 @@ jQuery( document ).ready( function( $ ) {
 			var link_source     	= $('.envirabox-wrap'),
 				image 				= link_source.data('envira-src'), /* $('img.envirabox-image').attr('src'), */
 				title 				= link_source.data('envira-title'),
+				full_size_image     = link_source.data('envira-fullsize-src'),
 				caption 			= link_source.data('envira-caption'),
 				gallery_id 			= link_source.data('envira-gallery-id'),
 				gallery_item_id 	= link_source.data('envira-item-id'),
 				rand 				= Math.floor( ( Math.random() * 10000 ) + 1 ),
 				envira_permalink 	= envira_social_get_query_arg( 'envira', window.location.href );
 
+				// If WP_DEBUG enabled, output error details
+				if ( envira_social.debug ) {
+					console.log ('full_size_image url (lightbox):');
+					console.log (full_size_image);
+				}
+
 				if ( typeof envira_permalink !== "undefined" && envira_permalink !== null ) {
 					envira_permalink = 'envira=' + envira_permalink;
 				} else {
 					envira_permalink = '';
+				}
+
+				if ( typeof full_size_image === "undefined" || full_size_image === null ) {
+					full_size_image = image;
 				}
 
 				// If WP_DEBUG enabled, output error details
@@ -140,8 +151,8 @@ jQuery( document ).ready( function( $ ) {
 						}
 					}
 
-					if (typeof $(this).attr('data-facebook-tags-manual') !== "undefined") {
-						tags	 		= decodeURIComponent($(this).data('facebook-tags-manual'));
+					if (typeof $('.envirabox-wrap').find('img.envirabox-image').data('envira-facebook-tags-manual') !== "undefined") {
+						tags	 		= decodeURIComponent($('.envirabox-wrap').find('img.envirabox-image').data('envira-facebook-tags-manual'));
 						tags 			= tags.replace(new RegExp("\\+","g"),' ');
 						// remove any dashes, since FB doesn't like them
 						tags 			= tags.replace(/-/g, '');
@@ -153,7 +164,7 @@ jQuery( document ).ready( function( $ ) {
 					} else {
 						if ( envira_social.debug ) {
 							console.log ('updating tags - missing');
-							console.log ( $(this).attr('data-facebook-tags-manual') );
+							console.log ( $('.envirabox-wrap').find('img.envirabox-image').data('envira-facebook-tags-manual') );
 						}		
 					}
 
@@ -227,11 +238,12 @@ jQuery( document ).ready( function( $ ) {
 					}
 
 					// caption, image, and link var is taken from the 'general' caption above
-					url = 'mailto:?subject=' + encodeURIComponent(caption) + '&body=Photo: ' + image + '%0D%0AURL: ' + cleaned_email_link;
+					url = 'mailto:?subject=' + encodeURIComponent(caption) + '&body=Photo: ' + full_size_image + '%0D%0AURL: ' + cleaned_email_link;
 
 					// If WP_DEBUG enabled, output error details
 					if ( envira_social.debug ) {
 						console.log ('email url (lightbox):');
+						console.log (full_size_image);
 						console.log (url);
 						console.log (link);
 					}
@@ -266,7 +278,7 @@ jQuery( document ).ready( function( $ ) {
 				var album_id    = false;
 			}
 
-			if ( typeof envira_permalink !== "undefined" ) {
+			if ( typeof envira_permalink !== "undefined" && envira_permalink !== null ) {
 				envira_permalink = 'envira=' + envira_permalink;
 			} else {
 				envira_permalink = '';

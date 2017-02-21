@@ -1221,12 +1221,22 @@ class Envira_Albums_Metaboxes {
                             <label for="envira-config-css-animations"><?php _e( 'Enable CSS Animations?', 'envira-albums' ); ?></label>
                         </th>
                         <td>
-                            <input id="envira-config-css-animations" type="checkbox" name="_eg_album_data[config][css_animations]]" value="<?php echo $this->get_config( 'css_animations', $this->get_config_default( 'css_animations' ) ); ?>" <?php checked( $this->get_config( 'css_animations', $this->get_config_default( 'css_animations' ) ), 1 ); ?> />
+                            <input id="envira-config-css-animations" type="checkbox" name="_eg_album_data[config][css_animations]" value="<?php echo $this->get_config( 'css_animations', $this->get_config_default( 'css_animations' ) ); ?>" <?php checked( $this->get_config( 'css_animations', $this->get_config_default( 'css_animations' ) ), 1 ); ?> />
                             <span class="description"><?php _e( 'Enables CSS animations when loading the main gallery images.', 'envira-albums' ); ?></span>
                         </td>
                     </tr>
-
+					<tr id="envira-config-css-opacity-box">
+						<th scope="row">
+							<label for="envira-config-css-opacity"><?php _e( 'Image Opacity', 'envira-gallery' ); ?></label>
+						</th>
+						<td>
+							<input id="envira-config-css-opacity" type="number" name="_eg_album_data[config][css_opacity]" min="0" max="100" step="1" value="<?php echo $this->get_config( 'css_opacity', $this->get_config_default( 'css_opacity' ) ); ?>" /><span class="envira-unit">%</span>
+							<p class="description"><?php _e( 'The opacity to display images at when loading the main gallery images using CSS animations (between 1 and 100%).', 'envira-gallery' ); ?></p>
+						</td>
+					</tr>
+                    
                     <?php do_action( 'envira_albums_config_box', $post ); ?>
+                
                 </tbody>
             </table>
         </div>
@@ -2189,6 +2199,12 @@ class Envira_Albums_Metaboxes {
 
         // Get the existing settings
         $settings = get_post_meta( $post_id, '_eg_album_data', true );
+
+        if ( !is_array( $settings ) || $settings === false ) {
+            // there are no settings, so start with an array
+            // also, this "resets" any "bad" data in this metadata
+            $settings = array();
+        }
 
         // If the ID of the album is not set or is lost, replace it now.
         if ( empty( $settings['id'] ) || ! $settings['id'] ) {
