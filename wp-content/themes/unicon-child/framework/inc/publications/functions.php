@@ -107,7 +107,7 @@ function custom_publications_index_content($get_categories = FALSE) {
     'categories' => $categories
   );
   foreach ($categories as $category_id ) {
-    $post = get_recent_post_for_post_tyle($category_id);
+    $post = get_recent_post_for_post_type($category_id);
     if (!empty($post)) {
       $render_array['posts'][$category_id] = $post;
     }
@@ -115,7 +115,17 @@ function custom_publications_index_content($get_categories = FALSE) {
   return $render_array;
 }
 
-function get_recent_post_for_post_tyle($category_id) {
+function custom_publications_index_get_labels() {
+  return array(
+//    53 => 'Print News',
+//    51 => 'e-News',
+    54 => 'Water Quality<br/> Report Card',
+    50 => 'Watershed Blog',
+//    52 => 'Past Presentations',
+  );
+}
+
+function get_recent_post_for_post_type($category_id) {
   $args = array(
     'numberposts' => 1,
     'offset' => 0,
