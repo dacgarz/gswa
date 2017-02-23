@@ -20,7 +20,14 @@ get_header(); ?>
 			'order' => 'DESC',
 			'category_name'	=> $categories,
 			'paged' => $paged,
-			'posts_per_page' => 12
+			'posts_per_page' => 12,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'post_type',
+					'field' => 'term_id',
+					'terms' => 50
+				)
+			)
 		);
 		$wp_query = new WP_Query($args);
 		$is_open_tag = FALSE;
