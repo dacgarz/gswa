@@ -31,7 +31,7 @@
 				<?php endif; ?>
 			</div>
 			<div style="text-align: center;margin-top:20px;">
-				&copy; 1996-2016 Great Swamp Watershed Association. All rights reserved.<br/>
+				&copy; 1996-2016 Great Swamp Watershed Association. All rights reserved.DELICE<br/>
 				Staff/Board | Municipal Alliance
 			</div>
 		</footer>
