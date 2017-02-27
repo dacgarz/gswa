@@ -19,6 +19,7 @@
 					</div>
 
 					<div class="topbar-col2">
+						<!-- added by Delice -->
 					<?php if (class_exists('Woocommerce')) { ?>
 						<?php if($minti_data['switch_shoppingicon'] == 1) { ?>
 						<?php global $woocommerce; ?>
@@ -27,13 +28,14 @@
 						</span>
 						<?php } ?>
 					<?php } ?>
-						
+						<!-- added by Delice -->
 			<?php if (class_exists('Woocommerce')) { ?>
 			<?php global $woocommerce; ?>
 			<?php if ( sizeof( $woocommerce->cart->cart_contents ) != 0 ) { ?>
 				<?php if ( version_compare( WOOCOMMERCE_VERSION, "2.0.0" ) >= 0 ) { the_widget( 'WC_Widget_Cart', 'title= ' ); } ?>
 			<?php } ?>
-		<?php } ?>
+		<?php } ?>						<!-- END by Delice -->
+
 						<?php if($minti_data['select_topbarright'] == 'Text Field') { ?>
 							<?php echo wp_kses_post($minti_data['textarea_topbar']); ?>
 						<?php } elseif($minti_data['select_topbarright'] == 'Navigation') { ?>
@@ -106,8 +108,7 @@ test01
 				<a href="#" id="close-search-btn"><i class="icon-minti-close"></i></a>
 			</div>
 			<?php } ?>
-//old woo cart here
-
+<!-- OLD woo cart icon here beside Donate button -->
 		</div>
 
 	</header>
