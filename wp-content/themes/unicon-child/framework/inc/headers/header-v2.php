@@ -19,14 +19,21 @@
 					</div>
 
 					<div class="topbar-col2">
-						<?php if (class_exists('Woocommerce')) { ?>
-					<?php if($minti_data['switch_shoppingicon'] == 1) { ?>
-					<?php global $woocommerce; ?>
-					<span class="cart-popup">
-					<a href="<?php echo esc_url($woocommerce->cart->get_cart_url()); ?>" id="shopping-btn" class="cart-contents"><i class="icon-minti-cart"></i><?php if ( sizeof( $woocommerce->cart->cart_contents ) != 0 ) { ?><span><?php echo esc_html($woocommerce->cart->cart_contents_count); ?></span><?php } ?></a>
-					</span>
+					<?php if (class_exists('Woocommerce')) { ?>
+						<?php if($minti_data['switch_shoppingicon'] == 1) { ?>
+						<?php global $woocommerce; ?>
+						<span class="cart-popup">
+						<a href="<?php echo esc_url($woocommerce->cart->get_cart_url()); ?>" id="shopping-btn" class="cart-contents"><i class="icon-minti-cart"></i><?php if ( sizeof( $woocommerce->cart->cart_contents ) != 0 ) { ?><span><?php echo esc_html($woocommerce->cart->cart_contents_count); ?></span><?php } ?></a>
+						</span>
+						<?php } ?>
 					<?php } ?>
-				<?php } ?>
+						
+			<?php if (class_exists('Woocommerce')) { ?>
+			<?php global $woocommerce; ?>
+			<?php if ( sizeof( $woocommerce->cart->cart_contents ) != 0 ) { ?>
+				<?php if ( version_compare( WOOCOMMERCE_VERSION, "2.0.0" ) >= 0 ) { the_widget( 'WC_Widget_Cart', 'title= ' ); } ?>
+			<?php } ?>
+		<?php } ?>
 						<?php if($minti_data['select_topbarright'] == 'Text Field') { ?>
 							<?php echo wp_kses_post($minti_data['textarea_topbar']); ?>
 						<?php } elseif($minti_data['select_topbarright'] == 'Navigation') { ?>
@@ -62,14 +69,7 @@
 					<div class="header-icons">
 
 
-					<?php if (class_exists('Woocommerce')) { ?>
-						<?php if($minti_data['switch_shoppingicon'] == 1) { ?>
-						<?php global $woocommerce; ?>
-						<span class="cart-popup">
-						<a href="<?php echo esc_url($woocommerce->cart->get_cart_url()); ?>" id="shopping-btn" class="cart-contents"><i class="icon-minti-cart"></i><?php if ( sizeof( $woocommerce->cart->cart_contents ) != 0 ) { ?><span><?php echo esc_html($woocommerce->cart->cart_contents_count); ?></span><?php } ?></a>
-						</span>
-						<?php } ?>
-					<?php } ?>
+
 					</div>
 
 					<?php
@@ -106,13 +106,7 @@
 				<a href="#" id="close-search-btn"><i class="icon-minti-close"></i></a>
 			</div>
 			<?php } ?>
-
-			<?php if (class_exists('Woocommerce')) { ?>
-			<?php global $woocommerce; ?>
-			<?php if ( sizeof( $woocommerce->cart->cart_contents ) != 0 ) { ?>
-				<?php if ( version_compare( WOOCOMMERCE_VERSION, "2.0.0" ) >= 0 ) { the_widget( 'WC_Widget_Cart', 'title= ' ); } ?>
-			<?php } ?>
-		<?php } ?>
+//old woo cart here
 
 		</div>
 
