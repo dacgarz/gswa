@@ -4,7 +4,7 @@
 
 		<div class="sixteen columns">
 
-			<div class="topbar-col1">
+			<div class="topbar-col1">first
 				<?php if($minti_data['select_topbarleft'] == 'Text Field') { ?>
 					<?php echo wp_kses_post($minti_data['textarea_topbar']); ?>
 				<?php } elseif($minti_data['select_topbarleft'] == 'Navigation') { ?>
@@ -16,7 +16,7 @@
 				<?php } elseif($minti_data['select_topbarleft'] == 'Leave Empty') { } ?>
 			</div>
 
-			<div class="topbar-col2">
+			<div class="topbar-col2">hello
 				<?php if($minti_data['select_topbarright'] == 'Text Field') { ?>
 					<?php echo wp_kses_post($minti_data['textarea_topbar']); ?>
 				<?php } elseif($minti_data['select_topbarright'] == 'Navigation') { ?>
